@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+  <!--===============================================================================================-->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="Content-Language" lang="es-CO" />
+  <meta name="robots" content="all" />
+  <meta name="geo.placename" content="Villavicencio, Meta, Colombia." />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <!--===============================================================================================-->
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="%PUBLIC_URL%/assetsLogo/logo.ico" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/assetsLogo/logo.ico" />
+  <!--===============================================================================================-->
+  <meta name="theme-color" content="#E6ACA9" />
+  <!--===============================================================================================-->
+  <title data-rh="true">Nury Valenzuela Store.</title>
+  <!--===============================================================================================-->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--===============================================================================================-->
+  <link href="%PUBLIC_URL%/fontawesome-free-6.2.0-web/css/fontawesome.css" rel="stylesheet" type="text/css" media="all">
+  <link href="%PUBLIC_URL%/fontawesome-free-6.2.0-web/css/brands.css" rel="stylesheet" type="text/css" media="all">
+  <link href="%PUBLIC_URL%/fontawesome-free-6.2.0-web/css/solid.css" rel="stylesheet" type="text/css" media="all">
+  <link href="%PUBLIC_URL%/fontawesome-free-6.2.0-web/css/v5-font-face.css" rel="stylesheet" type="text/css"
+    media="all">
+  <link href="%PUBLIC_URL%/fontawesome-free-6.2.0-web/css/all.css" rel="stylesheet" type="text/css" media="all">
+  <!--===============================================================================================-->
+  <script defer src="%PUBLIC_URL%/fontawesome-free-6.2.0-web/js/brands.js" type="text/javascript"
+    charset="UTF-8"></script>
+  <script defer src="%PUBLIC_URL%/fontawesome-free-6.2.0-web/js/solid.js" type="text/javascript"
+    charset="UTF-8"></script>
+  <script defer src="%PUBLIC_URL%/fontawesome-free-6.2.0-web/js/fontawesome.js" type="text/javascript"
+    charset="UTF-8"></script>
+  <!--===============================================================================================-->
+  <link href="%PUBLIC_URL%/assets/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+  <link href="%PUBLIC_URL%/assets/css/sticky-footer-navbar.css" rel="stylesheet" type="text/css" media="all">
+  <link href="%PUBLIC_URL%/assets/css/heroes.css" rel="stylesheet" type="text/css" media="all">
+  <link href="%PUBLIC_URL%/assets/css/styleBanner.css" rel="stylesheet" type="text/css" media="all">
+  <link href="%PUBLIC_URL%/assets/css/carousel.css" rel="stylesheet" type="text/css" media="all">
+  <!--===============================================================================================-->
+  <link href="%PUBLIC_URL%/assetsMDB/css/mdb.min.css" rel="stylesheet" type="text/css" media="all">
+  <!--===============================================================================================-->
+</head>
+
+<body class="d-flex flex-column h-100">
+  <!--===============================================================================================-->
+  <div id="root"></div>
+  <!--===============================================================================================-->
+  <script src="%PUBLIC_URL%/assets/dist/js/bootstrap.bundle.min.js" type="text/javascript" charset="UTF-8"></script>
+  <!--===============================================================================================-->
+  <script src="%PUBLIC_URL%/assetsMDB/js/mdb.min.js" type="text/javascript" charset="UTF-8"></script>
+  <!--===============================================================================================-->
+  <script type="text/javascript" charset="UTF-8">
+    var url = 'https://wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget.js?83771';
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url;
+    var options = {
+      "enabled": true,
+      "chatButtonSetting": {
+        "backgroundColor": "#E6ACA9",
+        "ctaText": "WhatsApp",
+        "borderRadius": "25",
+        "marginLeft": "0",
+        "marginBottom": "50",
+        "marginRight": "50",
+        "position": "left"
+      },
+      "brandSetting": {
+        "brandName": "Nury Valenzuela.",
+        "brandSubTitle": "Nury Valenzuela.",
+        "brandImg": "https://i.ibb.co/zQq53k0/LOGO-NV.jpg",
+        "welcomeText": "Hola!!\n\nVengo desde tu perfil de Instagram y deseo obtener mas información.",
+        "messageText": "Hola!!%0A%0AVengo desde tu perfil de Instagram y deseo obtener mas información. ",
+        "backgroundColor": "#E6ACA9",
+        "ctaText": "WhatsApp",
+        "borderRadius": "25",
+        "autoShow": true,
+        "phoneNumber": "573133966349"
+      }
+    };
+    s.onload = function () {
+      CreateWhatsappChatWidget(options);
+    };
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+  </script>
+  <!--===============================================================================================-->
+  <script type="text/javascript" charset="UTF-8">
+  </script>
+</body>
+
+</html>
