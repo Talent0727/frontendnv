@@ -12,7 +12,6 @@ const WishListItem = ({ item, removeItemHandler }) => {
             className="card-img-top img-fluid border border-dark img-rounded mx-auto d-block img-thumbnail"
             alt={item.title}
             title={item.title} />
-          <hr />
           <div className="card-body">
             <h5 className="card-title">
               <span className='badge badge-info mb-2' style={{ fontSize: "15px" }}>

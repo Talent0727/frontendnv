@@ -11,7 +11,6 @@ const Faq = () => {
           <section>
             <div className="row">
               <div className="col-md-12 gx-5 mb-4">
-                <hr className="my-10" />
                 <>
                   <h4 className="title">Preguntas Frecuentes.</h4>
                   <p style={{ textAlign: "justify" }} lang="es">

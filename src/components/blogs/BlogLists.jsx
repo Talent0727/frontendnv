@@ -51,7 +51,6 @@ const BlogLists = () => {
                         </code>
                     </a>
                 </div>
-                <hr className="my-10" />
             </div>
 
             <div className="hb-row">

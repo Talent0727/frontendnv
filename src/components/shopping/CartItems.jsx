@@ -41,7 +41,6 @@ const CartItems = () => {
                     <h2 className="npc-title">
                         <i className="fas fa-shopping-cart" /> Carrito De Compras.
                     </h2>
-                    <hr className="mb-5" />
                 </div>
                 <div className="row">
                     <div className="col-md-12">
@@ -63,10 +62,10 @@ const CartItems = () => {
                             }
                         </div>
                     </div>
-                    <hr className="mb-5" />
                     <div className="col-md-12">
                         <div className="c-col">
                             <div className="cart-bill">
+                                <hr className="mb-5" />
                                 <h2 className="bill-title">
                                     Mi Factura.
                                 </h2>
@@ -138,7 +137,6 @@ const CartItems = () => {
                                         <i className="fa-solid fa-credit-card"></i> Verificar.
                                     </button>)}
                                 </div>
-                                <hr className="my-10" />
                             </div>
                         </div>
                     </div>

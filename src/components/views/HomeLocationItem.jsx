@@ -11,9 +11,9 @@ const HomeLocationItem = () => {
                 <>
                   <div className="left-title">
                     <h2>Nuestros Nury Valenzuela.</h2>
+                    <hr className="my-10" />
                     <div className="clear" />
                   </div>
-                  <hr className="my-10" />
                   <div id="faqs-accordion" className="faqs-accordion">
                     <h3>
                       <p>
@@ -42,7 +42,6 @@ const HomeLocationItem = () => {
                         <i className="fab fa-youtube" style={{ fontSize: "25px", color: "#FD1D1D" }}></i> Youtube.
                       </a>
                     </p>
-                    <hr className="my-10" />
                     <div>
                       <p>
                         <Iframe

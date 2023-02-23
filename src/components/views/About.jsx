@@ -14,7 +14,6 @@ const About = () => {
           <section>
             <div className="row">
               <div className="col-md-12 gx-5 mb-4">
-                <hr className="my-10" />
                 <>
                   <p style={{ textAlign: "justify" }} lang="es">
                     <div className="contentStickyImage">

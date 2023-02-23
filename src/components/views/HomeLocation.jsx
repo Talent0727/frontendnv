@@ -11,7 +11,6 @@ const HomeLocation = () => {
           <section>
             <div className="row">
               <div className="col-md-12 gx-5 mb-4">
-                <hr className="my-10" />
                 <div className="page-header black-overlay">
                   <div className="container breadcrumb-section">
                     <div className="row pad-s15">
@@ -19,6 +18,7 @@ const HomeLocation = () => {
                         <h2>
                           <FontAwesomeIcon icon="fa-solid fa-location-dot" /> CONTACTOS.
                         </h2>
+                        <hr className="my-10" />
                         <p>
                           <span className="rounded-icon">
                             MI CORREO ES. :* <a
@@ -35,7 +35,6 @@ const HomeLocation = () => {
                     </div>
                   </div>
                 </div>
-                <hr className="my-10" />
                 <section className="page_single padTB100">
                   <div className="container">
                     <div className="row pad-s15">

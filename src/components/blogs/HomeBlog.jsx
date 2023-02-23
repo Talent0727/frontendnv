@@ -27,7 +27,6 @@ const HomeBlog = () => {
                 <h2 className="npc-title">
                     <FontAwesomeIcon icon="fa-solid fa-circle-info" /> BLOGS.
                 </h2>
-                <hr className="mb-5" />
             </div>
             <div className="hb-col">
                 <Link to='/blogs' rel='noopener noreferrer' className='hb-more badge badge-secondary mb-2' style={{ fontSize: "20px" }}>

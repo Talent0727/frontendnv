@@ -9,7 +9,6 @@ const MyAccount = () => {
     return (
         <main>
             <div className="container-md">
-                <hr className="my-10" />
                 {/* Heading */}
                 <div className="table-responsive">
                     <table className="table ">

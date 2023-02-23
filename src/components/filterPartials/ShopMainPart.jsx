@@ -127,7 +127,6 @@ const ShopMainPart = () => {
                 <h2 className="npc-title">
                     <FontAwesomeIcon icon={faBagShopping} /> LISTA DE PRODUCTOS.
                 </h2>
-                <hr className="mb-5" />
             </div>
             <div className="container mt-5 pt-3">
 

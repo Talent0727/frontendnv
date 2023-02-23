@@ -9,10 +9,9 @@ const Options2 = () => {
           <section>
             <div className="row">
               <div className="col-md-12 gx-5 mb-4">
-                <hr className="my-10" />
                 <>
                   <h4 className="title">POLITICAS DE ENVIOS, CAMBIOS, DEVOLUCIONES Y GARANTÍAS.</h4>
-                  <p style={{ textAlign: "justify" }} lang="es">
+                  <p style={{ textAlign: "justify" }} lang="es"><hr className="my-10" />
                     TIEMPOS DE ENTREGA:
                     <br />
                     El tiempo de entrega de los productos es aproximadamente (Dentro de Villavicencio (Meta) 2 días máximo) a nivel nacional 6 días hábiles y a nivel internacional de 10 a 20 días hábiles, para ciudades principales en Colombia dependiendo la firma de transporte asignada.

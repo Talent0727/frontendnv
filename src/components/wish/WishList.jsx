@@ -22,7 +22,6 @@ const WishList = () => {
         <h2 className="npc-title">
           <i class="fa-solid fa-heart"></i> LISTA DE DESEOS.
         </h2>
-        <hr className="mb-5" />
       </div>
       <div className="w-row">
         {
@@ -40,7 +39,6 @@ const WishList = () => {
           )
         }
       </div>
-      <hr className="my-10" />
     </div>
   );
 };

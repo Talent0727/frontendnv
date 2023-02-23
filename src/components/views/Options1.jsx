@@ -9,10 +9,9 @@ const Options1 = () => {
           <section>
             <div className="row">
               <div className="col-md-12 gx-5 mb-4">
-                <hr className="my-10" />
                 <>
                   <h4 className="title">TÉRMINOS Y CONDICIONES.</h4>
-                  <p style={{ textAlign: "justify" }} lang="es">
+                  <p style={{ textAlign: "justify" }} lang="es"><hr className="my-10" />
                     #1 LAS PARTES:
                     <br />
                     Entre el cliente y/o usuario, quien actúa directamente, si es una persona natural o por medio de una persona debidamente facultada para actuar a nombre y representación, en caso de ser una persona jurídica, y de otro lado Nury Valenzuela, marca nacional perteneciente a sociedad comercial debidamente constituida bajo las leyes colombianas, que cuenta con un sitio web https://www.nuryvalenzuelajoyeria.com.co/, celebran el presente contrato de conformidad con los términos y condiciones de uso que hacen parte integral de este contrato. En todo caso presumirá de buena fe que está contratando directamente con el cliente o con su representante legal debidamente facultado para efectuar este tipo de operaciones y ninguna responsabilidad deberá asumir por suplantación personal que realice cualquier cliente y/o usuario.
@@ -22,39 +21,39 @@ const Options1 = () => {
                     PARÁGRAFO SEGUNDO: Es responsabilidad del cliente cualquier uso que de la clave suministrada se realice, la cual no podrá ser transferida o revelada a terceros bajo ningún motivo. Así mismo, el cliente deberá adoptar todas las medidas de seguridad necesarias para evitar el mal uso o el conocimiento de esta por parte de terceros. Se recomienda efectuar el cambio de clave de manera periódica.
                     <br />
                     PARÁGRAFO TERCERO: En caso de pérdida, olvido o exposición a terceros de la clave, deberá remitirse a la sección de autenticación del sitio en donde hay un link recordar contraseña, en donde siguiendo las instrucciones, el cliente podrá recuperar su contraseña, a través de su correo electrónico o cambiar la clave. Si por algún motivo no logra solucionar el inconveniente debe escribir al Email: nuryvalenzuelajoyeria@gmail.com
-                    <br />
+                    <br /><hr className="my-10" />
                     #2 LA ACTIVIDAD:
                     <br />
                     Pondrá a disposición de los clientes, los colores en los que pueden adquirir los productos. Estos se exhibirán de la manera más real posible, sin embargo hay que tener en cuenta que con cada equipo/computador, el color que se elija podrá variar, por lo que la empresa no se hace responsable de este hecho si el cliente solicitara cambio por error en la selección del color.
-                    <br />
+                    <br /><hr className="my-10" />
                     #3 ACEPTACIÓN DE LOS TÉRMINOS:
                     <br />
                     Al acezar, hojear y/o usar este Sitio, el usuario admite haber leído y entendido estos Términos de Uso y está de acuerdo en sujetarse a los mismos y cumplir con todas las leyes y reglamentos aplicables que hagan parte de la Legislación Colombiana. Además, cuando el usuario utilice cualquier servicio suministrado en este Sitio, estará sujeto a las reglas, guías, políticas, términos y condiciones aplicables a dicho servicio en particular. No se responsabiliza de que el material en este Sitio sea apropiado o esté disponible para su uso en otros lugares, estando prohibido su acceso desde territorios donde su contenido sea ilegal. Aquellos que decidan acezar a este Sitio desde otros lugares lo harán bajo su propia iniciativa y es su responsabilidad el sujetarse a las leyes locales que sean aplicables. En caso de que el usuario no esté de acuerdo con estos términos, favor abstenerse de usar este Sitio. Cualquier reclamo con relación a este Sitio y el material en él contenido está regulado por las leyes de Colombia. Estos términos y condiciones están sujetos a cambios sin previo aviso en cualquier momento, bajo el principio de autonomía de voluntad y a partir de la fecha de modificación de estos términos y condiciones, todas las operaciones que se celebren y el usuario se regirán por el documento modificado.
-                    <br />
+                    <br /><hr className="my-10" />
                     #4 LAS DISPOSICIONES:
                     <br />
                     En caso de que una o más de las disposiciones contenidas en estos Términos y Condiciones sean consideradas nulas, ilegales o ineficaces en cualquier aspecto, la validez, legalidad, exigibilidad o eficacia del resto de las disposiciones aquí contenidas no se verán afectadas o anuladas por dicha circunstancia.
-                    <br />
+                    <br /><hr className="my-10" />
                     #5 REVISIÓN DE LOS TÉRMINOS:
                     <br />
                     Puede en cualquier momento revisar estos Términos de Uso aquí contenidos, por medio del reajuste de este anuncio. Al usar https://www.nuryvalenzuelajoyeria.com.co/ el usuario conviene en darse por obligado por cualquiera de tales revisiones, las cuales estarán vigentes a partir del momento en que las mismas sean accesibles por los Usuarios, debiendo entonces visitar periódicamente esta página para determinar los términos vigentes en ese momento a los cuales el usuario estará obligado en el evento que decida utilizar este Sitio.
-                    <br />
+                    <br /><hr className="my-10" />
                     #6 PROPIEDAD INDUSTRIAL:
                     <br />
                     Todas las marcas, enseñas, logos, nombres y cualesquiera otros signos distintivos, así como los modelos de utilidad y/o diseños industriales y demás elementos de propiedad industrial o intelectual insertados, usados y/o desplegados en este Sitio son Propiedad exclusiva de nada en https://www.nuryvalenzuelajoyeria.com.co/ podrá ser desarrollado como concesión u otorgamiento a cualquier título de autorizaciones, licencias o cualquier otro derecho para usar o disponer de cualquier forma de la Propiedad Industrial, sin el permiso por escrito o del titular de los derechos de la misma. Cualquier uso no autorizado constituirá una violación a los presentes Términos y Condiciones y a las normas vigentes nacionales e internacionales sobre Propiedad Industrial.
-                    <br />
+                    <br /><hr className="my-10" />
                     #7 DERECHOS DE AUTOR:
                     <br />
                     Todo el material informático, gráfico, publicitario, fotográfico, de multimedia, audiovisual y/o de diseño, así como todos los contenidos, textos y bases de datos puestos a su disposición en este Sitio son de propiedad exclusiva. Todos los Contenidos en página web están protegidos por las normas sobre Derechos de Autor y por todas las normas nacionales e internacionales que le sean aplicables. Exceptuando lo expresamente estipulado en estos Términos y Condiciones, queda prohibido todo acto de copia, reproducción, modificación, creación de trabajos derivados, venta o distribución, exhibición de los Contenidos, de ninguna manera o por ningún medio, incluyendo, más no limitado a, medios electrónicos, mecánicos, de fotocopiado, de grabación o de cualquier otra índole, sin el permiso previo por escrito; En ningún caso estos Términos y Condiciones confieren derechos, licencias y/o autorizaciones para realizar los actos anteriormente descritos. Cualquier uso no autorizado de los Contenidos constituirá una violación a los presentes Términos y Condiciones y a las normas vigentes sobre derechos de autor, únicamente se otorga al usuario una licencia y un derecho personal, intransferible y no exclusivo para desplegar https://www.nuryvalenzuelajoyeria.com.co/ en pantalla de un computador ordenador o dispositivo PDA bajo su control, y para copiar los Contenidos de propiedad única y exclusivamente para uso personal no comercial, con la condición de que el usuario no modifique de ninguna forma los Contenidos y que conserve todas las leyendas de derechos de autor y de otro tipo de propiedad contenidas en los mismos. El usuario se obliga por los presentes Términos y Condiciones a no modificar el software del Sitio de ninguna manera.
                     <br />
                     Signos distintivos Los signos distintivos Nury Valenzuela, Engrandece tu belleza, y cualquier otro exhibido en esta página, es de titularidad de Bajo ningún supuesto se podrá considerar que se permite el uso o se está concediendo una licencia cualquiera que sea su carácter, sobre las marcas, nombres comerciales, enseñas o lemas. Por lo tanto, se considera expresamente prohibido el uso de los mismos, so pena de verse incurso en las responsabilidades civiles y penales a que haya lugar.
-                    <br />
+                    <br /><hr className="my-10" />
                     #8 FORMACIÓN Y PERFECCIONAMIENTO:
                     <br />
                     El contrato de compraventa de productos, se perfecciona solamente cuando el cliente en atención a la invitación a ofrecer realizada por presente la oferta de compra mediante la selección del producto y efectúe el pago según las modalidades de pago ofrecidas en la página. En ningún caso, estará obligado bajo ningún supuesto a aceptar una oferta de compra.
                     <br />
                     PARÁGRAFO ÚNICO: Si la compra que se pretende efectuar llegare a superar una cantidad de cuatro (4) productos, se reserva la potestad de enviar esta oferta de compra al canal de negocios empresariales de la empresa por considerarse una venta institucional, con el fin de evitar la comercialización indebida de productos.
-                    <br />
+                    <br /><hr className="my-10" />
                     #9 TÉRMINO PARA LA ACEPTACIÓN DE LA OFERTA:
                     <br />
                     Podrá aceptar la oferta de forma inmediata luego de efectuado el pago, la cual podrá ser aceptada de manera total o parcial.
@@ -64,7 +63,7 @@ const Options1 = () => {
                     PARÁGRAFO SEGUNDO: En el evento que por cualquier motivo no acepte la oferta formulada de manera total o parcial, procederá a devolver los dineros de forma total o parcial según corresponda, a una cuenta de titularidad del oferente en una cuantía idéntica a la consignada en nuestras cuentas, sin ningún tipo de interés, indemnización u otros rubros.
                     <br />
                     PARÁGRAFO TERCERO: Para la devolución del dinero se observará el medio de pago de la siguiente manera: Para pagos por medio de tarjeta débito, de cuenta de ahorros o corriente, la devolución se efectuará en un plazo de ocho (8) días hábiles. Pero si el pago se realizó con tarjeta de crédito, la orden de devolución se efectuará en treinta (30) días hábiles, sin que exista responsabilidad; por las demoras que pueda tener la institución financiera.
-                    <br />
+                    <br /><hr className="my-10" />
                     #10 PRECIO:
                     <br />
                     El valor total de la compra estará compuesto de los siguientes rubros a cargo del cliente: valor del producto, impuestos y gastos de transporte si fuere el caso.
@@ -72,29 +71,29 @@ const Options1 = () => {
                     PARÁGRAFO PRIMERO: Se compromete a revisar constantemente y a actualizar los precios que se mencionan en la página web y a su vez, nuestro cliente y/o usuario, debe estar atento en caso de presentarse alguna fluctuación en los mismos.
                     <br />
                     PARÁGRAFO SEGUNDO: Informará o publicará la tarifa de transporte y envío que tendrán los bienes los cuales se generarán dependiendo de los costos, rubros y políticas de la empresa transportadora, las cuales son independientes autónomas y ajenas a Dentro del costo del flete se deberá tener en cuenta el lugar del territorio colombiano al cual se deban enviar los productos adquiridos, el tamaño y el peso de los mismos.
-                    <br />
+                    <br /><hr className="my-10" />
                     #11 CONDICIONES DE PAGO:
                     <br />
                     El pago se efectuará única y exclusivamente por los siguientes medios:
                     <br />
                     1. Tarjetas crédito:
                     <br />
-                    &#45;&#41; Visa.
-                    &#45;&#41; Diners Club.
-                    &#45;&#41; MasterCard.
+                    &#45;&#41; Visa.<br />
+                    &#45;&#41; Diners Club.<br />
+                    &#45;&#41; MasterCard.<br />
                     &#45;&#41; American Express.
                     <br />
                     2. Tarjetas débito:
                     <br />
-                    &#45;&#41; Maestro.
+                    &#45;&#41; Maestro.<br />
                     &#45;&#41; Electron.
                     <br />
                     3. Baloto,
                     <br />
-                    4. Discover, 5. PayPal, 6. Efecty, 7. PayU, Y MUCHOS MÁS.
+                    4. Discover,<br /> 5. PayPal,<br /> 6. Efecty,<br /> 7. PayU, Y MUCHOS MÁS.
                     <br />
                     PARÁGRAFO: Antes de la aceptación por parte nuestra de cualquier Oferta de compra, el cliente deberá elegir los términos y condiciones de pago del precio correspondiente, según los medios de pago que se encuentran ya específicamente establecidos en este Sitio. Aún cuando ponga a disposición del cliente un sistema de conexión segura para toda la realización de todas las ofertas de compra, en ningún caso será responsable por los fallos en las comunicaciones de las entidades bancarias o de crédito, así como tampoco de los daños causados a los usuarios con ocasión de una acción u omisión de dichas entidades.
-                    <br />
+                    <br /><hr className="my-10" />
                     #12 DERECHO DE RETRACTO:
                     <br />
                     El consumidor deberá devolver el producto a por los mismos medios y en las mismas condiciones en que lo recibió. Los costos de transporte y los demás que conlleve la devolución del bien serán cubiertos por el consumidor. El término máximo para ejercer el derecho de retracto será de cinco (5) días hábiles contados a partir de la entrega del bien o de la celebración del contrato en caso de la prestación de servicios.
@@ -106,7 +105,7 @@ const Options1 = () => {
                     - En los contratos de suministro de bienes confeccionados conforme a las especificaciones del consumidor o claramente personalizados.
                     <br />
                     - En los contratos de adquisición de bienes de uso personal deberá devolverle en dinero al consumidor todas las sumas pagadas sin que proceda a hacer descuentos o retenciones por concepto alguno. En todo caso la devolución del dinero al consumidor no podrá exceder de treinta (30) días calendario desde el momento en que ejerció el derecho.
-                    <br />
+                    <br /><hr className="my-10" />
                     #13 REMISIÓN DE LOS PRODUCTOS:
                     <br />
                     El envío de los productos se realizará únicamente dentro del territorio colombiano, a través de correo certificado, (Dentro de Villavicencio (Meta) 2 días máximo) a nivel nacional 6 días hábiles y a nivel internacional de 10 a 20 días hábiles, contados a partir de la aceptación de la oferta, siempre y cuando no medie ningún caso fortuito o fuerza mayor, entre los cuales se encuentra a manera de ejemplo, hechos del hombre o de la naturaleza, como huelgas, paros, revoluciones, rebelión sedición, asonada, atentados, cortes de fluidos, derrumbes, terremotos, avalanchas, desbordamientos, caídas de puentes, entre otros.
@@ -114,21 +113,21 @@ const Options1 = () => {
                     PARÁGRAFO PRIMERO: El lugar de envío será a dirección señalada por el cliente en la oferta que este elabore en el formato destinado para tal fin, el cual podrá ser el mismo lugar de habitación del comprador u otro que este designe. Se entiende que cualquier persona que se encuentre en el domicilio donde se debe realizar la entrega, se encuentra debidamente autorizado por el cliente para recibir su pedido, por lo que queda exonerado de cualquier responsabilidad al momento de la entrega, siempre y cuando la misma se haga en el domicilio registrado al momento de la compra en el sitio web.
                     <br />
                     PARÁGRAFO SEGUNDO: La empresa transportadora tendrá la obligación de hacer máximo dos (2) intentos de entrega de los productos adquiridos. En caso que los intentos de entrega resulten infructuosos, retornarán los bienes a la fábrica y se procederá a la devolución de los dineros consignados, salvo el valor del envío, sin ningún tipo de interés, retribución o suma adicional y sin importar la causa u origen que pueda tener la devolución. Igualmente se considera entrega infructuosa si el destinatario del producto es menor de catorce (14) años y no se encuentra acompañado de un padre, tutor o acudiente que firme junto con el destinatario el recibido del producto.
-                    <br />
+                    <br /><hr className="my-10" />
                     #14 FACTURA:
                     <br />
                     Facturación electrónica al correo vinculado a la compra.
-                    <br />
+                    <br /><hr className="my-10" />
                     #15 TRANSMISIÓN DE LA PROPIEDAD:
                     <br />
                     La transmisión de la propiedad se realiza tan pronto como coloque el bien o el producto en manos de la empresa transportadora, para ser remitido al cliente o a la persona que este designe.
                     <br />
                     PARÁGRAFO PRIMERO: No obstante lo anterior, el cliente o destinatario del bien o producto, deberá abstenerse de recibir el mismo inmediatamente, en caso de que el empaque o embalaje del producto, presente daños, rupturas, aberturas u otras similares, dejando la debida anotación o constancia de ese hecho.
-                    <br />
+                    <br /><hr className="my-10" />
                     #16 EMBALAJE DE LOS PRODUCTOS:
                     <br />
                     Nuestro cliente acepta que los productos sean empacados y presentados en bolsa plástica y/o caja de cartón que cumple con las condiciones necesarias para la conservación adecuada del producto.
-                    <br />
+                    <br /><hr className="my-10" />
                     #17 CAMBIOS Y GARANTÍAS DE PRODUCTOS:
                     <br />
                     Para hacer efectiva la garantía o cambio de cualquiera de los productos comercializados por nuestra página web, aplican las ‘Políticas de envíos, cambios, devoluciones y garantías’, las cuales hacen parte integral del presente documento.
@@ -142,17 +141,17 @@ const Options1 = () => {
                     <br />
                     1.Tarjetas crédito:
                     <br />
-                    &#45;&#41; Visa.
-                    &#45;&#41; Diners Club.
-                    &#45;&#41; MasterCard.
+                    &#45;&#41; Visa.<br />
+                    &#45;&#41; Diners Club.<br />
+                    &#45;&#41; MasterCard.<br />
                     &#45;&#41; American Express.
                     <br />
                     2. Tarjetas débito:
                     <br />
-                    &#45;&#41; Maestro.
+                    &#45;&#41; Maestro.<br />
                     &#45;&#41; Electron.
                     <br />
-                    3. Baloto, 4. Discover, 5. PayPal, 6. Efecty, 7. PayU Y MUCHOS MÁS.
+                    3. Baloto,<br /> 4. Discover,<br /> 5. PayPal,<br /> 6. Efecty,<br /> 7. PayU Y MUCHOS MÁS.
                     <br />
                     La plataforma de pagos deberá aprobar la transacción de acuerdo con el análisis de los datos, lo cual puede tardar hasta un día hábil.
                     <br />
@@ -160,17 +159,17 @@ const Options1 = () => {
                     <br />
                     1.Tarjetas crédito:
                     <br />
-                    &#45;&#41; Visa.
-                    &#45;&#41; Diners Club.
-                    &#45;&#41; MasterCard.
+                    &#45;&#41; Visa.<br />
+                    &#45;&#41; Diners Club.<br />
+                    &#45;&#41; MasterCard.<br />
                     &#45;&#41; American Express.
                     <br />
                     2. Tarjetas débito:
                     <br />
-                    &#45;&#41; Maestro.
+                    &#45;&#41; Maestro.<br />
                     &#45;&#41; Electron.
                     <br />
-                    3. Baloto, 4. Discover, 5. PayPal, 6. Efecty, 7. PayU Y MUCHOS MÁS.
+                    3. Baloto,<br /> 4. Discover,<br /> 5. PayPal,<br /> 6. Efecty,<br /> 7. PayU Y MUCHOS MÁS.
                     <br />
                     la información de pago se puede tardar hasta 1 día hábil después de efectuado el pago. Para pago contra entrega los tiempos empiezan a contar inmediatamente después de realizada la compra. En el momento de la aprobación del pago de tu orden, recibirás un correo electrónico con la confirmación del mismo. Las entregas no se pueden realizar en un horario exacto. En caso de que tengas alguna inquietud con el despacho del producto puedes comunicarte con la línea de Servicio al cliente de Nury Valenzuela al +57-3133966349 (en horario de lunes a viernes de 9am-6pm), o a través de nuestro correo: nuryvalenzuelajoyeria@gmail.com, o en nuestro sitio web https://www.nuryvalenzuelajoyeria.com.co/ en el formulario de ‘Contáctanos’ para verificar el estado del transporte. El producto podrá ser recibido por cualquier persona mayor de edad que habite o esté presente en el lugar de entrega, para lo cual bastará la firma de la guía del transportador.
                     <br />
@@ -200,30 +199,30 @@ const Options1 = () => {
                     <br />
                     Los tiempos para el cambio, según la política de devoluciones son:
                     <br />
-                    ·Cambio del producto por talla o acabado: se despachará (Dentro de Villavicencio (Meta) 2 días máximo) a nivel nacional 6 días hábiles y a nivel internacional de 10 a 20 días hábiles, después de haber recibido el producto en nuestra bodega y a partir de este momento aplican los mismos tiempos que para una entrega normal.
+                    Cambio del producto por talla o acabado: se despachará (Dentro de Villavicencio (Meta) 2 días máximo) a nivel nacional 6 días hábiles y a nivel internacional de 10 a 20 días hábiles, después de haber recibido el producto en nuestra bodega y a partir de este momento aplican los mismos tiempos que para una entrega normal.
                     <br />
-                    ·Bono o nota crédito para realizar una nueva compra en sitio web https://www.nuryvalenzuelajoyeria.com.co/ será enviado a tu correo dos (2) días hábiles después recibido el producto en nuestra bodega.
+                    Bono o nota crédito para realizar una nueva compra en sitio web https://www.nuryvalenzuelajoyeria.com.co/ será enviado a tu correo dos (2) días hábiles después recibido el producto en nuestra bodega.
                     <br />
-                    ·Devolución del dinero: A través de transferencia: se realiza aproximadamente dentro de los cinco días hábiles siguientes de recibir el producto en nuestra bodega. A través de reversión del pago: Treinta días hábiles después de recibir el producto en nuestra bodega.
+                    Devolución del dinero: A través de transferencia: se realiza aproximadamente dentro de los cinco días hábiles siguientes de recibir el producto en nuestra bodega. A través de reversión del pago: Treinta días hábiles después de recibir el producto en nuestra bodega.
                     <br />
                     Cambios en Showroom "Nury Valenzuela":
                     <br />
                     Acércate a nuestro Showroom (Dentro de Villavicencio (Meta) 2 días máximo) a nivel nacional 6 días hábiles y a nivel internacional de 10 a 20 días hábiles, siguientes a la compra del producto y cumpliendo los requisitos correspondientes a nuestras políticas de cambio, presentando la factura de compra y documento de identificación de la persona que realizó la compra, podrás realizar directamente tu cambio. Uno de nuestros asesores de venta te ayudará en el proceso. Debes tener en cuenta que: las compras realizadas en el Showroom de Nury Valenzuela, no pueden ser cambiadas en sitio web https://www.nuryvalenzuelajoyeria.com.co/
                     <br />
                     PARÁGRAFO ÚNICO: Toda venta efectuada se deberá considerar como una venta en firme, por lo tanto no se admitirá la devolución del producto o el dinero que no estén respaldadas en la ley o en orden de autoridad competente, dicha devolución de dinero en todo caso se efectuará sin ningún tipo de intereses, primas o sumas adicionales, e igualmente se descontarán todos los gastos de envío que se hubiesen originado si no existe prohibición legal.
-                    <br />
+                    <br /><hr className="my-10" />
                     #18 COMENTARIOS:
                     <br />
                     Se reserva el derecho de publicar o abstenerse de publicar cualquiera de los comentarios efectuados por los usuarios de nuestra página web a los productos. En este mismo sentido, en cualquier momento podrá un comentario ser retirado de la página web mencionada.
                     <br />
                     PARÁGRAFO ÚNICO: Todo comentario que se publique, deberá ser efectuado con un lenguaje cordial, respetuoso y relacionado con el objeto sobre el cual se comenta.
-                    <br />
+                    <br /><hr className="my-10" />
                     #19 RESPONSABILIDAD LIMITADA:
                     <br />
                     Sin perjuicio de lo determinado en las normas imperativas de la Legislación Colombiana aplicable, no asume responsabilidad alguna, incluyendo cualquier responsabilidad por cualquier daño o perjuicio, incluyendo mas no limitado la pérdida de información o utilidades, existencia de virus, resultados del uso o la incapacidad para usar el material en este Sitio, oportunidades de negocios perdidas, o cualquier otro daño, aun cuando el usuario nos haya avisado acerca de la posibilidad de tales daños, o por cualquier reclamo de terceros, salvo lo que expresamente aquí se estipula. Bajo los términos aquí señalados, no asume ninguna responsabilidad por la información que se suministra en la página, incluyendo pero sin limitarse a la referente a productos y/o servicios, notas de interés, opiniones, consejos prácticos y solución de inquietudes. No asume responsabilidad alguna por la imposibilidad de, o por problemas en, la utilización del Sitio o de alguna de las páginas que lo conforman, incluyendo pero sin limitarse a eventos tales como problemas en el servidor o en la conexión, interrupciones en su comunicación, problemas técnicos. En caso de que el uso del material de este Sitio dé como resultado la necesidad de dar servicio a, reparar o corregir equipo o información, el usuario asume cualquier costo derivado de ello.
                     <br />
                     PARÁGRAFO PRIMERO: La responsabilidad se limitará en una cuantía idéntica al valor del producto adquirido, o en su defecto, al valor del producto solicitado por el cliente.
-                    <br />
+                    <br /><hr className="my-10" />
                     #20 ORIGEN DE LOS FONDOS:
                     <br />
                     El cliente solemnemente declara y sostiene:
