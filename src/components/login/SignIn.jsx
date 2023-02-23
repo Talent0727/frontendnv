@@ -49,7 +49,7 @@ const SignIn = () => {
                             </span>
                         </h1>
                         <p className="col-lg-10 fs-4" style={{ textAlign: "justify" }}>
-                            ¡Bienvenido de nuevo a Nury Valenzuela Ingrese su correo electrónico para comenzar.
+                            ¡.Bienvenido de nuevo a Nury Valenzuela.! Ingrese su correo electrónico para comenzar.
                         </p>
                     </div>
                     <div className="col-md-10 mx-auto col-lg-5">
