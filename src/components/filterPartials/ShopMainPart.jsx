@@ -136,7 +136,7 @@ const ShopMainPart = () => {
                         <div className>
                             {/* Grid row */}
                             <div className="row">
-                                <div className="col-md-6 col-lg-12 mb-5">
+                                <div className="col-md-6 col-lg-11 mb-5">
                                     <a className="font-weight-bold white-text mr-4" href="#" rel="noopener noreferrer">
                                         <h4 className="s-filters badge badge-dark mb-2" style={{ fontSize: "15px" }}>
                                             <i className="fa-solid fa-filter" style={{ fontSize: "15px" }}></i> Filtros.
