@@ -864,15 +864,15 @@
 .pd-bottom {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 2px;
   margin-top: 10px;
 }
 
 .pd-smallImg {
-  width: 140px;
+  width: 44px;
   height: auto;
   cursor: pointer;
-  padding: 5px;
+  padding: 0px;
 }
 
 .co-container {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Category from './Category';
 import Price from './Price';
-import Star from './Star';
+//import Star from './Star';
 import Subcategory from './Subcategory';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -36,12 +36,12 @@ const ShopFilter = ({ filterResult, category, filterResultRatings, rating, subCa
                 </span>
                 <Price value={selectedPrice} changePrice={changePrice} />
             </div>
-            <div className='f-group'>
+            {/*<div className='f-group'>
                 <span className="f-groupTitle badge text-bg-warning" style={{ fontSize: "15px" }}>
                     Clasificación De Estrellas. :*
                 </span>
                 <Star filterResultRatings={filterResultRatings} rating={rating} />
-            </div>
+            </div>*/}
         </>
     );
 };
