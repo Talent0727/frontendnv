@@ -8,7 +8,7 @@ const ShopProducts = ({ list }) => {
 
   // for pagination
   const [pageNumber, setPageNumber] = useState(0);
-  const blogsPerPage = 3;
+  const blogsPerPage = 20;
   const pagesVisited = pageNumber * blogsPerPage;
 
   const pageCount = Math.ceil(list.length / blogsPerPage);

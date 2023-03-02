@@ -4,14 +4,13 @@ import LogoNV from '../assets/img/Logonv.png';
 const Logo = () => {
   return (
     <>
-      <section className="wa-partners padTB100">
+      <section className="wa-partners padTB100" style={{ marginTop: '100px' }}>
         <div className="container">
           <div className="row">
             {/*//==Section Heading Start==//*/}
             <div className="col-md-12">
               <div className="centered-title text-center">
                 <h2>NUESTRA EMPRESA.<span className="heading-border" /></h2>
-                <hr className="my-10" />
               </div>
             </div>
             {/*//==Section Heading End==//*/}

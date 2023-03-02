@@ -44,7 +44,7 @@ const NewProducts = () => {
                 <div className="npc-groups">
                   {
                     //only 4 latest
-                    products.slice(-4).map((product) => (
+                    products.slice(-15).map((product) => (
                       <NewProduct key={product._id} product={product} />
                     ))
                   }

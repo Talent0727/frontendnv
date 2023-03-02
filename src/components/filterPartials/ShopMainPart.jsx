@@ -14,7 +14,7 @@ const ShopMainPart = () => {
     const [category, setCategory] = useState([]); //default is empty, no category
     const [rating, setRating] = useState([]);   //default is empty, no rating
     const [subCategory, setSubCategory] = useState([]);    //default is empty, no subcategory
-    const [selectedPrice, setSelectedPrice] = useState([0, 1000]); //range from 0 - 1000
+    const [selectedPrice, setSelectedPrice] = useState([0, 9999000]); //range from 0 - 9999000
 
     const [list, setList] = useState(products) //get all products when fetch products
 
@@ -128,26 +128,48 @@ const ShopMainPart = () => {
                     <FontAwesomeIcon icon={faBagShopping} /> LISTA DE PRODUCTOS.
                 </h2>
             </div>
-            <div className="container mt-5 pt-3">
+            <div className="container mt-5 pt-4">
 
                 <div className="row pt-4">
                     {/* Sidebar */}
-                    <div className="col-lg-3">
+                    <div className="col-lg-12">
                         <div className>
                             {/* Grid row */}
                             <div className="row">
-                                <div className="col-md-6 col-lg-11 mb-5">
-                                    <a className="font-weight-bold white-text mr-4" href="#" rel="noopener noreferrer">
-                                        <h4 className="s-filters badge badge-dark mb-2" style={{ fontSize: "15px" }}>
-                                            <i className="fa-solid fa-filter" style={{ fontSize: "15px" }}></i> Filtros.
-                                        </h4>
-                                    </a>
-                                    <div className='f-group'>
-                                        <span className="f-groupTitle">Búsqueda. :*</span>
-                                        <Search value={inputSearch} changeInput={(e) => setInputSearch(e.target.value)} />
-                                    </div>
-                                    <div className="s-filterGroups">
-                                        <ShopFilter filterResult={filterResult} category={category} filterResultRatings={filterResultRatings} rating={rating} subCategory={subCategory} changeChecked={handleChangeChecked} selectedPrice={selectedPrice} changePrice={handleChangePrice} />
+                                <div className="col-md-12 col-lg-12 mb-5">
+                                    <div className='table-responsive'>
+                                        <table className="table align-middle mb-0 bg-white">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div className="d-flex align-items-center">
+                                                            <div className="ms-12">
+                                                                <p className="fw-bold mb-1">
+                                                                    <div className='f-group'>
+                                                                        <a className="font-weight-bold white-text mr-4" href="#" rel="noopener noreferrer">
+                                                                            <h4 className="s-filters badge badge-dark mb-2" style={{ fontSize: "15px" }}>
+                                                                                <i className="fa-solid fa-filter" style={{ fontSize: "15px" }}></i> Filtros.
+                                                                            </h4>
+                                                                        </a>
+                                                                    </div>
+                                                                </p>
+                                                                <p className="fw-bold mb-1">
+                                                                    <div className='f-group'>
+                                                                        <span className="f-groupTitle">Búsqueda. :*</span>
+                                                                        <Search value={inputSearch} changeInput={(e) => setInputSearch(e.target.value)} />
+                                                                    </div>
+                                                                </p>
+                                                                <p className="text-muted mb-0">
+                                                                    <div className='f-group'>
+                                                                        <ShopFilter filterResult={filterResult} category={category} filterResultRatings={filterResultRatings} rating={rating} subCategory={subCategory} changeChecked={handleChangeChecked} selectedPrice={selectedPrice} changePrice={handleChangePrice} />
+                                                                    </div>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                                 {/* Filter by category */}
@@ -157,7 +179,7 @@ const ShopMainPart = () => {
                     </div>
                     {/* Sidebar */}
                     {/* Content */}
-                    <div className="col-lg-9">
+                    <div className="col-lg-12">
                         {/* Products Grid */}
                         <section className="section pt-4">
                             {/* Grid row */}

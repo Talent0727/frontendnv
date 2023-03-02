@@ -9,7 +9,7 @@ const ShopProduct = ({ product }) => {
         <div className="card" style={{ width: '18rem' }}>
           <img
             src={product.image}
-            className="card-img-top img-fluid border border-dark img-rounded mx-auto d-block img-thumbnail"
+            className="card-img-top img-fluid border border-dark img-rounded mx-auto d-block img-thumbnail img-blog"
             alt={product.title}
             title={product.title} />
           <div className="card-body">
@@ -42,7 +42,17 @@ const ShopProduct = ({ product }) => {
             <li style={{ color: "black", fontSize: "20px" }} className="list-group-item px-4 badge badge-warning mb-2">
               {product.star}
             </li>
+            <li style={{ color: "black", fontSize: "20px" }} className="list-group-item px-4 badge badge-info mb-2">
+              {product.createdAt.slice(0, 10)}
+            </li>
           </ul>
+          <div className="card-footer">
+            <h5 className="card-title">
+              <span className='list-group-item px-4 badge badge-dark text-center mb-2' style={{ textAlign: "center", fontSize: "20px", borderRadius: "20px" }}>
+                <i class="fas fa-eye"></i> Ver Producto.
+              </span>
+            </h5>
+          </div>
         </div>
       </Link>
     </>

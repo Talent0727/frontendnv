@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../../style/index.css'
 
 const HomeBlogItem = ({ blog }) => {
   return (
@@ -8,7 +9,7 @@ const HomeBlogItem = ({ blog }) => {
       <Link to={`/blogs/${blog._id}`} rel="noopener noreferrer">
         <div className="card text-center border border-primary shadow-0 ">
           <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-            <img src={blog.image} className="img-fluid w-50 border border-dark img-rounded mx-auto d-block img-thumbnail" width={300} height={300} alt={blog.title} title={blog.title} />
+            <img src={blog.image} className="img-fluid w-50 border border-dark img-rounded mx-auto d-block img-thumbnail img-blog" alt={blog.title} title={blog.title} />
             <a href="#" rel="noopener noreferrer">
               <div className="mask" style={{ backgroundColor: 'rgba(251, 251, 251, 0.15)' }} />
             </a>
