@@ -5,49 +5,59 @@ import HomeLocationItem from './HomeLocationItem';
 const HomeLocation = () => {
   return (
     <>
-      <main className="mt-5">
+      <div class="b-example-divider" style={{ marginTop: '100px' }}></div>
+      {/*== Start Page Header ==*/}
+      <div id="page-header-wrapper">
         <div className="container">
-          {/*Section: Content*/}
-          <section>
-            <div className="row">
-              <div className="col-md-12 gx-5 mb-4">
-                <div className="page-header black-overlay">
-                  <div className="container breadcrumb-section">
-                    <div className="row pad-s15">
-                      <>
-                        <h2>
-                          <FontAwesomeIcon icon="fa-solid fa-location-dot" /> CONTACTOS.
-                        </h2>
-                        <hr className="my-10" />
-                        <p>
-                          <span className="rounded-icon">
-                            MI CORREO ES. :* <a
-                              href="mailto:nuryvalenzuelajoyeria@gmail.com"
-                              rel="noopener noreferrer"
-                              className="text-muted">
-                              <>
-                                <i className="fab fa-telegram"></i> nuryvalenzuelajoyeria@gmail.com
-                              </>
-                            </a>
-                          </span>
-                        </p>
-                      </>
-                    </div>
-                  </div>
-                </div>
-                <section className="page_single padTB100">
-                  <div className="container">
-                    <div className="row pad-s15">
-                      <HomeLocationItem />
-                    </div>
-                  </div>
-                </section>
+          <div className="row">
+            {/* Page Title Area Start */}
+            <div className="col-6">
+              <div className="page-title-wrap">
+                <h1>
+                  <FontAwesomeIcon icon="fa-solid fa-location-dot" /> CONTACTOS. :*
+                </h1>
               </div>
             </div>
-          </section>
-          {/*Section: Content*/}
+            {/* Page Title Area End */}
+            {/* Page Breadcrumb Start */}
+            <div className="col-6 m-auto">
+              <nav className="page-breadcrumb-wrap">
+                <ul className="nav justify-content-end">
+                  <li>
+                    <a href="/" rel="noopener noreferrer">
+                      INICIO.
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!" className="current" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon="fa-solid fa-location-dot" /> CONTACTOS. :*
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            {/* Page Breadcrumb End */}
+          </div>
         </div>
-      </main>
+      </div>
+      {/*== End Page Header ==*/}
+      <div id="about-page-wrapper" className="page-padding pb-0">
+        <div className="container">
+          {/* About Page Content Start */}
+          <div className="row">
+            {/* About Text Start */}
+            <div className="col-lg-12 order-last order-lg-first">
+              <div className="about-text-wrap">
+                <p>
+                  <HomeLocationItem />
+                </p>
+              </div>
+            </div>
+            {/* About Text End */}
+          </div>
+          {/* About Page Content End */}
+        </div>
+      </div>
     </>
   );
 };

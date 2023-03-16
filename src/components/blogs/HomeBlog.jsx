@@ -22,40 +22,54 @@ const HomeBlog = () => {
     }, []);
 
     return (
-        <div id='blog' className='hb-container'>
-            <div className="npc-row">
-                <h2 className="npc-title">
-                    <FontAwesomeIcon icon="fa-solid fa-circle-info" /> BLOGS.
-                </h2>
-            </div>
-            <div className="hb-col">
-                <Link to='/blogs' rel='noopener noreferrer' className='hb-more badge badge-secondary mb-2' style={{ fontSize: "20px" }}>
-                    Ver Más. <FontAwesomeIcon icon={faEye} />
-                </Link>
-            </div>
-            <div className="hb-row">
-                <div className="hb-col">
-                    <div className="hb-blogDiv">
-
-                        {
-                            blogs.length === 0 ? (
-                                <h3 className='no-data'>¡.Actualmente NO Hay Blogs.!</h3>
-                            ) : (
-                                <div className="hb-blogs">
-                                    {
-                                        //only 4 latest
-                                        blogs.slice(-4).map((blog) => (
-                                            <HomeBlogItem key={blog._id} blog={blog} />
-                                        ))
-                                    }
+        <>
+            <section id="blog-section-wrapper">
+                <div className="container" id='blog'>
+                    {/* Start Section Title Area */}
+                    <div className="row">
+                        <div className="col-lg-6 m-auto text-center">
+                            <div className="section-title-wrap">
+                                <h2>
+                                    <FontAwesomeIcon icon="fa-solid fa-circle-info" /> LO &#218;LTIMO DE NUESTRO BLOG.
+                                </h2>
+                                <p style={{ textAlign: "justify" }}>
+                                    ¿Quieres presentar las publicaciones de la mejor manera para resaltar los momentos interesantes de tu blog? ¡Enf&#243;cate en las &#250;ltimas noticias!
+                                </p>
+                                <div className="hb-col" style={{ marginTop: '20px' }}>
+                                    <Link to='/blogs' rel='noopener noreferrer' className='hb-more badge badge-secondary mb-2 text-center' style={{ fontSize: "20px" }}>
+                                        Ver M&#225;s. <FontAwesomeIcon icon={faEye} />
+                                    </Link>
                                 </div>
-                            )
-                        }
+                            </div>
+                        </div>
+                    </div>
+                    {/* End Section Title Area */}
+                    {/* Start Blog Content */}
+                    <div>
+                        <div>
+                            <div>
 
+                                {
+                                    blogs.length === 0 ? (
+                                        <h3 className='no-data'>¡.Actualmente NO Hay Blogs.!</h3>
+                                    ) : (
+                                        <div className="hb-blogs">
+                                            {
+                                                //only 4 latest
+                                                blogs.slice(-4).map((blog) => (
+                                                    <HomeBlogItem key={blog._id} blog={blog} />
+                                                ))
+                                            }
+                                        </div>
+                                    )
+                                }
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </>
     );
 };
 

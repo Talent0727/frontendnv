@@ -2,33 +2,58 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../style/index.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const BlogListItem = ({ blog }) => {
   return (
-    <div className='hb-blog'>
+    <>
       <Link to={`/blogs/${blog._id}`} rel="noopener noreferrer">
-        <div className="card text-center border border-primary shadow-0 ">
-          <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-            <img src={blog.image} className="img-fluid w-50 border border-dark img-rounded mx-auto d-block img-thumbnail img-blog" alt={blog.title} title={blog.title} />
-            <a href="#" rel="noopener noreferrer">
-              <div className="mask" style={{ backgroundColor: 'rgba(251, 251, 251, 0.15)' }} />
-            </a>
-          </div>
-          <div className="card-header">
-            <h3 className="hb-blogTitle">{blog.title}</h3>
-          </div>
-          <div className="card-body">
-            <p className="card-text">
-              <p className="hb-desc" style={{ textAlign: "justify" }}>{blog.description}</p>
-              <div className="hb-blogFooter">
-                <span>{blog.author}</span>
-                <span>{blog.createdAt.slice(0, 10)}</span>
+        {/* Single Product Start */}
+        <div className="col-lg-3 col-sm-6">
+          <div className="single-product-item" style={{ marginTop: '100px', width: '20rem' }}>
+            {/* Product Thumbnail */}
+            <figure className="product-thumbnail">
+              <a href="#!" className="d-block" rel="noopener noreferrer">
+                <img src={blog.image} className='img-fluid border border-dark img-rounded mx-auto d-block img-thumbnail img-blog' alt={blog.title} title={blog.title} />
+              </a>
+              <figcaption className="product-hvr-content">
+                <a href="#!" className="btn btn-brand btn-quickView" rel="noopener noreferrer">
+                  <span className='list-group-item px-4 badge badge-dark text-center mb-2' style={{ textAlign: "center", borderRadius: "20px" }}>
+                    <i class="fas fa-eye"></i> Ver Blog.
+                  </span>
+                </a>
+              </figcaption>
+            </figure>
+            {/* Product Details */}
+            <div className="product-details">
+              <h2 className="product-name">
+                {blog.title}
+              </h2>
+              <div className="blog-meta">
+                <div className="d-flex justify-content-between align-items-center">
+                  <div className="btn-group">
+                    <a href="#!" className="product-cat-name" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon="fa-solid fa-user-tie" /> <span>{blog.author}</span>
+                    </a>
+
+                    &#124;
+
+                    <a href="#!" className="product-cat-name" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon="fa-solid fa-calendar-days" /> <span>{blog.createdAt.slice(0, 10)}</span>
+                    </a>
+                  </div>
+                </div>
               </div>
+              <hr className="my-4" />
+            </div>
+            <p className="hb-desc" style={{ textAlign: "justify" }}>
+              {blog.description}
             </p>
           </div>
         </div>
+        {/* Single Product End */}
       </Link>
-    </div>
+    </>
   );
 };
 

@@ -123,82 +123,74 @@ const ShopMainPart = () => {
 
     return (
         <>
-            <div className="npc-row">
-                <h2 className="npc-title">
-                    <FontAwesomeIcon icon={faBagShopping} /> LISTA DE PRODUCTOS.
-                </h2>
-            </div>
-            <div className="container mt-5 pt-4">
-
-                <div className="row pt-4">
-                    {/* Sidebar */}
-                    <div className="col-lg-12">
-                        <div className>
-                            {/* Grid row */}
-                            <div className="row">
-                                <div className="col-md-12 col-lg-12 mb-5">
-                                    <div className='table-responsive'>
-                                        <table className="table align-middle mb-0 bg-white">
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <div className="d-flex align-items-center">
-                                                            <div className="ms-12">
-                                                                <p className="fw-bold mb-1">
-                                                                    <div className='f-group'>
-                                                                        <a className="font-weight-bold white-text mr-4" href="#" rel="noopener noreferrer">
-                                                                            <h4 className="s-filters badge badge-dark mb-2" style={{ fontSize: "15px" }}>
-                                                                                <i className="fa-solid fa-filter" style={{ fontSize: "15px" }}></i> Filtros.
-                                                                            </h4>
-                                                                        </a>
-                                                                    </div>
-                                                                </p>
-                                                                <p className="fw-bold mb-1">
-                                                                    <div className='f-group'>
-                                                                        <span className="f-groupTitle">Búsqueda. :*</span>
-                                                                        <Search value={inputSearch} changeInput={(e) => setInputSearch(e.target.value)} />
-                                                                    </div>
-                                                                </p>
-                                                                <p className="text-muted mb-0">
-                                                                    <div className='f-group'>
-                                                                        <ShopFilter filterResult={filterResult} category={category} filterResultRatings={filterResultRatings} rating={rating} subCategory={subCategory} changeChecked={handleChangeChecked} selectedPrice={selectedPrice} changePrice={handleChangePrice} />
-                                                                    </div>
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                {/* Filter by category */}
+            <div class="b-example-divider" style={{ marginTop: '100px' }}></div>
+            {/*== Start Page Header ==*/}
+            <div id="page-header-wrapper">
+                <div className="container">
+                    <div className="row">
+                        {/* Page Title Area Start */}
+                        <div className="col-6">
+                            <div className="page-title-wrap">
+                                <h1>
+                                    <FontAwesomeIcon icon={faBagShopping} />  PRODUCTOS.
+                                </h1>
+                                <hr className="my-4" />
+                                <a href="/shop" rel="noopener noreferrer">
+                                    <code className='badge rounded-pill badge-dark' style={{ fontSize: "15px" }}>
+                                        <FontAwesomeIcon icon="fa-solid fa-repeat" /> Cargar La P&#225;gina. <span className="fas fa-chevron-right ms-1 fs--2" style={{ fontSize: "15px" }} />
+                                    </code>
+                                </a>
                             </div>
-                            {/* Grid row */}
+                        </div>
+                        {/* Page Title Area End */}
+                        {/* Page Breadcrumb Start */}
+                        <div className="col-6 m-auto">
+                            <nav className="page-breadcrumb-wrap">
+                                <ul className="nav justify-content-end">
+                                    <li>
+                                        <a href="/" rel="noopener noreferrer">
+                                            INICIO.
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/shop" className="current" rel="noopener noreferrer">
+                                            <FontAwesomeIcon icon={faBagShopping} />  PRODUCTOS.
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        {/* Page Breadcrumb End */}
+                    </div>
+                </div>
+            </div>
+            {/*== End Page Header ==*/}
+            <div id="cart-page-wrapper">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className='f-group'>
+                                <span className="f-groupTitle">B&#250;scar. :*</span>
+                                <Search value={inputSearch} changeInput={(e) => setInputSearch(e.target.value)} />
+                            </div>
+                            <div className='f-group'>
+                                <ShopFilter filterResult={filterResult} category={category} filterResultRatings={filterResultRatings} rating={rating} subCategory={subCategory} changeChecked={handleChangeChecked} selectedPrice={selectedPrice} changePrice={handleChangePrice} />
+                            </div>
+                            {/* Cart Table Area */}
                         </div>
                     </div>
-                    {/* Sidebar */}
-                    {/* Content */}
-                    <div className="col-lg-12">
-                        {/* Products Grid */}
-                        <section className="section pt-4">
-                            {/* Grid row */}
-                            <div className="row">
-                                {/* Grid column */}
-                                <div className="col-lg-12 col-md-12 mb-4">
-                                    {/* Card */}
-                                    <div className="card card-ecommerce">
-                                        {resultsFound ? (<ShopProducts list={list} />) : (<Empty />)}
-                                    </div>
-                                    {/* Card */}
-                                </div>
-                                {/* Grid column */}
+                </div>
+            </div>
+            <div id="cart-page-wrapper" className="page-padding">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12 mb-2">
+                            <div className='card card-ecommerce'>
+                                {resultsFound ? (<ShopProducts list={list} />) : (<Empty />)}
                             </div>
-                            {/* Grid row */}
-                        </section>
-                        {/* Products Grid */}
+                            {/* Cart Table Area */}
+                        </div>
                     </div>
-                    {/* Content */}
                 </div>
             </div>
         </>

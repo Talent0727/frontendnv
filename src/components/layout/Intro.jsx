@@ -15,9 +15,6 @@ const Intro = () => {
                   Nury Valenzuela.
                 </span>
               </h1>
-              <h5 className="mb-4" style={{ textAlign: "center", color: "white", borderRadius: "20px 20px", padding: "2px 4px", backgroundColor: 'rgb(0 0 0 / 12%)' }}>
-                Los mejores productos y la mejor calidad.
-              </h5>
               <Link to="/shop" rel="noopener noreferrer" className="btn btn-secondary btn-lg m-2" role="button">
                 Compra Ahora.
               </Link>

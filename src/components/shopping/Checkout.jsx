@@ -18,6 +18,7 @@ const Checkout = ({ setOpen, cartItems, subTotal, taxPrice, totalPrice }) => {
     const [email, setEmail] = useState('');
     const [address, setAddress] = useState('');
     const [phone, setPhone] = useState('');
+    const [marker, setMarker] = useState('');
 
     const orderProductHandler = async (e) => {
         e.preventDefault();
@@ -32,6 +33,7 @@ const Checkout = ({ setOpen, cartItems, subTotal, taxPrice, totalPrice }) => {
                 email: email,
                 address: address,
                 phone: phone,
+                marker: marker,
                 subTotal: subTotal,
                 taxPrice: taxPrice,
                 totalPrice: totalPrice
@@ -53,27 +55,42 @@ const Checkout = ({ setOpen, cartItems, subTotal, taxPrice, totalPrice }) => {
     }
 
     return (
-        <div className='co-container'>
+        <div className='co-container' style={{ marginTop: '120px' }}>
             <form onSubmit={orderProductHandler}>
-                <h5 className='co-title'> DETALLES DE FACTURACIÓN. :* </h5>
-                <hr className="mb-5" />
+                <h5 className='co-title'> DETALLES DE FACTURACI&#211;N. :* </h5>
                 <div className="close-form" onClick={() => setOpen(false)}>X</div>
                 <div className="form-group">
-                    <label htmlFor="name">Tu Nombre Completo. :*</label>
-                    <input required type="text" onChange={(e) => setName(e.target.value)} id='name' />
+                    <label htmlFor="name">Nombre Completo. :*</label>
+                    <input required type="text" onChange={(e) => setName(e.target.value)} id='name' placeholder='Nombre Completo. :*' />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="email">Correo Electrónico. :*</label>
-                    <input required type="text" onChange={(e) => setEmail(e.target.value)} id='email' />
+                    <label htmlFor="email">Correo Electr&#243;nico. :*</label>
+                    <input required type="text" onChange={(e) => setEmail(e.target.value)} id='email' placeholder='Correo Electrónico. :*' />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="address">Dirección. :*</label>
-                    <input required type="text" onChange={(e) => setAddress(e.target.value)} id='address' />
+                    <label htmlFor="address">Direcci&#243;n. :*</label>
+                    <input required type="text" onChange={(e) => setAddress(e.target.value)} id='address' placeholder='Dirección. :*' />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="phone">Número De Teléfono Y Celular. :*</label>
-                    <input required type="text" onChange={(e) => setPhone(e.target.value)} id='phone' />
+                    <label htmlFor="phone">N&#250;mero De Tel&#233;fono Y Celular. :*</label>
+                    <input required type="text" onChange={(e) => setPhone(e.target.value)} id='phone' placeholder='Número De Teléfono Y Celular. :*' />
                 </div>
+                <p>
+                    <label htmlFor="marker">
+                        Detalle. :*
+                    </label>
+                    <div class="form-floating mb-3">
+                        <select className="form-control form-select form-select-lg mb-3 is-valid" aria-label=".form-select-lg example" onChange={(e) => setMarker(e.target.value)} id='marker' required>
+                            <option value="" disabled selected>--- Seleccionar ---</option>
+                            <option value="Pendiente De Pago">
+                                Pendiente De Pago
+                            </option>
+                        </select>
+                        <label htmlFor="marker">
+                            Detalle. :*
+                        </label>
+                    </div>
+                </p>
                 <div className="co-btn">
                     <button type='submit'>Realizar Pedido. <FontAwesomeIcon icon={faTruck} /></button>
                 </div>

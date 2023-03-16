@@ -4,53 +4,93 @@ import { Link } from 'react-router-dom';
 const WishListItem = ({ item, removeItemHandler }) => {
   const uint8 = new Uint32Array([item.price]);
   return (
-    <main>
-      <Link to={`/product/${item._id}`} rel="noopener noreferrer">
-        <div className="card" style={{ width: '18rem' }}>
-          <img
-            src={item.image}
-            className="card-img-top img-fluid border border-dark img-rounded mx-auto d-block img-thumbnail"
-            alt={item.title}
-            title={item.title} />
-          <div className="card-body">
-            <h5 className="card-title">
-              <span className='badge badge-info mb-2' style={{ fontSize: "15px" }}>
-                {item.title}
-              </span>
-            </h5>
+    <>
+      {/*== Start Wishlist Page Wrapper ==*/}
+      <div id="wishlist-page-wrapper" className="page-padding">
+        <div className="container">
+          {/* Wishlist Page Content Start */}
+          <div className="row">
+            <div className="col-lg-12">
+              <Link to={`/product/${item._id}`} rel="noopener noreferrer">
+                {/* Wishlist Table Area */}
+                <div className="cart-table table-responsive">
+                  <table className="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th className="pro-thumbnail">IMAGEN. :*</th>
+                        <th className="pro-title">NOMBRE. :*</th>
+                        <th className="pro-price">CATEGOR&#205;A. :*</th>
+                        <th className="pro-quantity">SUBCATEGOR&#205;A. :*</th>
+                        <th className="pro-subtotal">PRECIO. :*</th>
+                        <th className="pro-subtotal">CLASIFICACI&#211;N. :*</th>
+                        <th className="pro-remove">ACCI&#211;N. :*</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="pro-thumbnail">
+                          <a href="#!" rel="noopener noreferrer">
+                            <img
+                              src={item.image}
+                              className="card-img-top img-fluid border border-dark img-rounded mx-auto d-block img-thumbnail"
+                              alt={item.title}
+                              title={item.title} />
+                          </a>
+                        </td>
+                        <td className="pro-title">
+                          <a href="#!" rel="noopener noreferrer">
+                            <span className='badge badge-info mb-2 text-black' style={{ fontSize: "15px" }}>
+                              {item.title}
+                            </span>
+                          </a>
+                        </td>
+                        <td className="pro-title">
+                          <a href="#!" rel="noopener noreferrer">
+                            <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "15px" }}>
+                              {item.category}
+                            </span>
+                          </a>
+                        </td>
+                        <td className="pro-title">
+                          <a href="#!" rel="noopener noreferrer">
+                            <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "15px" }}>
+                              {item.subcategory}
+                            </span>
+                          </a>
+                        </td>
+                        <td className="pro-price">
+                          <span>
+                            <em>
+                              <b style={{ color: "green", fontSize: "20px" }} className="badge badge-success mb-2">
+                                {(uint8.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }))}
+                              </b>
+                            </em>
+                          </span>
+                        </td>
+                        <td className="pro-quantity">
+                          <span className="badge badge-warning mb-2 text-black" style={{ color: "black", fontSize: "20px" }}>
+                            {item.star}
+                          </span>
+                        </td>
+                        <td className="pro-remove">
+                          <button className='w-btnTrash' onClick={() => removeItemHandler(item)}>
+                            <span style={{ color: "red", fontSize: "20px" }} alt='Eliminar.' title='Eliminar.' className='w-trash badge badge-danger mb-2'>
+                              <i className="fa-solid fa-trash"></i>
+                            </span>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </Link>
+            </div>
           </div>
-          <ul className="list-group list-group-light list-group-small">
-            <li className="list-group-item px-4">
-              <span className='badge badge-danger mb-2' style={{ fontSize: "15px" }}>
-                {item.category}
-              </span>
-            </li>
-            <li className="list-group-item px-4">
-              <span className='badge badge-danger mb-2' style={{ fontSize: "15px" }}>
-                {item.subcategory}
-              </span>
-            </li>
-            <li className="list-group-item px-4">
-              <span>
-                <em>
-                  <b style={{ color: "green", fontSize: "20px" }} className="badge badge-success mb-2">
-                    {(uint8.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }))}
-                  </b>
-                </em>
-              </span>
-            </li>
-            <li style={{ color: "black", fontSize: "20px" }} className="list-group-item px-4 badge badge-warning mb-2">
-              {item.star}
-            </li>
-          </ul>
+          {/* Wishlist Page Content End */}
         </div>
-      </Link>
-      <button className='w-btnTrash' onClick={() => removeItemHandler(item)}>
-        <span style={{ color: "red", fontSize: "20px" }} className='w-trash badge badge-danger mb-2'>
-          <i className="fa-solid fa-trash"></i> Eliminar.
-        </span>
-      </button>
-    </main>
+      </div>
+      {/*== Start Wishlist Page Wrapper ==*/}
+    </>
   );
 };
 

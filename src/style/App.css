@@ -218,9 +218,9 @@
 }
 
 .hb-blogs {
-  columns: 2 250px;
+  columns: 4 250px;
   column-gap: 15px;
-  width: 90%;
+  width: 42%;
   margin: 0 auto;
 }
 
@@ -638,9 +638,8 @@
 .c-plus {
   background: none !important;
   border: none !important;
-  font-size: 30px;
   font-weight: bold;
-  margin: 0 10px;
+  margin: 0 0;
 }
 
 .c-minus:hover,

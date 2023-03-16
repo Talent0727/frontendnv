@@ -5,30 +5,50 @@ import '../../style/index.css'
 
 const HomeBlogItem = ({ blog }) => {
   return (
-    <div className='hb-blog'>
-      <Link to={`/blogs/${blog._id}`} rel="noopener noreferrer">
-        <div className="card text-center border border-primary shadow-0 ">
-          <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-            <img src={blog.image} className="img-fluid w-50 border border-dark img-rounded mx-auto d-block img-thumbnail img-blog" alt={blog.title} title={blog.title} />
-            <a href="#" rel="noopener noreferrer">
-              <div className="mask" style={{ backgroundColor: 'rgba(251, 251, 251, 0.15)' }} />
-            </a>
-          </div>
-          <div className="card-header">
-            <h3 className="hb-blogTitle">{blog.title}</h3>
-          </div>
-          <div className="card-body">
-            <p className="card-text">
-              <p className="hb-desc" style={{ textAlign: "justify" }}>{blog.description}</p>
-              <div className="hb-blogFooter">
-                <span>{blog.author}</span>
-                <span>{blog.createdAt.slice(0, 10)}</span>
-              </div>
-            </p>
+    <>
+      <div className="row">
+        <div className="col-lg-12">
+          <div className="blog-content-wrapper">
+            <div className="blog-content-carousel">
+              {/* Single Blog Start */}
+              <Link to={`/blogs/${blog._id}`} rel="noopener noreferrer">
+                <div className="single-blog-wrap" style={{ marginTop: '50px' }}>
+                  <figure className='blog-thumbnail'>
+                    <a href="#!">
+                      <img src={blog.image} alt={blog.title} title={blog.title} />
+                    </a>
+                  </figure>
+                  <div className="blog-details">
+                    <h3>
+                      <a href="#!" rel="noopener noreferrer">
+                        {blog.title}
+                      </a>
+                    </h3>
+                    <div className="blog-meta">
+                      <div className="d-flex justify-content-between align-items-center">
+                        <div className="btn-group">
+                          <a href="#!" rel="noopener noreferrer">
+                            <span>{blog.author}</span>
+                          </a>
+                          <a href="#!" rel="noopener noreferrer">
+                            <span>{blog.createdAt.slice(0, 10)}</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <p style={{ textAlign: "justify" }}>
+                      {blog.description}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+              {/* Single Blog End */}
+            </div>
           </div>
         </div>
-      </Link>
-    </div>
+      </div>
+      {/* End Blog Content */}
+    </>
   );
 };
 

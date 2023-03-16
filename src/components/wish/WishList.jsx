@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { Store } from '../../utils/Store';
 import WishListItem from './WishListItem';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 
 const WishList = () => {
 
@@ -17,17 +19,53 @@ const WishList = () => {
   }
 
   return (
-    <div className='w-container'>
-      <div className="npc-row">
-        <h2 className="npc-title">
-          <i class="fa-solid fa-heart"></i> LISTA DE DESEOS.
-        </h2>
+    <>
+      <div class="b-example-divider" style={{ marginTop: '100px' }}></div>
+      {/*== Start Page Header ==*/}
+      <div id="page-header-wrapper">
+        <div className="container">
+          <div className="row">
+            {/* Page Title Area Start */}
+            <div className="col-6">
+              <div className="page-title-wrap">
+                <h1>
+                  <i class="fa-solid fa-heart"></i> LISTA DE DESEOS.
+                </h1>
+              </div>
+            </div>
+            {/* Page Title Area End */}
+            {/* Page Breadcrumb Start */}
+            <div className="col-6 m-auto">
+              <nav className="page-breadcrumb-wrap">
+                <ul className="nav justify-content-end">
+                  <li>
+                    <a href="/" rel="noopener noreferrer">
+                      INICIO.
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/shop" rel="noopener noreferrer">
+                      <FontAwesomeIcon icon={faBagShopping} />  PRODUCTOS.
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/wish" className="current" rel="noopener noreferrer">
+                      <i class="fa-solid fa-heart"></i> LISTA DE DESEOS.
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            {/* Page Breadcrumb End */}
+          </div>
+        </div>
       </div>
-      <div className="w-row">
+      {/*== End Page Header ==*/}
+      <div>
         {
           wishItems.length === 0 ? (
             <h4 className='no-products'>
-              ¡.NO Has Añadido Ningún Producto A La Lista De Deseos.!
+              ¡.NO Has Añadido Ning&#250;n Producto A La Lista De Deseos.!
             </h4>
           ) : (
             <div className="w-groups">
@@ -39,7 +77,7 @@ const WishList = () => {
           )
         }
       </div>
-    </div>
+    </>
   );
 };
 

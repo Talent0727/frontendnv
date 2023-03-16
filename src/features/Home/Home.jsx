@@ -5,7 +5,7 @@ import HomeBlog from '../../components/blogs/HomeBlog';
 import Intro from '../../components/layout/Intro';
 import NewProducts from '../../components/products/NewProducts';
 import WidgetInstagram from '../../components/widget/WidgetInstagram';
-import Logo from '../../components/layout/Logo';
+import Scroll from '../../components/widget/Scroll';
 
 const Home = () => {
   return (
@@ -15,8 +15,8 @@ const Home = () => {
       <NewProducts />
       <HomeBlog />
       <WidgetInstagram />
-      <Logo />
       <Footer />
+      <Scroll />
     </>
   );
 };

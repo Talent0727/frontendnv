@@ -28,50 +28,155 @@ const MyOrders = () => {
     }, [userId, navigate, userInfo]);
 
     return (
-        <main className='mt-5'>
-            <div className="container">
-                <section>
+        <>
+            <div class="b-example-divider" style={{ marginTop: '100px' }}></div>
+            {/*== Start Page Header ==*/}
+            <div id="page-header-wrapper">
+                <div className="container">
                     <div className="row">
-                        <div className="col-md-6 gx-5 mb-4">
-                            <div className="mb-6">
-                                {/* heading */}
-                                <h2 className="mb-0">Mis Pedidos. :*</h2>
-                            </div>
-                            <div className="">
-                                {
-                                    orders.length === 0 ? (
-                                        <h4 className='no-products'>
-                                            ¡.Sin Pedidos.!
-                                        </h4>
-                                    ) : (
-                                        <div className="">
-                                            {
-                                                orders.map((item) => (
-                                                    <div className="" key={item._id}>
-                                                        <h4
-                                                            className="badge badge-secondary mb-2"
-                                                            style={{ fontWeight: "bold", fontSize: "15px" }}>
-                                                            <strong>
-                                                                # ID. :* {item._id}
-                                                            </strong>
-                                                        </h4>
-                                                        <Link to={`/order/${item._id}`} rel='noopener noreferrer'
-                                                            className='badge badge-info mb-2'
-                                                            style={{ fontWeight: "bold", fontSize: "15px" }}>
-                                                            <FontAwesomeIcon icon={faEye} />
-                                                        </Link>
-                                                    </div>
-                                                ))
-                                            }
-                                        </div>
-                                    )
-                                }
+                        {/* Page Title Area Start */}
+                        <div className="col-6">
+                            <div className="page-title-wrap">
+                                <h1>
+                                    <FontAwesomeIcon icon="fa-solid fa-truck-fast" /> Mis Pedidos. :*
+                                </h1>
                             </div>
                         </div>
+                        {/* Page Title Area End */}
+                        {/* Page Breadcrumb Start */}
+                        <div className="col-6 m-auto">
+                            <nav className="page-breadcrumb-wrap">
+                                <ul className="nav justify-content-end">
+                                    <li>
+                                        <a href="/" rel="noopener noreferrer">
+                                            INICIO.
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#!" className="current" rel="noopener noreferrer">
+                                            <FontAwesomeIcon icon="fa-solid fa-truck-fast" /> Mis Pedidos. :*
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        {/* Page Breadcrumb End */}
                     </div>
-                </section>
+                </div>
             </div>
-        </main>
+            {/*== End Page Header ==*/}
+            <div id="my_account-page-wrapper" className="page-padding">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            {/* My Account Page Start */}
+                            <div className="myaccount-page-wrapper">
+                                {/* My Account Tab Menu Start */}
+                                <div className="row">
+                                    <div className="col-lg-3 col-md-4">
+                                        <div className="myaccount-tab-menu nav" role="tablist">
+                                            <a href="#dashboad" className="active" data-bs-toggle="tab" rel="noopener noreferrer">
+                                                <i className="fa fa-dashboard" /> INICIO. :*
+                                            </a>
+                                            <a href="#orders" data-bs-toggle="tab" rel="noopener noreferrer">
+                                                <FontAwesomeIcon icon="fa-solid fa-truck-fast" /> Mis Pedidos. :*
+                                            </a>
+                                        </div>
+                                    </div>
+                                    {/* My Account Tab Menu End */}
+                                    {/* My Account Tab Content Start */}
+                                    <div className="col-lg-9 col-md-8">
+                                        <div className="tab-content" id="myaccountContent">
+                                            {/* Single Tab Content Start */}
+                                            <div className="tab-pane fade show active" id="dashboad" role="tabpanel">
+                                                <div className="myaccount-content">
+                                                    <h3>
+                                                        <i className="fa fa-dashboard" /> INICIO. :*
+                                                    </h3>
+                                                    <div className="welcome">
+                                                        <p style={{ fontWeight: "bold", fontSize: "15px" }}>
+                                                            <div id="intro-example" className="p-5 text-center bg-image" style={{ backgroundImage: 'url("https://images.pexels.com/photos/2942855/pexels-photo-2942855.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")' }}>
+                                                                <div className="mask" style={{ backgroundColor: '#bdc3c787' }}>
+                                                                    <div className="d-flex justify-content-center align-items-center h-100">
+                                                                        <div className="text-white">
+                                                                            <h1 className="mb-3">
+                                                                                <span className="special" style={{ textAlign: "center", color: "white", borderRadius: "20px 20px", padding: "2px 4px", backgroundColor: 'rgb(0 0 0 / 12%)' }}>
+                                                                                    Nury Valenzuela.
+                                                                                </span>
+                                                                            </h1>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {/* Single Tab Content End */}
+                                            {/* Single Tab Content Start */}
+                                            <div className="tab-pane fade" id="orders" role="tabpanel">
+                                                <div className="myaccount-content">
+                                                    <h3>
+                                                        <FontAwesomeIcon icon="fa-solid fa-truck-fast" /> Mis Pedidos. :*
+                                                    </h3>
+                                                    {
+                                                        orders.length === 0 ? (
+                                                            <h4 className='no-products'>
+                                                                ¡.Sin Pedidos.!
+                                                            </h4>
+                                                        ) : (
+                                                            <div>
+                                                                {
+                                                                    orders.map((item) => (
+                                                                        <div className="myaccount-table table-responsive text-center" key={item._id}>
+                                                                            <table className="table table-bordered">
+                                                                                <thead className="thead-light">
+                                                                                    <tr>
+                                                                                        <th className="pro-thumbnail text-black">
+                                                                                            # REFERENCIA. :*
+                                                                                        </th>
+                                                                                        <th className="pro-thumbnail text-black">
+                                                                                            ACCI&#211;N. :*
+                                                                                        </th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <strong className='badge badge-secondary text-black mb-2' style={{ fontWeight: "bold", fontSize: "15px" }}>
+                                                                                                {item._id}
+                                                                                            </strong>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            <Link to={`/order/${item._id}`} rel='noopener noreferrer'
+                                                                                                className='btn btn-brand btn-small text-black mb-2'
+                                                                                                style={{ fontWeight: "bold", fontSize: "15px" }}>
+                                                                                                <FontAwesomeIcon icon={faEye} />
+                                                                                            </Link>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    ))
+                                                                }
+                                                            </div>
+                                                        )
+                                                    }
+                                                </div>
+                                            </div>
+                                            {/* Single Tab Content End */}
+                                        </div>
+                                    </div>
+                                    {/* My Account Tab Content End */}
+                                </div>
+                            </div>
+                            {/* My Account Page End */}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>
     );
 };
 
