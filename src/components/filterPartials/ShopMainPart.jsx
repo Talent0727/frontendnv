@@ -134,12 +134,6 @@ const ShopMainPart = () => {
                                 <h1>
                                     <FontAwesomeIcon icon={faBagShopping} />  PRODUCTOS.
                                 </h1>
-                                <hr className="my-4" />
-                                <a href="/shop" rel="noopener noreferrer">
-                                    <code className='badge rounded-pill badge-dark' style={{ fontSize: "15px" }}>
-                                        <FontAwesomeIcon icon="fa-solid fa-repeat" /> Cargar La P&#225;gina. <span className="fas fa-chevron-right ms-1 fs--2" style={{ fontSize: "15px" }} />
-                                    </code>
-                                </a>
                             </div>
                         </div>
                         {/* Page Title Area End */}

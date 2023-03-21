@@ -95,9 +95,6 @@ const BlogLists = () => {
                                             <ul className="product-view d-flex align-items-center">
                                                 <li className="current" data-bs-target="grid-view"><i className="fa fa-th" /></li>
                                             </ul>
-                                            <span className="show-items">
-                                                Art&#237;culos 1 - 10
-                                            </span>
                                         </div>
                                     </div>
                                     <div className="shop-page-products-wrap">

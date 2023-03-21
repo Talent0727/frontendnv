@@ -31,9 +31,6 @@ const ShopProducts = ({ list }) => {
                         <i className="fa fa-list-ul" />
                       </li>
                     </ul>
-                    <span className="show-items">
-                      Art&#237;culos 1 - 18
-                    </span>
                   </div>
                 </div>
                 <div className="shop-page-products-wrap">
