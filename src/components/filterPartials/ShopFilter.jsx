@@ -33,7 +33,7 @@ const ShopFilter = ({ filterResult, category, subCategory, changeChecked, select
                                             </th>
                                             <th className="pro-quantity">
                                                 <span className="f-groupTitle badge badge-primary text-black" style={{ fontSize: "15px" }}>
-                                                    Cargar La P&#225;gina. :*
+                                                    Acc&#237;on. :*
                                                 </span>
                                             </th>
                                         </tr>
