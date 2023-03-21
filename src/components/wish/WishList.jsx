@@ -20,7 +20,7 @@ const WishList = () => {
 
   return (
     <>
-      <div class="b-example-divider" style={{ marginTop: '100px' }}></div>
+      <div className="b-example-divider" style={{ marginTop: '100px' }}></div>
       {/*== Start Page Header ==*/}
       <div id="page-header-wrapper">
         <div className="container">
@@ -29,7 +29,7 @@ const WishList = () => {
             <div className="col-6">
               <div className="page-title-wrap">
                 <h1>
-                  <i class="fa-solid fa-heart"></i> LISTA DE DESEOS.
+                  <i className="fa-solid fa-heart"></i> LISTA DE DESEOS.
                 </h1>
               </div>
             </div>
@@ -50,7 +50,7 @@ const WishList = () => {
                   </li>
                   <li>
                     <a href="/wish" className="current" rel="noopener noreferrer">
-                      <i class="fa-solid fa-heart"></i> LISTA DE DESEOS.
+                      <i className="fa-solid fa-heart"></i> LISTA DE DESEOS.
                     </a>
                   </li>
                 </ul>

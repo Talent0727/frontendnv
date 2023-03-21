@@ -19,7 +19,7 @@ const BlogListItem = ({ blog }) => {
               <figcaption className="product-hvr-content">
                 <a href="#!" className="btn btn-brand btn-quickView" rel="noopener noreferrer">
                   <span className='list-group-item px-4 badge badge-dark text-center mb-2' style={{ textAlign: "center", borderRadius: "20px" }}>
-                    <i class="fas fa-eye"></i> Ver Blog.
+                    <i className="fas fa-eye"></i> Ver Blog.
                   </span>
                 </a>
               </figcaption>

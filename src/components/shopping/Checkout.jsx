@@ -79,7 +79,7 @@ const Checkout = ({ setOpen, cartItems, subTotal, taxPrice, totalPrice }) => {
                     <label htmlFor="marker">
                         Detalle. :*
                     </label>
-                    <div class="form-floating mb-3">
+                    <div className="form-floating mb-3">
                         <select className="form-control form-select form-select-lg mb-3 is-valid" aria-label=".form-select-lg example" onChange={(e) => setMarker(e.target.value)} id='marker' required>
                             <option value="" disabled selected>--- Seleccionar ---</option>
                             <option value="Pendiente De Pago">

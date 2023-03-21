@@ -38,7 +38,7 @@ const CartItems = () => {
 
     return (
         <>
-            <div class="b-example-divider" style={{ marginTop: '100px' }}></div>
+            <div className="b-example-divider" style={{ marginTop: '100px' }}></div>
             {/*== Start Page Header ==*/}
             <div id="page-header-wrapper">
                 <div className="container">
