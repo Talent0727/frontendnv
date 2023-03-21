@@ -27,9 +27,7 @@ const ShopProducts = ({ list }) => {
                 <div className="products-settings-option d-block d-md-flex">
                   <div className="product-cong-left d-flex align-items-center">
                     <ul className="product-view d-flex align-items-center">
-                      <li className="current" data-bs-target="product-list-view">
-                        <i className="fa fa-list-ul" />
-                      </li>
+                      <li className="current" data-bs-target="grid-view"><i className="fa fa-th" /></li>
                     </ul>
                   </div>
                 </div>
