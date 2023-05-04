@@ -109,8 +109,8 @@ const CartItems = () => {
                                             <th className="pro-price">CATEGOR&#205;A. :*</th>
                                             <th className="pro-price">SUBCATEGOR&#205;A. :*</th>
                                             <th className="pro-quantity">PRECIO. :*</th>
-                                            <th className="pro-subtotal">TALLAS. :*</th>
-                                            <th className="pro-remove">COLORES. :*</th>
+                                            <th className="pro-subtotal">TALLA. :*</th>
+                                            <th className="pro-remove">COLOR DE ORO. :*</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -193,7 +193,7 @@ const CartItems = () => {
                                                 <tr>
                                                     <td>
                                                         <span style={{ color: "green", fontSize: "15px" }} className="badge badge-success mb-2">
-                                                            Impuesto. :*
+                                                            Impuesto IVA De 19%. :*
                                                         </span>
                                                     </td>
                                                     <td>

@@ -4,12 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faRightToBracket, faPowerOff, faHeart, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { toast } from 'react-toastify';
 import { Store } from '../../utils/Store';
-import Logo from '../assets/img/Logonv.png';
+import Logo from '../assets/img/logonv.png';
 
 const Header = () => {
 
     const navigate = useNavigate();
 
+    // eslint-disable-next-line no-unused-vars
     const { state, dispatch: ctxDispatch } = useContext(Store);
     const { cart, wish } = state;
 
@@ -20,7 +21,7 @@ const Header = () => {
     const logoutHandler = () => {
         localStorage.removeItem('userInfo');
         toast.success('¡.Has Terminado Tu Sesion Satisfactoriamente.!');
-        navigate('/login');
+        navigate('/');
     }
 
     return (
@@ -34,7 +35,7 @@ const Header = () => {
                             <div className="col-md-6 text-center text-md-start">
                                 {/* Start PreHeader Left */}
                                 <div className="preheader-left-wrap">
-                                    <a href="https://api.whatsapp.com/send?phone=573133966349&text=Hola%2C%20vengo%20desde%20tu%20perfil%20de%20Instagram%20y%20deseo%20obtener%20mas%20informaci%C3%B3n%20%20%F0%9F%92%8E" target="_blank" rel="noopener noreferrer"><i className="fa fa-phone" /> +57 313&#45;396&#45;63&#45;49</a>
+                                    <a href="https://api.whatsapp.com/send?phone=573133966349&text=Hola%2C%20vengo%20desde%20tu%20perfil%20de%20Instagram%20y%20deseo%20obtener%20mas%20informaci%C3%B3n%20%20%F0%9F%92%8E" target="_blank" rel="noopener noreferrer"><i className="fa fa-phone" /> +57 313 396 63 49</a>
                                 </div>
                                 {/* End PreHeader Left */}
                             </div>
@@ -100,7 +101,7 @@ const Header = () => {
                                                         </Link>
                                                     </li>
                                                     <li>
-                                                        <Link to="/about" rel="noopener noreferrer" className="mb-2">
+                                                        <Link to="/abouts" rel="noopener noreferrer" className="mb-2">
                                                             Qui&#233;nes Somos.
                                                         </Link>
                                                     </li>
@@ -122,8 +123,11 @@ const Header = () => {
                                     <Link to="/" rel="noopener noreferrer">
                                         <img
                                             src={Logo}
-                                            alt="Nury Valenzuela."
-                                            title="Nury Valenzuela."
+                                            className="site_logo"
+                                            width={200}
+                                            height={200}
+                                            alt="Nury Valenzuela&#174; Joyer&iacute;a &#124; Colombia."
+                                            title="Nury Valenzuela&#174; Joyer&iacute;a &#124; Colombia."
                                             loading="lazy"
                                             lang="es" />
                                     </Link>
@@ -154,7 +158,7 @@ const Header = () => {
                                         userInfo ? (
                                             <>
                                                 <div className="mini-cart-wrap">
-                                                    <Link to="#!" rel="noopener noreferrer">
+                                                    <a href="#!" rel="noopener noreferrer">
                                                         <span
                                                             className='badge badge-pill badge-danger bg-danger border border-secondary text-white ms-1 rounded-pill mb-2'
                                                             alt='Cerrar Sesi&#243;n.'
@@ -165,7 +169,7 @@ const Header = () => {
                                                         >
                                                             <FontAwesomeIcon icon={faPowerOff} aria-hidden="true" style={{ fontSize: "20px" }} />
                                                         </span>
-                                                    </Link>
+                                                    </a>
                                                 </div>
                                                 <div className="mini-cart-wrap">
                                                     <Link to="/wish" rel="noopener noreferrer" className="text-reset me-3">

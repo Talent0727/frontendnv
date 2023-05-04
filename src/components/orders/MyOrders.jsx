@@ -101,8 +101,8 @@ const MyOrders = () => {
                                                                         <div className="text-white">
                                                                             <h1 className="mb-3">
                                                                                 <span className="special" style={{ textAlign: "center", color: "white", borderRadius: "20px 20px", padding: "2px 4px", backgroundColor: 'rgb(0 0 0 / 12%)' }}>
-                                                                                    Nury Valenzuela.
-                                                                                </span>
+                                                                                    Nury Valenzuela&#174;
+                                                                                </span>Joyer&iacute;a &#124; Colombia.
                                                                             </h1>
                                                                         </div>
                                                                     </div>

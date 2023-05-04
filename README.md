@@ -4,7 +4,7 @@
 
 ### `FRONT-END` - PÚBLICO 👨🏻‍💻:
 
-## ![PUBLICO-ORIGINAL](https://user-images.githubusercontent.com/54821048/205689004-bf59d008-4923-439d-b3c2-42f1d6cb5f74.png)
+## ![PUBLICO-ORIGINAL](<![image](https://user-images.githubusercontent.com/54821048/235183542-8495c4fe-165e-466a-b19b-06d4de08c8b5.png)>)
 
 Como arrancar el proyecto Primero dirijase al package.json para ver los scripts.
 
@@ -17,7 +17,7 @@ Luego de terminar de instalar las dependencias, puede arrancar el proyecto de un
 ## FRONT-END:
 
 USANDO LA BASE DE DATOS MONGODB COMPASS: -> ACTIVAR EL SERVIDOR CON LINK: http://localhost:5000/api/seed
-![MONGOBD](https://user-images.githubusercontent.com/54821048/205748463-b02e9153-751b-4f6d-8230-21fe4a9efa16.png)
+![MONGOBD](<![image](https://user-images.githubusercontent.com/54821048/235183867-915916d1-b0d9-4139-bff1-2540d583c086.png)>)
 
 CONOCIDO A "CRUD" - POSTMAN.
 ![POSTMAN](https://user-images.githubusercontent.com/54821048/205748424-a7c83222-1a07-4eca-8185-a9a90726909d.png)
@@ -30,10 +30,19 @@ http://localhost:5000/api/users/register <br />
 http://localhost:5000/api/users/all <br />
 http://localhost:5000/api/users/\_id <br />
 
-Clientes: -> Público. <br />
-USERS: bebito123 <br />
-EMAIL: bebito123@gmail.com <br />
-PASS: bebito123 -> (bebito123 - NUEVA) <br />
+(BACK-END) SEGURIDAD DEL SISTEMA PROTEGIDAS: <br />
+
+1. ACTIVO: SOLO Administrador. -> (PRIVADAS). -> SISTEMA DE CONTROL DE INVENTARIOS. <br />
+2. DESACTIVO: SOLO Cliente. -> (PÚBLICO). -> HACER COMPRAS. <br />
+
+Clientes: -> Público -> (HACER COMPRAS). <br />
+nombres: "bebito", <br />
+apellidos: "perez", <br />
+username: "bebitoperez123", <br />
+email: "bebitoperez123@gmail.com", <br />
+rol: "Cliente", <br />
+password: ("bebitoperez123"), <br />
+isAdmin: DESACTIVO <br />
 
 ## Cuando haya arrancado asegurese que indique la url y el puerto.
 

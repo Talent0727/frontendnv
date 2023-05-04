@@ -155,11 +155,6 @@ const ProductDetails = () => {
                                             <h2>
                                                 {product.title}
                                             </h2>
-                                            <p className="pro-rating">
-                                                <span className="pd-star badge badge-warning mb-2" style={{ color: "black", fontSize: "20px" }}>
-                                                    Clasificaci&#243;n. :* {product.star}
-                                                </span>
-                                            </p>
                                             <hr className="my-2" />
                                             <p className="pro-rating">
                                                 <span className="pd-category badge badge-secondary mb-2" style={{ fontSize: "20px" }}>
@@ -171,8 +166,14 @@ const ProductDetails = () => {
                                                     {product.subcategory}
                                                 </span>
                                             </p>
+                                            <p className="pro-rating">
+                                                <span className="pd-subcategory badge badge-secondary mb-2 text-black" style={{ fontSize: "20px" }}>
+                                                    {product.tripletecategory}
+                                                </span>
+                                            </p>
+                                            <hr className="my-2" />
                                             <div className="price-group">
-                                                <span className="price badge badge-success mb-2" style={{ color: "green", fontSize: "20px" }}>
+                                                <span className="price badge badge-success text-black mb-2" style={{ color: "green", fontWeight: "bold", fontSize: "20px" }}>
                                                     Precio. :* {(uint8.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }))}
                                                 </span>
                                             </div>
@@ -189,7 +190,7 @@ const ProductDetails = () => {
                                                     <div className="pd-otherAction">
                                                         <div className="pd-size" style={{ textAlign: "justify" }}>
                                                             <h4 className="pd-sizeTitle">
-                                                                Selecciona La Talla 📏. :*
+                                                                Talla 📏. :*
                                                             </h4>
                                                             <div className="pd-sizeDiv">
                                                                 {
@@ -209,7 +210,7 @@ const ProductDetails = () => {
                                                     <div className="pd-otherAction">
                                                         <div className="pd-color" style={{ textAlign: "justify" }}>
                                                             <h4 className="pd-sizeTitle">
-                                                                Selecciona Los Colores 🖌️. :*
+                                                                Color De Oro 🖌️. :*
                                                             </h4>
                                                             <div className="pd-sizeDiv">
                                                                 {
@@ -225,19 +226,13 @@ const ProductDetails = () => {
                                                     </div>
                                                 </div>
                                             </p>
+                                            <hr className="my-2" />
                                             <div className="product-quantity d-sm-flex align-items-center">
-                                                <div className="pro-quantity">
-                                                    <span className="pd-star badge badge-warning mb-2" style={{ color: "black", fontSize: "20px" }}>
-                                                        Unidades. :* {product.countInStock}
-                                                    </span>
-                                                </div>
+                                                <button className="btn btn-transparent btn-semi-round" alt="Añadir A La Lista De Deseos." title='Añadir A La Lista De Deseos.' onClick={addToWishHandler}>
+                                                    <span className="fa fa-heart" /> Añadir Lista De Deseos.
+                                                </button>
                                                 <button className="btn btn-transparent btn-semi-round" onClick={addToCartHandler}>
                                                     <i className="fa fa-shopping-basket" /> Añadir Al Carrito.
-                                                </button>
-                                            </div>
-                                            <div className="product-btn-group">
-                                                <button className='btn btn-round btn-transparent' alt="Añadir A La Lista De Deseos." title='Añadir A La Lista De Deseos.' onClick={addToWishHandler}>
-                                                    <span className="fa fa-heart" />
                                                 </button>
                                             </div>
                                         </div>
@@ -277,7 +272,7 @@ const ProductDetails = () => {
                         {/* Single Product Page Content End */}
                     </div>
                 </div>
-            </div>
+            </div >
             {/*== End Single Product Wrapper ==*/}
         </>
     );

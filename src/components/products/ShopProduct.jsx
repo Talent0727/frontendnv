@@ -50,13 +50,6 @@ const ShopProduct = ({ product }) => {
               </h2>
               <div className="product-prices">
                 <span className="price">
-                  <span className='badge badge-warning mb-2 text-black' style={{ fontSize: "10px" }}>
-                    {product.star}
-                  </span>
-                </span>
-              </div>
-              <div className="product-prices">
-                <span className="price">
                   <em>
                     <b style={{ color: "green", fontSize: "15px" }} className="badge badge-success mb-2">
                       {(uint8.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }))}

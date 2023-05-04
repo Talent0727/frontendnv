@@ -1,10 +1,14 @@
 import React from 'react';
-import Category from './Category';
+//////////////////////////////////////////////////////////////////////////////////
 import Price from './Price';
+//////////////////////////////////////////////////////////////////////////////////
+import Category from './Category';
 import Subcategory from './Subcategory';
+import Tripletecategory from './Tripletecategory';
+//////////////////////////////////////////////////////////////////////////////////
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const ShopFilter = ({ filterResult, category, subCategory, changeChecked, selectedPrice, changePrice }) => {
+const ShopFilter = ({ filterResult, category, subcategory, changeChecked, tripletecategory, changeTripleteChecked, selectedPrice, changePrice }) => {
     return (
         <>
             <div id="cart-page-wrapper">
@@ -31,6 +35,11 @@ const ShopFilter = ({ filterResult, category, subCategory, changeChecked, select
                                                     SubCategor&#237;a. :*
                                                 </span>
                                             </th>
+                                            <th className="pro-price">
+                                                <span className="f-groupTitle badge badge-primary text-black" style={{ fontSize: "15px" }}>
+                                                    Mega-Desplegable Categor&#237;a. :*
+                                                </span>
+                                            </th>
                                             <th className="pro-quantity">
                                                 <span className="f-groupTitle badge badge-primary text-black" style={{ fontSize: "15px" }}>
                                                     Acc&#237;on. :*
@@ -47,7 +56,10 @@ const ShopFilter = ({ filterResult, category, subCategory, changeChecked, select
                                                 <Category filterResult={filterResult} category={category} />
                                             </td>
                                             <td className="pro-price">
-                                                <Subcategory subCategory={subCategory} changeChecked={changeChecked} />
+                                                <Subcategory subcategory={subcategory} changeChecked={changeChecked} />
+                                            </td>
+                                            <td className="pro-price">
+                                                <Tripletecategory tripletecategory={tripletecategory} changeTripleteChecked={changeTripleteChecked} />
                                             </td>
                                             <td className="pro-quantity">
                                                 <a className="f-groupTitle" href="/shop" rel="noopener noreferrer">

@@ -22,7 +22,6 @@ const WishListItem = ({ item, removeItemHandler }) => {
                         <th className="pro-price">CATEGOR&#205;A. :*</th>
                         <th className="pro-quantity">SUBCATEGOR&#205;A. :*</th>
                         <th className="pro-subtotal">PRECIO. :*</th>
-                        <th className="pro-subtotal">CLASIFICACI&#211;N. :*</th>
                         <th className="pro-remove">ACCI&#211;N. :*</th>
                       </tr>
                     </thead>
@@ -65,11 +64,6 @@ const WishListItem = ({ item, removeItemHandler }) => {
                                 {(uint8.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }))}
                               </b>
                             </em>
-                          </span>
-                        </td>
-                        <td className="pro-quantity">
-                          <span className="badge badge-warning mb-2 text-black" style={{ color: "black", fontSize: "20px" }}>
-                            {item.star}
                           </span>
                         </td>
                         <td className="pro-remove">

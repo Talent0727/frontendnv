@@ -97,11 +97,11 @@ const SignUp = () => {
                     <div className="col-lg-5 text-center text-lg-start">
                         <h1 className="display-4 fw-bold lh-1 mb-3">
                             <span className="special" style={{ textAlign: "justify", color: "black" }}>
-                                Nury Valenzuela.
-                            </span>
+                                Nury Valenzuela&#174;
+                            </span>Joyer&iacute;a &#124; Colombia.
                         </h1>
                         <p className="col-lg-10 fs-4" style={{ textAlign: "justify" }}>
-                            ¡.Bienvenido A Nury Valenzuela.! NUEVOS USUARIOS.
+                            ¡.Bienvenido.! NUEVOS USUARIOS.
                         </p>
                     </div>
                     <div className="col-md-10 mx-auto col-lg-7">
@@ -172,15 +172,15 @@ const SignUp = () => {
                             <label htmlFor="isAdmin">
                                 <i className="fa-solid fa-users"></i> Estado. <span
                                     className="required">:*</span> <span className="badge rounded-pill text-bg-secondary" style={{ fontSize: "15px" }}>
-                                    <code className='text-white'>(Activado - Administrador)<br /> y (DesActivado - Cliente).</code>
+                                    <code className='text-white'>(Activar - Administrador)<br /> y (DesActivar - Cliente).</code>
                                 </span>
                             </label>
                             <div className="form-floating mb-3">
                                 <select className="form-control form-select form-select-lg mb-3 is-valid" aria-label=".form-select-lg example" onChange={(e) => setIsAdmin(e.target.value)} id='isAdmin' name="isAdmin"
                                     placeholder="Estado. :*" required>
                                     <option value="" disabled selected>--- Seleccionar ---</option>
-                                    <option value="false">DesActivado - Cliente</option>
-                                    <option value="true">Activado - Administrador</option>
+                                    <option value="false">DesActivar</option>
+                                    <option value="true">Activar</option>
                                 </select>
                                 <label htmlFor="isAdmin">
                                     <i className="fa-solid fa-users"></i> Estado. :*

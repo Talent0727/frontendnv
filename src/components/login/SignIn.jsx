@@ -81,11 +81,11 @@ const SignIn = () => {
                     <div className="col-lg-7 text-center text-lg-start">
                         <h1 className="display-4 fw-bold lh-1 mb-3">
                             <span className="special" style={{ textAlign: "justify", color: "black" }}>
-                                Nury Valenzuela.
-                            </span>
+                                Nury Valenzuela&#174;
+                            </span>Joyer&iacute;a &#124; Colombia.
                         </h1>
                         <p className="col-lg-10 fs-4" style={{ textAlign: "justify" }}>
-                            ¡.Bienvenido De Nuevo A Nury Valenzuela.! USUARIOS REGISTRADOS.
+                            ¡.Bienvenido.! USUARIOS REGISTRADOS.
                         </p>
                     </div>
                     <div className="col-md-10 mx-auto col-lg-5">
@@ -115,7 +115,7 @@ const SignIn = () => {
                             <small className="text-muted">
                                 <p style={{ textAlign: "justify" }}>
                                     {' '}
-                                    SI TODAV&#205;A NO TIENES UNA CUENTA DE USUARIO DE Nury Valenzuela UTILIZAR ESTA OPCI&#211;N PARA ACCEDER AL FORMULARIO
+                                    SI TODAV&#205;A NO TIENES UNA CUENTA DE USUARIO PARA ACCEDER AL FORMULARIO
                                     DE REGISTRO.{' '}
                                     {' '}
                                     TE SOLICITAREMOS LA INFORMACI&#211;N IMPRESCINDIBLE PARA REALIZAR EL PROCESO DE COMPRA.{' '}

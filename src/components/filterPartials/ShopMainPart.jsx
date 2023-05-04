@@ -10,10 +10,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ShopMainPart = () => {
 
-    const [products, setProducts] = useState([]); //default is empty, no products
-    const [category, setCategory] = useState([]); //default is empty, no category
-    const [rating, setRating] = useState([]);   //default is empty, no rating
-    const [subCategory, setSubCategory] = useState([]);    //default is empty, no subcategory
+    const [products, setProducts] = useState([]); //default is empty, no Products
+    const [category, setCategory] = useState([]); //default is empty, no Category
+    const [subcategory, setSubcategory] = useState([]);    //default is empty, no Subcategory
+    const [tripletecategory, setTripletecategory] = useState([]);    //default is empty, no Tripletecategory
     const [selectedPrice, setSelectedPrice] = useState([0, 9999000]); //range from 0 - 9999000
 
     const [list, setList] = useState(products) //get all products when fetch products
@@ -21,23 +21,24 @@ const ShopMainPart = () => {
     const [inputSearch, setInputSearch] = useState(''); //for search is empty default
     const [resultsFound, setResultsFound] = useState(true);
     const [selectedCategory, setSelectedCategory] = useState();
-    const [selectedRating, setSelectedRating] = useState();
 
     //value when i click on button -> catItem
     const filterResult = (catItem) => {
         setSelectedCategory(catItem);
     }
 
-    //value when i click on button -> starItem
-    const filterResultRatings = (starItem) => {
-        setSelectedRating(starItem);
+    //value when i click on checkbox -> id
+    const handleChangeChecked = (id) => {
+        const subcategoryList = subcategory;
+        const changeCheckedSubcategory = subcategoryList.map((item) => item._id === id ? { ...item, checked: !item.checked } : item);
+        setSubcategory(changeCheckedSubcategory);
     }
 
     //value when i click on checkbox -> id
-    const handleChangeChecked = (id) => {
-        const subcategoryList = subCategory;
-        const changeCheckedSubcategory = subcategoryList.map((item) => item._id === id ? { ...item, checked: !item.checked } : item);
-        setSubCategory(changeCheckedSubcategory);
+    const handleChangeTripleteChecked = (id) => {
+        const tripletecategoryList = tripletecategory;
+        const changeCheckedTripletecategory = tripletecategoryList.map((item) => item._id === id ? { ...item, checked: !item.checked } : item);
+        setTripletecategory(changeCheckedTripletecategory);
     }
 
     // change value for price
@@ -56,15 +57,15 @@ const ShopMainPart = () => {
             }
 
             // SubCategory Filters
-            const subcategoryChecked = subCategory.filter((item) => item.checked).map((item) => item.label);
-            //console.log(subcategoryChecked);
+            const subcategoryChecked = subcategory.filter((item) => item.checked).map((item) => item.titlesubcategory);
             if (subcategoryChecked.length) {
                 updateProductList = updateProductList.filter((item) => subcategoryChecked.includes(item.subcategory));
             }
 
-            //Rating Filters
-            if (selectedRating) {
-                updateProductList = updateProductList.filter((item) => item.star === selectedRating);
+            // Tripletecategory Filters
+            const tripletecategoryChecked = tripletecategory.filter((item) => item.checked).map((item) => item.titletripletecategory);
+            if (tripletecategoryChecked.length) {
+                updateProductList = updateProductList.filter((item) => tripletecategoryChecked.includes(item.tripletecategory));
             }
 
             // Price Filter
@@ -83,7 +84,7 @@ const ShopMainPart = () => {
             !updateProductList.length ? setResultsFound(false) : setResultsFound(true);
         }
         applyFilters();
-    }, [inputSearch, products, selectedCategory, selectedRating, subCategory, selectedPrice]);
+    }, [inputSearch, products, selectedCategory, subcategory, tripletecategory, selectedPrice]);
 
     useEffect(() => {
         //fetch all products from db
@@ -103,18 +104,21 @@ const ShopMainPart = () => {
             console.log(resultCategory.data);
             setCategory(resultCategory.data);
 
-            //fetch all ratings
-            const resultRating = await axios.get('/api/rating/all');
-            console.log(resultRating.data);
-            setRating(resultRating.data);
-
             //fetch all subcategory
-            const resultSubCategory = await axios.get('/api/subcategory/all');
-            console.log(resultSubCategory.data);
+            const resultSubcategory = await axios.get('/api/subcategory/all');
+            console.log(resultSubcategory.data);
 
-            const resultSubCategoryData = resultSubCategory.data;
+            const resultSubcategoryData = resultSubcategory.data;
 
-            setSubCategory(resultSubCategoryData);
+            setSubcategory(resultSubcategoryData);
+
+            //fetch all Tripletecategory
+            const resultTripletecategory = await axios.get('/api/tripletecategory/all');
+            console.log(resultTripletecategory.data);
+
+            const resultTripletecategoryData = resultTripletecategory.data;
+
+            setTripletecategory(resultTripletecategoryData);
         }
 
         fetchData();
@@ -168,7 +172,7 @@ const ShopMainPart = () => {
                                 <Search value={inputSearch} changeInput={(e) => setInputSearch(e.target.value)} />
                             </div>
                             <div className='f-group'>
-                                <ShopFilter filterResult={filterResult} category={category} filterResultRatings={filterResultRatings} rating={rating} subCategory={subCategory} changeChecked={handleChangeChecked} selectedPrice={selectedPrice} changePrice={handleChangePrice} />
+                                <ShopFilter filterResult={filterResult} category={category} subcategory={subcategory} changeChecked={handleChangeChecked} tripletecategory={tripletecategory} changeTripleteChecked={handleChangeTripleteChecked} selectedPrice={selectedPrice} changePrice={handleChangePrice} />
                             </div>
                             {/* Cart Table Area */}
                         </div>

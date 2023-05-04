@@ -147,6 +147,11 @@ const MyOrder = () => {
                                             </th>
                                             <th className="pro-thumbnail">
                                                 <span style={{ color: "black", fontSize: "15px" }} className="badge badge-secondary mb-2">
+                                                    Comentarios. :*
+                                                </span>
+                                            </th>
+                                            <th className="pro-thumbnail">
+                                                <span style={{ color: "black", fontSize: "15px" }} className="badge badge-secondary mb-2">
                                                     Est&#225; Entregado. :*
                                                 </span>
                                             </th>
@@ -187,6 +192,11 @@ const MyOrder = () => {
                                             <td className="pro-thumbnail">
                                                 <span style={{ color: "black", fontSize: "15px" }} className="badge badge-secondary mb-2">
                                                     {order.marker}
+                                                </span>
+                                            </td>
+                                            <td className="pro-thumbnail">
+                                                <span style={{ color: "black", fontSize: "15px" }} className="badge badge-secondary mb-2">
+                                                    {order.comment}
                                                 </span>
                                             </td>
                                             <td className="pro-thumbnail">
@@ -241,7 +251,7 @@ const MyOrder = () => {
                                                 <tr>
                                                     <td>
                                                         <h4 style={{ color: "green", fontSize: "15px" }} className="badge badge-success mb-2">
-                                                            Impuesto. :*
+                                                            Impuesto IVA De 19%. :*
                                                         </h4>
                                                     </td>
                                                     <td>

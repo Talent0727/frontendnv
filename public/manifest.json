@@ -8,17 +8,17 @@
   "default_locale": "es-CO",
   "icons": [
     {
-      "src": "./assetsLogo/logo.ico",
+      "src": "./assetsLogo/logonv.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "./assetsLogo/Logonv.png",
+      "src": "./assetsLogo/logonv.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "./assetsLogo/Logonv.png",
+      "src": "./assetsLogo/logonv.png",
       "type": "image/png",
       "sizes": "512x512"
     }
@@ -26,7 +26,7 @@
   "scope": "/",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#E6ACA9",
+  "theme_color": "#bdb093",
   "background_color": "#ffffff",
   "orientation": "any",
   "description": "Nury Valenzuela&#174; Joyer&iacute;a &#124; Colombia. &#45;"

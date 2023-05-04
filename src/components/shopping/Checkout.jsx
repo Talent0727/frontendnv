@@ -19,6 +19,7 @@ const Checkout = ({ setOpen, cartItems, subTotal, taxPrice, totalPrice }) => {
     const [address, setAddress] = useState('');
     const [phone, setPhone] = useState('');
     const [marker, setMarker] = useState('');
+    const [comment, setComment] = useState('');
 
     const orderProductHandler = async (e) => {
         e.preventDefault();
@@ -34,6 +35,7 @@ const Checkout = ({ setOpen, cartItems, subTotal, taxPrice, totalPrice }) => {
                 address: address,
                 phone: phone,
                 marker: marker,
+                comment: comment,
                 subTotal: subTotal,
                 taxPrice: taxPrice,
                 totalPrice: totalPrice
@@ -74,6 +76,10 @@ const Checkout = ({ setOpen, cartItems, subTotal, taxPrice, totalPrice }) => {
                 <div className="form-group">
                     <label htmlFor="phone">N&#250;mero De Tel&#233;fono Y Celular. :*</label>
                     <input required type="text" onChange={(e) => setPhone(e.target.value)} id='phone' placeholder='Número De Teléfono Y Celular. :*' />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="comment">Comentarios. :*</label>
+                    <textarea className="form-control is-valid" id="comment" cols="100" rows="100" required onChange={(e) => setComment(e.target.value)} placeholder="Comentarios. :*" spellCheck={false} style={{ height: 150, textAlign: "justify" }} />
                 </div>
                 <p>
                     <label htmlFor="marker">

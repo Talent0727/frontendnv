@@ -122,9 +122,6 @@ const BlogDetails = () => {
                                         <a className="text-reset" style={{ fontSize: "25px" }} href="https://www.instagram.com/nuryvalenzuelajoyeria/" target="_blank" rel="noopener noreferrer" role="button" data-mdb-ripple-color="dark">
                                             <i className="fab fa-instagram" style={{ fontSize: "25px", color: "#ac2bac" }} />
                                         </a>
-                                        <a className="text-reset" style={{ fontSize: "25px" }} href="https://www.youtube.com/embed/lUIAHkN8TlQ" target="_blank" rel="noopener noreferrer" role="button" data-mdb-ripple-color="dark">
-                                            <i className="fab fa-youtube" style={{ fontSize: "25px", color: "#FD1D1D" }} />
-                                        </a>
                                         <a className="text-reset" style={{ fontSize: "25px" }} href="https://api.whatsapp.com/send?phone=573133966349&text=Hola%2C%20vengo%20desde%20tu%20perfil%20de%20Instagram%20y%20deseo%20obtener%20mas%20informaci%C3%B3n%20%20%F0%9F%92%8E" target="_blank" rel="noopener noreferrer" role="button" data-mdb-ripple-color="dark">
                                             <i className="fab fa-whatsapp" style={{ fontSize: "25px", color: "#008000" }} />
                                         </a>

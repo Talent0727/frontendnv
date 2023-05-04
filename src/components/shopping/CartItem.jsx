@@ -73,13 +73,6 @@ const CartItem = ({ item, removeItemHandler, updateCartHandler }) => {
                                                 </h2>
                                                 <div className="product-prices">
                                                   <span className="price">
-                                                    <span className='badge badge-warning mb-2 text-black' style={{ fontSize: "15px" }}>
-                                                      {item.star}
-                                                    </span>
-                                                  </span>
-                                                </div>
-                                                <div className="product-prices">
-                                                  <span className="price">
                                                     <span>
                                                       <em>
                                                         <b style={{ color: "green", fontSize: "15px" }} className="badge badge-success mb-2">

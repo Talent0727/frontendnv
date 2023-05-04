@@ -14,7 +14,7 @@ const HomeBlogItem = ({ blog }) => {
               <Link to={`/blogs/${blog._id}`} rel="noopener noreferrer">
                 <div className="single-blog-wrap" style={{ marginTop: '50px' }}>
                   <figure className='blog-thumbnail'>
-                    <a href="#!">
+                    <a href="#!" rel="noopener noreferrer">
                       <img src={blog.image} alt={blog.title} title={blog.title} />
                     </a>
                   </figure>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LogoNV from '../assets/img/Logonv.png';
+import LogoNV from '../assets/img/logonv.png';
 
 const Footer = () => {
   return (
@@ -27,10 +27,6 @@ const Footer = () => {
                         <a className="text-reset" style={{ fontSize: "25px" }} href="https://www.instagram.com/nuryvalenzuelajoyeria/" target="_blank" rel="noopener noreferrer" role="button" data-mdb-ripple-color="dark">
                           <i className="fab fa-instagram" style={{ fontSize: "25px", color: "#ac2bac" }} />
                         </a>
-                        {/* Youtube */}
-                        <a className="text-reset" style={{ fontSize: "25px" }} href="https://www.youtube.com/embed/lUIAHkN8TlQ" target="_blank" rel="noopener noreferrer" role="button" data-mdb-ripple-color="dark">
-                          <i className="fab fa-youtube" style={{ fontSize: "25px", color: "#FD1D1D" }} />
-                        </a>
                         {/* WhatsAPP */}
                         <a className="text-reset" style={{ fontSize: "25px" }} href="https://api.whatsapp.com/send?phone=573133966349&text=Hola%2C%20vengo%20desde%20tu%20perfil%20de%20Instagram%20y%20deseo%20obtener%20mas%20informaci%C3%B3n%20%20%F0%9F%92%8E" target="_blank" rel="noopener noreferrer" role="button" data-mdb-ripple-color="dark">
                           <i className="fab fa-whatsapp" style={{ fontSize: "25px", color: "#008000" }} />
@@ -53,10 +49,13 @@ const Footer = () => {
                 <div className="col-lg-4 col-sm-12">
                   <div className="single-footer-widget-wrap footer-about">
                     <a href="/" className="footerLogo">
-                      <img src={LogoNV}
+                      <img
+                        src={LogoNV}
                         className="site_logo"
-                        alt="Nury Valenzuela."
-                        title="Nury Valenzuela."
+                        width={200}
+                        height={200}
+                        alt="Nury Valenzuela&#174; Joyer&iacute;a &#124; Colombia."
+                        title="Nury Valenzuela&#174; Joyer&iacute;a &#124; Colombia."
                         style={{ textAlign: "center" }}
                         lang="es" />
                     </a>
@@ -64,13 +63,6 @@ const Footer = () => {
                       <p>
                         <Link to="/location" rel="noopener noreferrer" className="text-reset">
                           <i className="fa fa-angle-double-right wv_circle" /> Villavicencio, Meta, Am&#233;rica Del Sur.
-                        </Link>
-                      </p>
-                      <hr className="my-2" />
-                      <p>
-                        <Link to="/location" rel="noopener noreferrer" className="text-reset">
-                          <i className="fa fa-angle-double-right wv_circle" /> Direcci&#243;n: MonteArroyo Reservados 2 (Casa 6 Manzana
-                          3).
                         </Link>
                       </p>
                       <hr className="my-2" />
@@ -150,7 +142,7 @@ const Footer = () => {
                           </Link>
                         </li>
                         <li style={{ textAlign: "justify" }}>
-                          <Link to="/about" rel="noopener noreferrer" className="text-reset">
+                          <Link to="/abouts" rel="noopener noreferrer" className="text-reset">
                             <i className="fa fa-angle-double-right wv_circle" /> Qui&#233;nes Somos.
                           </Link>
                         </li>

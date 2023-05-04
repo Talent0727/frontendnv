@@ -1,4 +1,5 @@
 import React from 'react';
+
 const Category = ({ category, filterResult }) => {
   return (
     <div className='f-filterDiv'>
@@ -6,7 +7,7 @@ const Category = ({ category, filterResult }) => {
         <button className='f-button' onClick={() => filterResult()}>Ver Todos.</button>
         {
           category.map((cat) => (
-            <button className='f-button' onClick={() => filterResult(cat.label)} key={cat._id}>{cat.label}</button>
+            <button className='f-button' onClick={() => filterResult(cat.titlecategory)} key={cat._id}>{cat.titlecategory}</button>
           ))
         }
       </div>
