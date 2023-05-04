@@ -18,13 +18,13 @@ Al ver los scripts ejecute "npm install" esto permite instalar tanto las depende
 
 Luego de terminar de instalar las dependencias, puede arrancar el proyecto de una forma. - Con el comando "npm start": Puede arrancar el proyecto tanto front-end como front-end pero sin nodemon en el lado front-end. - Con el comando "npm start": Puede arrancar el proyecto tanto front-end como front-end pero con nodemon en el lado front-end. Por otro lado con concurrently "npm start" "npm start".
 
-## Ejecutar con Terminal. :_ `"npm start"` -> Y LUEGO ABRE NAVEGADOR ACTIVAR EL SERVIDOR CON LINK. :_ http://localhost:5000/api/seed
+## Ejecutar con Terminal. :\* `"npm start"` -> Y LUEGO ABRE NAVEGADOR ACTIVAR EL SERVIDOR CON LINK. :\* http://localhost:5000/api/seed
 
 ===========================================================================
 
 ## FRONT-END. :\*
 
-USANDO LA BASE DE DATOS MONGODB COMPASS. :_ -> ACTIVAR EL SERVIDOR CON LINK. :_ http://localhost:5000/api/seed <br />
+USANDO LA BASE DE DATOS MONGODB COMPASS. :\* -> ACTIVAR EL SERVIDOR CON LINK. :\* http://localhost:5000/api/seed <br />
 
 # ![MONGOBD](https://user-images.githubusercontent.com/54821048/235183867-915916d1-b0d9-4139-bff1-2540d583c086.png)
 
