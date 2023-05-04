@@ -22,7 +22,7 @@ Luego de terminar de instalar las dependencias, puede arrancar el proyecto de un
 
 ===========================================================================
 
-## FRONT-END. :\*
+## `FRONT-END`. :\*
 
 USANDO LA BASE DE DATOS MONGODB COMPASS. :\* -> ACTIVAR EL SERVIDOR CON LINK. :\* http://localhost:5000/api/seed <br />
 
