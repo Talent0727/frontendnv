@@ -16,10 +16,10 @@ Luego de terminar de instalar las dependencias, puede arrancar el proyecto de un
 
 ## FRONT-END:
 
-USANDO LA BASE DE DATOS MONGODB COMPASS: -> ACTIVAR EL SERVIDOR CON LINK: http://localhost:5000/api/seed
+USANDO LA BASE DE DATOS MONGODB COMPASS: -> ACTIVAR EL SERVIDOR CON LINK: http://localhost:5000/api/seed <br />
 ![MONGOBD](https://user-images.githubusercontent.com/54821048/235183867-915916d1-b0d9-4139-bff1-2540d583c086.png)
 
-CONOCIDO A "CRUD" - POSTMAN.
+CONOCIDO A "CRUD" - POSTMAN. <br />
 ![POSTMAN](https://user-images.githubusercontent.com/54821048/205748424-a7c83222-1a07-4eca-8185-a9a90726909d.png)
 
 ---
