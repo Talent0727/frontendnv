@@ -56,6 +56,8 @@ rol: "Cliente", <br />
 password: ("bebitoperez123"), <br />
 isAdmin: DESACTIVO <br />
 
+### Cuando haya arrancado asegurese que indique la url y el puerto.
+
 ===========================================================================
 
 ## `Idiomas y Herramientas. :*`
@@ -104,8 +106,6 @@ isAdmin: DESACTIVO <br />
   <img src="https://cdn.worldvectorlogo.com/logos/adobe-xd.svg" alt="xd" width="40" height="40"/>
 </a>
 </p>
-
-### Cuando haya arrancado asegurese que indique la url y el puerto.
 
 ===========================================================================
 
