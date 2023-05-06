@@ -72,7 +72,7 @@ const Header = () => {
                                             </li>
                                             <li>
                                                 <Link to="/shop" rel="noopener noreferrer">
-                                                    Ver PRODUCTOS.
+                                                    Ver TIENDA.
                                                 </Link>
                                             </li>
                                             <li>

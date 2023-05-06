@@ -99,7 +99,7 @@ const Footer = () => {
                         </li>
                         <li style={{ textAlign: "justify" }}>
                           <Link to="/shop" rel="noopener noreferrer" className="text-reset">
-                            <i className="fa fa-angle-double-right wv_circle" /> Ver Productos.
+                            <i className="fa fa-angle-double-right wv_circle" /> Ver Tienda.
                           </Link>
                         </li>
                         <li style={{ textAlign: "justify" }}>

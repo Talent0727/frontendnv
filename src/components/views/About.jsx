@@ -79,7 +79,7 @@ const About = () => {
                                   <div>
                                     <img
                                       src={about.imageOne}
-                                      className="img-responsive img-rounded mx-auto d-block img-thumbnail"
+                                      className="img-responsive img-rounded mx-auto d-block img-thumbnail rounded-pill"
                                       alt={about.titleOne}
                                       title={about.titleOne} />
                                   </div>
@@ -122,7 +122,7 @@ const About = () => {
                                   <div>
                                     <img
                                       src={about.imageFour}
-                                      className="img-responsive img-rounded mx-auto d-block img-thumbnail"
+                                      className="img-responsive img-rounded mx-auto d-block img-thumbnail rounded-pill"
                                       alt={about.titleFour}
                                       title={about.titleFour} />
                                   </div>
@@ -146,24 +146,58 @@ const About = () => {
                                     </strong>
                                   </h1>
                                   <div className="AbouTimages">
-                                    <Link to="https://www.instagram.com/nuryval10/" target={"_blank"} rel="noopener noreferrer">
+                                    <Link to="#!" target={"_blank"} rel="noopener noreferrer">
                                       <div>
                                         <img
                                           src={about.imageMother}
-                                          className="img-responsive img-rounded mx-auto d-block img-thumbnail"
+                                          className="img-responsive img-rounded mx-auto d-block img-thumbnail rounded-pill"
                                           alt={about.titleFive}
                                           title={about.titleFive} />
                                       </div>
                                     </Link>
-                                    <Link to="https://www.instagram.com/marianatamayov/" target={"_blank"} rel="noopener noreferrer">
+                                    <p>
+                                      <div className="post-footer d-block d-sm-flex justify-content-sm-between align-items-center">
+                                        <ul className="tags">
+                                          <li>
+                                            <span>
+                                              <code>@nuryval10</code>
+                                            </span>
+                                          </li>
+                                        </ul>
+                                        <div className="post-share mt-3 mt-sm-0">
+                                          {/* Instagram */}
+                                          <a className="text-reset" style={{ fontSize: "25px" }} href="https://www.instagram.com/nuryval10/" target="_blank" rel="noopener noreferrer" role="button" data-mdb-ripple-color="dark">
+                                            <i className="fab fa-instagram" style={{ fontSize: "25px", color: "#ac2bac" }} />
+                                          </a>
+                                        </div>
+                                      </div>
+                                    </p>
+                                    <Link to="#!" target={"_blank"} rel="noopener noreferrer">
                                       <div>
                                         <img
                                           src={about.imageDaughter}
-                                          className="img-responsive img-rounded mx-auto d-block img-thumbnail"
+                                          className="img-responsive img-rounded mx-auto d-block img-thumbnail rounded-pill"
                                           alt={about.titleFive}
                                           title={about.titleFive} />
                                       </div>
                                     </Link>
+                                    <p>
+                                      <div className="post-footer d-block d-sm-flex justify-content-sm-between align-items-center">
+                                        <ul className="tags">
+                                          <li>
+                                            <span>
+                                              <code>@marianatamayov</code>
+                                            </span>
+                                          </li>
+                                        </ul>
+                                        <div className="post-share mt-3 mt-sm-0">
+                                          {/* Instagram */}
+                                          <a className="text-reset" style={{ fontSize: "25px" }} href="https://www.instagram.com/marianatamayov/" target="_blank" rel="noopener noreferrer" role="button" data-mdb-ripple-color="dark">
+                                            <i className="fab fa-instagram" style={{ fontSize: "25px", color: "#ac2bac" }} />
+                                          </a>
+                                        </div>
+                                      </div>
+                                    </p>
                                   </div>
                                 </div>
                               </div>
