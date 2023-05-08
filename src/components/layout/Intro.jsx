@@ -2,13 +2,30 @@
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+///////////////////////////////////////////////////////////////////////////////////////////////
+import { Swiper, SwiperSlide } from "swiper/react";
+// import styles bundle
+import 'swiper/css/bundle';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from 'swiper';
+///////////////////////////////////////////////////////////////////////////////////////////////
+import Carousel from 'react-bootstrap/Carousel';
+///////////////////////////////////////////////////////////////////////////////////////////////
 import '../../style/BannerSlider.css';
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 const Intro = () => {
+
+  const progressCircle = useRef(null);
+  const progressContent = useRef(null);
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty('--progress', 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
 
   const [banners, setBanners] = useState([]);
 
@@ -26,100 +43,105 @@ const Intro = () => {
 
   return (
     <>
-      <div className="b-example-divider" style={{ marginTop: '100px' }}></div>
+      <div className="b-example-divider" style={{ marginTop: '115px' }}></div>
       {
         banners.length === 0 ? (
           <h3 className='no-data'>¡.Actualmente NO Hay Carrusel Para Deslizarse.!</h3>
         ) : (
-          <div>
-            {
-              //only max latest banner
-              banners.map((banner) => (
-                <Carousel
-                  className="main-slider"
-                  infiniteLoop={true}
-                  useKeyboardArrows
-                  showThumbs={false}
-                  showArrows={true}
-                  fade={true}
-                  pause={false}
-                  autoPlay
-                  interval={2000}
-                  key={banner._id}>
-                  <div style={{ backgroundColor: '#bdc3c787' }}>
-                    <a rel="noopener noreferrer" className="flex">
-                      <div>
-                        {
-                          banner.code ? banner.code :
-                            <img
-                              src={banner.image}
-                              className='d-block w-100'
-                              height={700}
-                              width={600}
-                              alt={banner.title}
-                              title={banner.title} />
-                        }
-                      </div>
-                    </a>
-                    <div className="carousel-caption d-none d-md-block legend">
-                      <p>
-                        <h1 className="mb-3">
-                          <span
-                            className="special"
-                            style={{
-                              textAlign: "center",
-                              color: "white",
-                              borderRadius: "20px 20px",
-                              padding: "2px 4px",
-                              backgroundColor: 'rgb(0 0 0 / 12%)'
-                            }}>
-                            {banner.title}
-                          </span>
-                        </h1>
-                        <h3 className="mb-3">
-                          <span
-                            className="badge badge-secondary"
-                            style={{
-                              textAlign: "center",
-                              color: "white",
-                              borderRadius: "20px 20px",
-                              padding: "2px 4px",
-                              backgroundColor: 'rgb(0 0 0 / 12%)'
-                            }}>
-                            {banner.description}
-                          </span>
-                          <p>
-                            <span style={{ textAlign: "center", color: "white" }}>
-                              {banner.author}
-                            </span>
-                          </p>
-                          <p>
-                            <span style={{ textAlign: "center", color: "white" }}>
-                              {banner.createdAt.slice(0, 10)}
-                            </span>
-                          </p>
-                        </h3>
-                        <Link
-                          to="/shop"
-                          rel="noopener noreferrer"
-                          className="btn btn-secondary btn-lg m-2"
-                          role="button">
-                          Compra Ahora.
-                        </Link>
-                        <a
-                          href="#blog"
-                          rel="noopener noreferrer"
-                          className="btn btn-secondary btn-lg m-2"
-                          role="button">
-                          <FontAwesomeIcon icon={faChevronDown} />
-                        </a>
-                      </p>
+          <>
+            <Swiper
+              spaceBetween={30}
+              slidesPerView={1}
+              centeredSlides={true}
+              grabCursor={true}
+              autoplay={{
+                delay: 9900,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                type: "progressbar",
+                clickable: true,
+              }}
+              navigation={true}
+              modules={[Pagination, Navigation, Mousewheel, Keyboard, Autoplay]}
+              onAutoplayTimeLeft={onAutoplayTimeLeft}
+              mousewheel={true}
+              keyboard={true}
+              cssMode={true}
+              className="mySwiper"
+            >
+              {banners.map((banner) => (
+                <SwiperSlide
+                  className='image'
+                  style={{ backgroundColor: '#bdc3c787' }}>
+                  <a rel="noopener noreferrer" className="flex">
+                    <div>
+                      {
+                        banner.code ? banner.code :
+                          <img
+                            src={banner.image}
+                            className='d-block w-100'
+                            height={700}
+                            width={600}
+                            alt={banner.title}
+                            title={banner.title} />
+                      }
                     </div>
-                  </div>
-                </Carousel >
-              ))
-            }
-          </div>
+                  </a>
+                  <Carousel.Caption>
+                    <p>
+                      <h1 className="mb-3">
+                        <span
+                          className="special"
+                          style={{
+                            textAlign: "center",
+                            color: "white",
+                            borderRadius: "20px 20px",
+                            padding: "2px 4px",
+                            backgroundColor: 'rgb(0 0 0 / 12%)'
+                          }}>
+                          {banner.title}
+                        </span>
+                      </h1>
+                      <h3 className="mb-3">
+                        <span
+                          className="badge badge-secondary"
+                          style={{
+                            textAlign: "center",
+                            color: "white",
+                            borderRadius: "20px 20px",
+                            padding: "2px 4px",
+                            backgroundColor: 'rgb(0 0 0 / 12%)'
+                          }}>
+                          {banner.description}
+                        </span>
+                      </h3>
+                      <Link
+                        to="/shop"
+                        rel="noopener noreferrer"
+                        className="btn btn-secondary btn-lg m-2"
+                        role="button">
+                        Compra Ahora.
+                      </Link>
+                      <a
+                        href="#blog"
+                        rel="noopener noreferrer"
+                        className="btn btn-secondary btn-lg m-2"
+                        role="button">
+                        <FontAwesomeIcon icon={faChevronDown} />
+                      </a>
+                    </p>
+                  </Carousel.Caption>
+                </SwiperSlide>
+              ))}
+              <div className="autoplay-progress" slot="container-end">
+                <svg viewBox="0 0 48 48" ref={progressCircle}>
+                  <circle cx="24" cy="24" r="20"></circle>
+                </svg>
+                <span ref={progressContent}></span>
+              </div>
+            </Swiper>
+          </>  //only max latest banner
         )
       }
     </>
