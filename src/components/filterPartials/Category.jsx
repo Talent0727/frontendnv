@@ -6,8 +6,13 @@ const Category = ({ category, filterResult }) => {
       <div className="f-buttons">
         <button className='f-button' onClick={() => filterResult()}>Ver Todos.</button>
         {
-          category.map((cat) => (
-            <button className='f-button' onClick={() => filterResult(cat.titlecategory)} key={cat._id}>{cat.titlecategory}</button>
+          category.map((category) => (
+            <button
+              className='f-button'
+              onClick={() => filterResult(category.titlecategory)}
+              key={category._id}>
+              {category.titlecategory}
+            </button>
           ))
         }
       </div>

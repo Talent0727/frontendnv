@@ -8,7 +8,7 @@ import Tripletecategory from './Tripletecategory';
 //////////////////////////////////////////////////////////////////////////////////
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const ShopFilter = ({ filterResult, category, subcategory, changeChecked, tripletecategory, changeTripleteChecked, selectedPrice, changePrice }) => {
+const ShopFilter = ({ filterResult, filterResult2, filterResult3, category, subcategory, tripletecategory, selectedPrice, changePrice }) => {
     return (
         <>
             <div id="cart-page-wrapper">
@@ -27,17 +27,17 @@ const ShopFilter = ({ filterResult, category, subcategory, changeChecked, triple
                                             </th>
                                             <th className="pro-title">
                                                 <span className="f-groupTitle badge badge-primary text-black" style={{ fontSize: "15px" }}>
-                                                    Categor&#237;a. :*
+                                                    MEN&#218; 1 Categor&#237;a. :*
                                                 </span>
                                             </th>
                                             <th className="pro-price">
                                                 <span className="f-groupTitle badge badge-primary text-black" style={{ fontSize: "15px" }}>
-                                                    SubCategor&#237;a. :*
+                                                    MEN&#218; 2 Categor&#237;a. :*
                                                 </span>
                                             </th>
                                             <th className="pro-price">
                                                 <span className="f-groupTitle badge badge-primary text-black" style={{ fontSize: "15px" }}>
-                                                    Mega-Desplegable Categor&#237;a. :*
+                                                    MEN&#218; 3 Categor&#237;a. :*
                                                 </span>
                                             </th>
                                             <th className="pro-quantity">
@@ -56,10 +56,10 @@ const ShopFilter = ({ filterResult, category, subcategory, changeChecked, triple
                                                 <Category filterResult={filterResult} category={category} />
                                             </td>
                                             <td className="pro-price">
-                                                <Subcategory subcategory={subcategory} changeChecked={changeChecked} />
+                                                <Subcategory filterResult2={filterResult2} subcategory={subcategory} />
                                             </td>
                                             <td className="pro-price">
-                                                <Tripletecategory tripletecategory={tripletecategory} changeTripleteChecked={changeTripleteChecked} />
+                                                <Tripletecategory filterResult3={filterResult3} tripletecategory={tripletecategory} />
                                             </td>
                                             <td className="pro-quantity">
                                                 <a className="f-groupTitle" href="/shop" rel="noopener noreferrer">

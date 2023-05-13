@@ -35,12 +35,17 @@ const NewProduct = ({ product }) => {
               <div className="product-details">
                 <a href="#!" className="product-cat-name" rel="noopener noreferrer">
                   <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "10px" }}>
-                    {product.category}
+                    {product.categoryOptions}
                   </span>
-                </a>
+                </a><br />
                 <a href="#!" className="product-cat-name" rel="noopener noreferrer">
                   <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "10px" }}>
-                    {product.subcategory}
+                    {product.subcategoryOptions}
+                  </span>
+                </a><br />
+                <a href="#!" className="product-cat-name" rel="noopener noreferrer">
+                  <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "10px" }}>
+                    {product.tripletecategoryOptions}
                   </span>
                 </a>
                 <h2 className="product-name">

@@ -158,17 +158,17 @@ const ProductDetails = () => {
                                             <hr className="my-2" />
                                             <p className="pro-rating">
                                                 <span className="pd-category badge badge-secondary mb-2" style={{ fontSize: "20px" }}>
-                                                    {product.category}
+                                                    {product.categoryOptions}
                                                 </span>
                                             </p>
                                             <p className="pro-rating">
                                                 <span className="pd-subcategory badge badge-secondary mb-2 text-black" style={{ fontSize: "20px" }}>
-                                                    {product.subcategory}
+                                                    {product.subcategoryOptions}
                                                 </span>
                                             </p>
                                             <p className="pro-rating">
                                                 <span className="pd-subcategory badge badge-secondary mb-2 text-black" style={{ fontSize: "20px" }}>
-                                                    {product.tripletecategory}
+                                                    {product.tripletecategoryOptions}
                                                 </span>
                                             </p>
                                             <hr className="my-2" />

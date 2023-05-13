@@ -58,12 +58,17 @@ const CartItem = ({ item, removeItemHandler, updateCartHandler }) => {
                                               <div className="product-details">
                                                 <a href="#!" className="product-cat-name" rel="noopener noreferrer">
                                                   <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "15px" }}>
-                                                    {item.category}
+                                                    {item.categoryOptions}
                                                   </span>
-                                                </a>
+                                                </a><br />
                                                 <a href="#!" className="product-cat-name" rel="noopener noreferrer">
                                                   <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "15px" }}>
-                                                    {item.subcategory}
+                                                    {item.subcategoryOptions}
+                                                  </span>
+                                                </a><br />
+                                                <a href="#!" className="product-cat-name" rel="noopener noreferrer">
+                                                  <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "15px" }}>
+                                                    {item.tripletecategoryOptions}
                                                   </span>
                                                 </a>
                                                 <h2 className="product-name">
@@ -96,11 +101,6 @@ const CartItem = ({ item, removeItemHandler, updateCartHandler }) => {
                                                     </span>
                                                   </span>
                                                 </div>
-                                                <small className="text-muted">
-                                                  <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "15px" }}>
-                                                    {item.createdAt.slice(0, 10)}
-                                                  </span>
-                                                </small>
                                               </div>
                                             </div>
                                           </Link>

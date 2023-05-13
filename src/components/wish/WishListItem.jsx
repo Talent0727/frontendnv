@@ -19,8 +19,9 @@ const WishListItem = ({ item, removeItemHandler }) => {
                       <tr>
                         <th className="pro-thumbnail">IMAGEN. :*</th>
                         <th className="pro-title">NOMBRE. :*</th>
-                        <th className="pro-price">CATEGOR&#205;A. :*</th>
-                        <th className="pro-quantity">SUBCATEGOR&#205;A. :*</th>
+                        <th className="pro-price">MEN&#218; 1 CATEGOR&#205;A. :*</th>
+                        <th className="pro-quantity">MEN&#218; 2 CATEGOR&#205;A. :*</th>
+                        <th className="pro-quantity">MEN&#218; 3 CATEGOR&#205;A. :*</th>
                         <th className="pro-subtotal">PRECIO. :*</th>
                         <th className="pro-remove">ACCI&#211;N. :*</th>
                       </tr>
@@ -46,14 +47,21 @@ const WishListItem = ({ item, removeItemHandler }) => {
                         <td className="pro-title">
                           <a href="#!" rel="noopener noreferrer">
                             <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "15px" }}>
-                              {item.category}
+                              {item.categoryOptions}
                             </span>
                           </a>
                         </td>
                         <td className="pro-title">
                           <a href="#!" rel="noopener noreferrer">
                             <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "15px" }}>
-                              {item.subcategory}
+                              {item.subcategoryOptions}
+                            </span>
+                          </a>
+                        </td>
+                        <td className="pro-title">
+                          <a href="#!" rel="noopener noreferrer">
+                            <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "15px" }}>
+                              {item.tripletecategoryOptions}
                             </span>
                           </a>
                         </td>

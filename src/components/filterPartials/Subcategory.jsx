@@ -1,15 +1,18 @@
 import React from 'react';
 
-const Subcategory = ({ subcategory, changeChecked }) => {
+const Subcategory = ({ subcategory, filterResult2 }) => {
     return (
         <div className='f-filterDiv'>
-            <div className="f-checkboxes">
+            <div className="f-buttons">
+                <button className='f-button' onClick={() => filterResult2()}>Ver Todos.</button>
                 {
-                    subcategory.map((sub) => (
-                        <div className="f-checkbox" key={sub._id}>
-                            <label htmlFor={sub.titlesubcategory} className='f-filterLabel'>{sub.titlesubcategory}</label>
-                            <input type="checkbox" className='f-check' checked={sub.checked} onChange={() => changeChecked(sub._id)} name={sub.titlesubcategory} id={sub.titlesubcategory} />
-                        </div>
+                    subcategory.map((subcategory) => (
+                        <button
+                            className='f-button'
+                            onClick={() => filterResult2(subcategory.titlesubcategory)}
+                            key={subcategory._id}>
+                            {subcategory.titlesubcategory}
+                        </button>
                     ))
                 }
             </div>

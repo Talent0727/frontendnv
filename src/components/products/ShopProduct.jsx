@@ -33,12 +33,17 @@ const ShopProduct = ({ product }) => {
             <div className="product-details">
               <a href="#!" className="product-cat-name" rel="noopener noreferrer">
                 <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "10px" }}>
-                  {product.category}
+                  {product.categoryOptions}
                 </span>
-              </a>
+              </a><br />
               <a href="#!" className="product-cat-name" rel="noopener noreferrer">
                 <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "10px" }}>
-                  {product.subcategory}
+                  {product.subcategoryOptions}
+                </span>
+              </a><br />
+              <a href="#!" className="product-cat-name" rel="noopener noreferrer">
+                <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "10px" }}>
+                  {product.tripletecategoryOptions}
                 </span>
               </a>
               <h2 className="product-name">
@@ -55,13 +60,6 @@ const ShopProduct = ({ product }) => {
                       {(uint8.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }))}
                     </b>
                   </em>
-                </span>
-              </div>
-              <div className="product-prices">
-                <span className="price">
-                  <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "10px" }}>
-                    {product.createdAt.slice(0, 10)}
-                  </span>
                 </span>
               </div>
             </div>

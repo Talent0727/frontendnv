@@ -106,8 +106,9 @@ const CartItems = () => {
                                     <thead>
                                         <tr>
                                             <th className="pro-thumbnail">NOMBRE. :*</th>
-                                            <th className="pro-price">CATEGOR&#205;A. :*</th>
-                                            <th className="pro-price">SUBCATEGOR&#205;A. :*</th>
+                                            <th className="pro-price">MEN&#218; 1 CATEGOR&#205;A. :*</th>
+                                            <th className="pro-quantity">MEN&#218; 2 CATEGOR&#205;A. :*</th>
+                                            <th className="pro-quantity">MEN&#218; 3 CATEGOR&#205;A. :*</th>
                                             <th className="pro-quantity">PRECIO. :*</th>
                                             <th className="pro-subtotal">TALLA. :*</th>
                                             <th className="pro-remove">COLOR DE ORO. :*</th>
@@ -131,12 +132,17 @@ const CartItems = () => {
                                                                 </td>
                                                                 <td className="pro-title">
                                                                     <span style={{ color: "black", fontSize: "15px" }} className="badge badge-secondary mb-2">
-                                                                        {item.category}
+                                                                        {item.categoryOptions}
                                                                     </span>
                                                                 </td>
                                                                 <td className="pro-price">
                                                                     <span style={{ color: "black", fontSize: "15px" }} className="badge badge-secondary mb-2">
-                                                                        {item.subcategory}
+                                                                        {item.subcategoryOptions}
+                                                                    </span>
+                                                                </td>
+                                                                <td className="pro-price">
+                                                                    <span style={{ color: "black", fontSize: "15px" }} className="badge badge-secondary mb-2">
+                                                                        {item.tripletecategoryOptions}
                                                                     </span>
                                                                 </td>
                                                                 <td className="pro-subtotal">

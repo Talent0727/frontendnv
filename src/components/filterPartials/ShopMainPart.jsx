@@ -21,24 +21,20 @@ const ShopMainPart = () => {
     const [inputSearch, setInputSearch] = useState(''); //for search is empty default
     const [resultsFound, setResultsFound] = useState(true);
     const [selectedCategory, setSelectedCategory] = useState();
+    const [selectedSubcategory, setselectedSubcategory] = useState();
+    const [selectedTripletecategory, setselectedTripletecategory] = useState();
 
     //value when i click on button -> catItem
     const filterResult = (catItem) => {
         setSelectedCategory(catItem);
     }
 
-    //value when i click on checkbox -> id
-    const handleChangeChecked = (id) => {
-        const subcategoryList = subcategory;
-        const changeCheckedSubcategory = subcategoryList.map((item) => item._id === id ? { ...item, checked: !item.checked } : item);
-        setSubcategory(changeCheckedSubcategory);
+    const filterResult2 = (catItem) => {
+        setselectedSubcategory(catItem);
     }
 
-    //value when i click on checkbox -> id
-    const handleChangeTripleteChecked = (id) => {
-        const tripletecategoryList = tripletecategory;
-        const changeCheckedTripletecategory = tripletecategoryList.map((item) => item._id === id ? { ...item, checked: !item.checked } : item);
-        setTripletecategory(changeCheckedTripletecategory);
+    const filterResult3 = (catItem) => {
+        setselectedTripletecategory(catItem);
     }
 
     // change value for price
@@ -53,19 +49,17 @@ const ShopMainPart = () => {
 
             //Category Filters
             if (selectedCategory) {
-                updateProductList = updateProductList.filter((item) => item.category === selectedCategory);
+                updateProductList = updateProductList.filter((item) => item.categoryOptions === selectedCategory);
             }
 
             // SubCategory Filters
-            const subcategoryChecked = subcategory.filter((item) => item.checked).map((item) => item.titlesubcategory);
-            if (subcategoryChecked.length) {
-                updateProductList = updateProductList.filter((item) => subcategoryChecked.includes(item.subcategory));
+            if (selectedSubcategory) {
+                updateProductList = updateProductList.filter((item) => item.subcategoryOptions === selectedSubcategory);
             }
 
             // Tripletecategory Filters
-            const tripletecategoryChecked = tripletecategory.filter((item) => item.checked).map((item) => item.titletripletecategory);
-            if (tripletecategoryChecked.length) {
-                updateProductList = updateProductList.filter((item) => tripletecategoryChecked.includes(item.tripletecategory));
+            if (selectedTripletecategory) {
+                updateProductList = updateProductList.filter((item) => item.tripletecategoryOptions === selectedTripletecategory);
             }
 
             // Price Filter
@@ -84,7 +78,7 @@ const ShopMainPart = () => {
             !updateProductList.length ? setResultsFound(false) : setResultsFound(true);
         }
         applyFilters();
-    }, [inputSearch, products, selectedCategory, subcategory, tripletecategory, selectedPrice]);
+    }, [inputSearch, products, selectedCategory, selectedSubcategory, selectedTripletecategory, selectedPrice]);
 
     useEffect(() => {
         //fetch all products from db
@@ -107,18 +101,12 @@ const ShopMainPart = () => {
             //fetch all subcategory
             const resultSubcategory = await axios.get('/api/subcategory/all');
             console.log(resultSubcategory.data);
-
-            const resultSubcategoryData = resultSubcategory.data;
-
-            setSubcategory(resultSubcategoryData);
+            setSubcategory(resultSubcategory.data);
 
             //fetch all Tripletecategory
             const resultTripletecategory = await axios.get('/api/tripletecategory/all');
             console.log(resultTripletecategory.data);
-
-            const resultTripletecategoryData = resultTripletecategory.data;
-
-            setTripletecategory(resultTripletecategoryData);
+            setTripletecategory(resultTripletecategory.data);
         }
 
         fetchData();
@@ -172,7 +160,7 @@ const ShopMainPart = () => {
                                 <Search value={inputSearch} changeInput={(e) => setInputSearch(e.target.value)} />
                             </div>
                             <div className='f-group'>
-                                <ShopFilter filterResult={filterResult} category={category} subcategory={subcategory} changeChecked={handleChangeChecked} tripletecategory={tripletecategory} changeTripleteChecked={handleChangeTripleteChecked} selectedPrice={selectedPrice} changePrice={handleChangePrice} />
+                                <ShopFilter filterResult={filterResult} filterResult2={filterResult2} filterResult3={filterResult3} category={category} subcategory={subcategory} tripletecategory={tripletecategory} selectedPrice={selectedPrice} changePrice={handleChangePrice} />
                             </div>
                             {/* Cart Table Area */}
                         </div>
