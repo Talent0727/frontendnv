@@ -8,7 +8,7 @@
 
 ===========================================================================
 
-# ![PUBLICO-ORIGINAL](https://user-images.githubusercontent.com/54821048/235183542-8495c4fe-165e-466a-b19b-06d4de08c8b5.png)
+# ![image](https://github.com/Adriianpr919/frontendnv/assets/54821048/1619a1ad-0edb-476c-b1a7-11011c08541d)
 
 ===========================================================================
 
