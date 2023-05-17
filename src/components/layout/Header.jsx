@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faRightToBracket, faPowerOff, faHeart, faCartShopping, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { toast } from 'react-toastify';
 import { Store } from '../../utils/Store';
-import Logo from '../assets/img/logonv.png';
+import Logo from './assets/img/logonv.png';
 
 import 'flowbite';
 
