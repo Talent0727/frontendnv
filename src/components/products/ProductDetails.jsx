@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import axios from 'axios';
 import React, { useState, useContext, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -72,7 +73,7 @@ const ProductDetails = () => {
 
     return (
         <>
-            <div className="b-example-divider" style={{ marginTop: '100px' }}></div>
+            <div className="b-example-divider" style={{ marginTop: '0%' }}></div>
             {/*== Start Page Header ==*/}
             <div id="page-header-wrapper">
                 <div className="container">
@@ -81,7 +82,7 @@ const ProductDetails = () => {
                         <div className="col-6">
                             <div className="page-title-wrap">
                                 <h1>
-                                    <FontAwesomeIcon icon={faBagShopping} />  PRODUCTOS DETALLE.
+                                    <FontAwesomeIcon icon={faBagShopping} />  PRODUCTO DETALLE.
                                 </h1>
                                 <hr className="my-4" />
                                 <a href="/shop" rel="noopener noreferrer">
@@ -103,7 +104,7 @@ const ProductDetails = () => {
                                     </li>
                                     <li>
                                         <a href="/shop" className="current" rel="noopener noreferrer">
-                                            <FontAwesomeIcon icon={faBagShopping} />  PRODUCTOS DETALLE.
+                                            <FontAwesomeIcon icon={faBagShopping} />  PRODUCTO DETALLE.
                                         </a>
                                     </li>
                                 </ul>
@@ -114,166 +115,216 @@ const ProductDetails = () => {
                 </div>
             </div>
             {/*== End Page Header ==*/}
-            {/*== Start Single Product Wrapper ==*/}
-            <div id="single-product-page-wrapper" className="page-padding">
-                <div className="container">
-                    <div className="row">
-                        {/* Single Product Page Content Start */}
-                        <div className="col-lg-12">
-                            <div className="single-product-page-content">
-                                <div className="row">
-                                    {/* Product Thumbnail Area Start */}
-                                    <div className="col-lg-5">
-                                        <div className="product-thumbnail-wrap">
-                                            <div className="pd-col">
-                                                <div className="pd-imageDiv">
-                                                    <div className="product-image-carousel">
-                                                        <div className="single-image-item">
-                                                            <div className="pd-top">
-                                                                <img src={selectedImg || `${product.image}`} className='pd-img img-fluid border border-dark img-rounded mx-auto d-block img-thumbnail img-blog' alt={product.title} title={product.title} />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div>
-                                                        <div>
-                                                            <div className="pd-bottom">
-                                                                <img src={`${product.image}`} onClick={() => setSelectedImg(`${product.image}`)} className='pd-smallImg img-blog' alt={product.title} title={product.title} />
+            <section className="bg-white py-10">
+                <div className="container max-w-screen-xl mx-auto px-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-5">
+                        <aside>
+                            <div className="grid gap-4">
+                                <div className="relative overflow-x-auto">
+                                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                        <tbody>
+                                            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    <div className="grid grid-cols-1 gap-4">
+                                                        <div className="space-x-2 overflow-auto text-left whitespace-nowrap">
+                                                            <a
+                                                                className="inline-block border border-gray-200 p-1 rounded-md hover:border-blue-500 cursor-pointer"
+                                                            >
+                                                                <img
+                                                                    className="h-auto max-w-full rounded-lg"
+                                                                    src={`${product.image}`}
+                                                                    onClick={() => setSelectedImg(`${product.image}`)}
+                                                                    alt={product.title}
+                                                                    title={product.title}
+                                                                    width="500"
+                                                                    height="500"
+                                                                />
                                                                 {product.imagesOnes?.map((item) => (
-                                                                    <img src={`${item.value}`} onClick={() => setSelectedImg(`${item.value}`)} className='pd-smallImg img-blog' alt={product.title} title={product.title} key={item.i} />
+                                                                    <img
+                                                                        className="h-auto max-w-full rounded-lg"
+                                                                        key={item._id}
+                                                                        onClick={() => setSelectedImg(`${item.value}`)}
+                                                                        src={`${item.value}`}
+                                                                        alt={product.title}
+                                                                        title={product.title}
+                                                                        width="500"
+                                                                        height="500"
+                                                                    />
                                                                 ))}
-                                                            </div>
+                                                            </a>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* Product Thumbnail Area End */}
-                                    {/* Product Details Area Start */}
-                                    <div className="col-lg-7">
-                                        <div className="product-details">
-                                            <h2>
-                                                {product.title}
-                                            </h2>
-                                            <hr className="my-2" />
-                                            <p className="pro-rating">
-                                                <span className="pd-category badge badge-secondary mb-2" style={{ fontSize: "20px" }}>
-                                                    {product.categoryOptions}
-                                                </span>
-                                            </p>
-                                            <p className="pro-rating">
-                                                <span className="pd-subcategory badge badge-secondary mb-2 text-black" style={{ fontSize: "20px" }}>
-                                                    {product.subcategoryOptions}
-                                                </span>
-                                            </p>
-                                            <p className="pro-rating">
-                                                <span className="pd-subcategory badge badge-secondary mb-2 text-black" style={{ fontSize: "20px" }}>
-                                                    {product.tripletecategoryOptions}
-                                                </span>
-                                            </p>
-                                            <hr className="my-2" />
-                                            <div className="price-group">
-                                                <span className="price badge badge-success text-black mb-2" style={{ color: "green", fontWeight: "bold", fontSize: "20px" }}>
-                                                    Precio. :* {(uint8.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }))}
-                                                </span>
-                                            </div>
-                                            <div className="product-info-stock-sku">
-                                                <span className="product-stock-status text-success">
-                                                    <span className='pd-quantityNumber badge badge-success text-black'>
-                                                        <FontAwesomeIcon icon="fa-solid fa-check" style={{ color: "green" }} /> {product.countInStock > 0 ? 'EN STOCK.' : 'AGOTADO.'}
-                                                    </span>
-                                                </span>
-                                            </div>
-                                            <hr className="my-2" />
-                                            <p className="card-text">
-                                                <div className="pd-group">
-                                                    <div className="pd-otherAction">
-                                                        <div className="pd-size" style={{ textAlign: "justify" }}>
-                                                            <h4 className="pd-sizeTitle">
-                                                                Talla 📏. :*
-                                                            </h4>
-                                                            <div className="pd-sizeDiv">
-                                                                {
-                                                                    product.sizes?.map((size) => (
-                                                                        <>
-                                                                            <input type="radio" onChange={(e) => setSize(e.target.value)} id={size.value} name="size" value={size.value} required />
-                                                                            <label htmlFor={size.value}>{size.value}</label>
-                                                                        </>
-                                                                    ))
-                                                                }
-                                                            </div>
-                                                        </div>
+                                                </th>
+                                                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    <div className="border border-gray-200 shadow-sm p-1 text-center rounded mb-5">
+                                                        <img
+                                                            className="h-auto max-w-full rounded-lg object-cover inline-block"
+                                                            src={selectedImg || `${product.image}`}
+                                                            alt={product.title}
+                                                            title={product.title}
+                                                            width="950"
+                                                            height="950"
+                                                        />
                                                     </div>
-                                                </div>
-                                                <hr className="my-2" />
-                                                <div className="pd-group">
-                                                    <div className="pd-otherAction">
-                                                        <div className="pd-color" style={{ textAlign: "justify" }}>
-                                                            <h4 className="pd-sizeTitle">
-                                                                Color De Oro 🖌️. :*
-                                                            </h4>
-                                                            <div className="pd-sizeDiv">
-                                                                {
-                                                                    product.colors?.map((color) => (
-                                                                        <>
-                                                                            <input type="radio" onChange={(e) => setColor(e.target.value)} id={color.value} name="color" value={color.value} required />
-                                                                            <label htmlFor={color.value}>{color.value}</label>
-                                                                        </>
-                                                                    ))
-                                                                }
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </p>
-                                            <hr className="my-2" />
-                                            <div className="product-quantity d-sm-flex align-items-center">
-                                                <button className="btn btn-transparent btn-semi-round" alt="Añadir A La Lista De Deseos." title='Añadir A La Lista De Deseos.' onClick={addToWishHandler}>
-                                                    <span className="fa fa-heart" /> Añadir Lista De Deseos.
-                                                </button>
-                                                <button className="btn btn-transparent btn-semi-round" onClick={addToCartHandler}>
-                                                    <i className="fa fa-shopping-basket" /> Añadir Al Carrito.
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* Product Details Area End */}
-                                </div>
-                                <div className="row">
-                                    <div className="col-lg-12">
-                                        {/* Product Full Description Start */}
-                                        <div className="product-full-info-reviews">
-                                            {/* Single Product tab Menu */}
-                                            <nav className="nav" id="nav-tab">
-                                                <a className="active" id="description-tab" rel="noopener noreferrer" data-bs-toggle="tab" href="#description">
-                                                    Descripci&#243;n. :*
-                                                </a>
-                                            </nav>
-                                            {/* Single Product tab Menu */}
-                                            {/* Single Product tab Content */}
-                                            <div className="tab-content" id="nav-tabContent">
-                                                <div className="tab-pane fade show active" id="description">
-                                                    <p className="pd-desc" style={{ textAlign: "justify" }}>
-                                                        <strong>
-                                                            <FontAwesomeIcon icon={faBagShopping} /> Productos Detalles. :*
-                                                        </strong>
-                                                        <hr className="my-2" />
-                                                        {product.description}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            {/* Single Product tab Content */}
-                                        </div>
-                                        {/* Product Full Description End */}
-                                    </div>
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                        </div>
-                        {/* Single Product Page Content End */}
+                        </aside>
+                        <main>
+                            <h1 className="font-semibold text-5xl mb-4">
+                                {product.title}
+                            </h1>
+                            <hr className="my-2" />
+                            <ul className="mb-5">
+                                <li className="mb-1">
+                                    {" "}
+                                    <b className="font-medium w-39 inline-block">
+                                        <h1 className="font-semibold text-3xl mb-3">
+                                            MEN&#218; 1 CATEGOR&#205;A. :*
+                                        </h1>
+                                    </b>
+                                    <span className="text-gray-500">
+                                        <span className="badge badge-secondary text-black" style={{ fontSize: "20px" }}>
+                                            {product.categoryOptions}
+                                        </span>
+                                    </span>
+                                </li>
+                                <li className="mb-1">
+                                    {" "}
+                                    <b className="font-medium w-39 inline-block">
+                                        <h1 className="font-semibold text-3xl mb-3">
+                                            MEN&#218; 2 CATEGOR&#205;A. :*
+                                        </h1>
+                                    </b>
+                                    <span className="text-gray-500">
+                                        <span className="badge badge-secondary text-black" style={{ fontSize: "20px" }}>
+                                            {product.subcategoryOptions}
+                                        </span>
+                                    </span>
+                                </li>
+                                <li className="mb-1">
+                                    {" "}
+                                    <b className="font-medium w-39 inline-block">
+                                        <h1 className="font-semibold text-3xl mb-3">
+                                            MEN&#218; 3 CATEGOR&#205;A. :*
+                                        </h1>
+                                    </b>
+                                    <span className="text-gray-500">
+                                        <span className="badge badge-secondary text-black" style={{ fontSize: "20px" }}>
+                                            {product.tripletecategoryOptions}
+                                        </span>
+                                    </span>
+                                </li>
+                            </ul>
+                            <hr className="my-2" />
+                            <p className="mb-4 font-semibold text-xl">
+                                <span className="badge badge-success text-black" style={{ color: "green", fontWeight: "bold", fontSize: "20px" }}>
+                                    Precio. :* {(uint8.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }))}
+                                </span>
+                            </p>
+                            <div className="flex flex-wrap items-center space-x-2 mb-2">
+                                <span className="text-green-500">
+                                    <span className='badge badge-success text-black' style={{ color: "green", fontWeight: "bold", fontSize: "20px" }}>
+                                        {product.countInStock > 0 ? 'EN STOCK.' : 'AGOTADO.'}
+                                    </span>
+                                </span>
+                            </div>
+                            <hr className="my-2" />
+                            <p className="mb-4 text-gray-500">
+                                <div className="pd-group">
+                                    <div className="pd-otherAction">
+                                        <div className="pd-size" style={{ textAlign: "justify" }}>
+                                            <h1 className="font-semibold text-3xl mb-3">
+                                                Talla 📏. :*
+                                            </h1>
+                                            <div className="pd-sizeDiv">
+                                                {
+                                                    product.sizes?.map((size) => (
+                                                        <>
+                                                            <input type="radio" onChange={(e) => setSize(e.target.value)} id={size.value} name="size" value={size.value} required />
+                                                            <label htmlFor={size.value}>{size.value}</label>
+                                                        </>
+                                                    ))
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </p>
+                            <hr className="my-2" />
+                            <p className="mb-4 text-gray-500">
+                                <div className="pd-group">
+                                    <div className="pd-otherAction">
+                                        <div className="pd-color" style={{ textAlign: "justify" }}>
+                                            <h1 className="font-semibold text-3xl mb-3">
+                                                Color De Oro 🖌️. :*
+                                            </h1>
+                                            <div className="pd-sizeDiv">
+                                                {
+                                                    product.colors?.map((color) => (
+                                                        <>
+                                                            <input type="radio" onChange={(e) => setColor(e.target.value)} id={color.value} name="color" value={color.value} required />
+                                                            <label htmlFor={color.value}>{color.value}</label>
+                                                        </>
+                                                    ))
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </p>
+
+                            <div className="flex flex-wrap gap-2 mb-5">
+                                <button className="btn btn-transparent btn-semi-round" alt="Añadir A La Lista De Deseos." title='Añadir A La Lista De Deseos.' onClick={addToWishHandler}>
+                                    <span className="fa fa-heart" /> A&#241;adir Lista De Deseos.
+                                </button>
+                                <button className="btn btn-transparent btn-semi-round" onClick={addToCartHandler}>
+                                    <i className="fa fa-shopping-basket" /> A&#241;adir Al Carrito.
+                                </button>
+                            </div>
+
+                            <p className="mb-4 text-gray-500">
+                                <div className="col-lg-12">
+                                    <div className="single-product-page-content">
+                                        <div className="row">
+                                            <div className="col-lg-12">
+                                                {/* Product Full Description Start */}
+                                                <div className="product-full-info-reviews">
+                                                    {/* Single Product tab Menu */}
+                                                    <nav className="nav" id="nav-tab">
+                                                        <a className="active" id="description-tab" rel="noopener noreferrer" data-bs-toggle="tab" href="#description">
+                                                            Descripci&#243;n. :*
+                                                        </a>
+                                                    </nav>
+                                                    {/* Single Product tab Menu */}
+                                                    {/* Single Product tab Content */}
+                                                    <div className="tab-content" id="nav-tabContent">
+                                                        <div className="tab-pane fade show active" id="description">
+                                                            <p className="pd-desc" style={{ textAlign: "justify" }}>
+                                                                <strong>
+                                                                    <FontAwesomeIcon icon={faBagShopping} /> Producto Detalle. :*
+                                                                </strong>
+                                                                <hr className="my-2" />
+                                                                {product.description}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    {/* Single Product tab Content */}
+                                                </div>
+                                                {/* Product Full Description End */}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </p>
+                        </main>
                     </div>
                 </div>
-            </div >
-            {/*== End Single Product Wrapper ==*/}
+            </section>
+            {/*== Start Single Product Wrapper ==*/}
         </>
     );
 };

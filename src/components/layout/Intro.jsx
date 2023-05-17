@@ -43,10 +43,14 @@ const Intro = () => {
 
   return (
     <>
-      <div className="b-example-divider" style={{ marginTop: '115px' }}></div>
+      <div className="b-example-divider" style={{ marginTop: '0%' }}></div>
       {
         banners.length === 0 ? (
-          <h3 className='no-data'>¡.Actualmente NO Hay Carrusel Para Deslizarse.!</h3>
+          <div className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+            <span className="font-medium no-data" style={{ fontSize: "15px" }}>
+              ¡.Actualmente NO Hay Carrusel Para Deslizarse.!
+            </span>
+          </div>
         ) : (
           <>
             <Swiper
@@ -72,6 +76,7 @@ const Intro = () => {
             >
               {banners.map((banner) => (
                 <SwiperSlide
+                  key={banner._id}
                   className='image'
                   style={{ backgroundColor: '#bdc3c787' }}>
                   <a rel="noopener noreferrer" className="flex">

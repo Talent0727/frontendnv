@@ -5,7 +5,9 @@ const Scroll = () => {
   return (
     <>
       {/* Scroll to Top Start */}
-      <a href="#" className="scrolltotop"><i className="fa fa-angle-double-up" /></a>
+      <a href="#" rel="noopener noreferrer" className="scrolltotop">
+        <i className="fa fa-angle-double-up" />
+      </a>
       {/* Scroll to Top End */}
     </>
   );

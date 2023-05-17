@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
@@ -131,7 +135,7 @@ footer {
 }
 
 .AbouTimg {
-  height: 100vh;
+  height: 115vh;
   position: sticky;
   top: 0;
 }
@@ -154,7 +158,7 @@ footer {
 
 .AbouTimages img {
   width: 100%;
-  height: 180px;
+  height: 300px;
   object-fit: cover;
 }
 

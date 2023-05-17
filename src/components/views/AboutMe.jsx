@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Users from './assetsUsers/img/customers/user.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,7 +9,7 @@ const AboutMe = () => {
 
     return (
         <>
-            <div className="b-example-divider" style={{ marginTop: '100px' }}></div>
+            <div className="b-example-divider" style={{ marginTop: '0%' }}></div>
             {/*== Start Page Header ==*/}
             <div id="page-header-wrapper">
                 <div className="container">
@@ -100,54 +101,35 @@ const AboutMe = () => {
                                                     </h3>
                                                     <address>
                                                         <p style={{ textAlign: "justify", marginTop: '50px' }} lang="es">
-                                                            {/* Form */}
-                                                            <form className="row mb-4">
-                                                                <div className="mb-3 col-12 col-md-12 mb-4">
-                                                                    {/* Radio button */}
-                                                                    <div className="d-inline-flex">
-                                                                        {/* Horizontal */}
-                                                                        <div className="card mb-3" style={{ maxWidth: 540 }}>
-                                                                            <div className="row g-0">
-                                                                                <div className="col-md-4">
-                                                                                    <img
-                                                                                        src={Users}
-                                                                                        className="img-fluid rounded-start h-100 w-100 border border-dark img-rounded mx-auto d-block img-thumbnail mb-4"
-                                                                                        alt={userInfo.username}
-                                                                                        title={userInfo.username} />
-                                                                                </div>
-                                                                                <div className="col-md-8">
-                                                                                    <div className="card-body">
-                                                                                        <h5 className="card-title">
-                                                                                            <span className="badge rounded-pill text-bg-dark" style={{ fontSize: "15px" }}>
-                                                                                                MI USUARIO. :*
-                                                                                            </span>
-                                                                                        </h5>
-                                                                                        <h5 className="card-title">
-                                                                                            <span className="badge rounded-pill text-bg-secondary" style={{ fontSize: "15px" }}>
-                                                                                                {userInfo.username}
-                                                                                            </span>
-                                                                                        </h5>
-                                                                                        <hr className="my-2" />
-                                                                                        <p className="card-text" style={{ textAlign: "justify" }}>
-                                                                                            <span className="badge rounded-pill text-bg-primary" style={{ fontSize: "15px" }}>
-                                                                                                MI NOMBRE COMPLETO. :*
-                                                                                            </span>
-                                                                                        </p>
-                                                                                        <p className="card-text" style={{ textAlign: "justify" }}>
-                                                                                            <span className="badge rounded-pill text-bg-secondary" style={{ fontSize: "15px" }}>
-                                                                                                {userInfo.nombres} {userInfo.apellidos}
-                                                                                            </span>
-                                                                                        </p>
-                                                                                    </div>
-                                                                                </div>
+                                                            <section className="bg-white dark:bg-gray-900">
+                                                                <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
+                                                                    <div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
+                                                                        <div className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
+                                                                            <a rel="noopener noreferrer">
+                                                                                <img
+                                                                                    src={Users}
+                                                                                    className="img-fluid rounded-start border border-dark img-rounded mx-auto d-block img-thumbnail mb-4"
+                                                                                    alt={userInfo.username}
+                                                                                    title={userInfo.username} />
+                                                                            </a>
+                                                                            <div className="p-5">
+                                                                                <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                                                                    <a rel="noopener noreferrer">
+                                                                                        <span className="badge rounded-pill text-bg-dark" style={{ fontSize: "15px" }}>
+                                                                                            MI USUARIO. :* {userInfo.username}
+                                                                                        </span>
+                                                                                    </a>
+                                                                                </h3>
+                                                                                <span className="text-gray-500 dark:text-gray-400">
+                                                                                    <span className="badge rounded-pill text-bg-primary" style={{ fontSize: "15px" }}>
+                                                                                        MI NOMBRE COMPLETO. :* {userInfo.nombres} {userInfo.apellidos}
+                                                                                    </span>
+                                                                                </span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </form>
-                                                            <span>
-                                                                <strong>Nota:</strong> Desde el panel de tu cuenta. puede verificar y ver f&#225;cilmente sus pedidos recientes, administrar sus direcciones de env&#237;o y facturaci&#243;n y los detalles de su cuenta.
-                                                            </span>
+                                                            </section>
                                                         </p>
                                                     </address>
                                                 </div>

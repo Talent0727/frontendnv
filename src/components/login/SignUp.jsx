@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -56,7 +57,7 @@ const SignUp = () => {
 
     return (
         <>
-            <div className="b-example-divider" style={{ marginTop: '100px' }}></div>
+            <div className="b-example-divider" style={{ marginTop: '0%' }}></div>
             {/*== Start Page Header ==*/}
             <div id="page-header-wrapper">
                 <div className="container">
@@ -92,139 +93,195 @@ const SignUp = () => {
                 </div>
             </div>
             {/*== End Page Header ==*/}
-            <div className="container col-xl-10 col-xxl-8 px-4 py-5">
-                <div className="row align-items-center g-lg-5 py-5">
-                    <div className="col-lg-5 text-center text-lg-start">
-                        <h1 className="display-4 fw-bold lh-1 mb-3">
-                            <span className="special" style={{ textAlign: "justify", color: "black" }}>
-                                Nury Valenzuela&#174;
-                            </span>Joyer&iacute;a &#124; Colombia.
-                        </h1>
-                        <p className="col-lg-10 fs-4" style={{ textAlign: "justify" }}>
-                            ¡.Bienvenido.! NUEVOS USUARIOS.
-                        </p>
-                    </div>
-                    <div className="col-md-10 mx-auto col-lg-7">
-                        <form className="p-4 p-md-5 border rounded-3 bg-light" onSubmit={registerHandler}>
-                            <label htmlFor="nombres">
-                                <i className="fa-solid fa-pen-to-square"></i> Tu Nombre. <span
-                                    className="required">:*</span>
-                            </label>
-                            <div className="form-floating mb-3">
-                                <input
-                                    className="form-control is-valid" type="text" onChange={(e) => setNombres(e.target.value)} id='nombres' name="nombres" placeholder="Tu Nombre." required />
-                                <label htmlFor="nombres">
-                                    <i className="fa-solid fa-pen-to-square"></i> Tu Nombre. <span
-                                        className="required">:*</span>
-                                </label>
-                            </div>
-                            <label htmlFor="apellidos">
-                                <i className="fa-solid fa-pen-to-square"></i> Tu Apellido. <span
-                                    className="required">:*</span>
-                            </label>
-                            <div className="form-floating mb-3">
-                                <input
-                                    className="form-control is-valid" type="text" onChange={(e) => setApellidos(e.target.value)} id='apellidos' name="apellidos" placeholder="Tu Apellido." required />
-                                <label htmlFor="apellidos">
-                                    <i className="fa-solid fa-pen-to-square"></i> Tu Apellido. <span
-                                        className="required">:*</span>
-                                </label>
-                            </div>
-                            <label htmlFor="username">
-                                <i className="fas fa-user-plus"></i> Tu Usuario. <span
-                                    className="required">:*</span>
-                            </label>
-                            <div className="form-floating mb-3">
-                                <input
-                                    className="form-control is-valid" type="text" onChange={(e) => setUsername(e.target.value)} id='username' name="username" placeholder="Tu Usuario." required />
-                                <label htmlFor="username">
-                                    <i className="fas fa-user-plus"></i> Tu Usuario. <span
-                                        className="required">:*</span>
-                                </label>
-                            </div>
-                            <label htmlFor="email">
-                                <i className="fas fa-at"></i> Tu Correo. <span className="required">:*</span>
-                            </label>
-                            <div className="form-floating mb-3">
-                                <input
-                                    className="form-control is-valid" type="email" onChange={(e) => setEmail(e.target.value)} id='email' name="email" placeholder="tucorreo@ejemplo.com" required />
-                                <label htmlFor="email">
-                                    <i className="fas fa-at"></i> Tu Correo. <span className="required">:*</span>
-                                </label>
-                            </div>
-                            <label htmlFor="rol">
-                                <i className="fa-solid fa-users"></i> Cargo. <span
-                                    className="required">:*</span> <span className="badge rounded-pill text-bg-secondary" style={{ fontSize: "15px" }}>
-                                    <code className='text-white'>(Administrador) y (Cliente).</code>
-                                </span>
-                            </label>
-                            <div className="form-floating mb-3">
-                                <select className="form-control form-select form-select-lg mb-3 is-valid" aria-label=".form-select-lg example" onChange={(e) => setRol(e.target.value)} id='rol' name="rol"
-                                    placeholder="Cargo. :*" required>
-                                    <option value="" disabled selected>--- Seleccionar ---</option>
-                                    <option value="Administrador">Administrador</option>
-                                    <option value="Cliente">Cliente</option>
-                                </select>
-                                <label htmlFor="rol">
-                                    <i className="fa-solid fa-users"></i> Cargo. :*
-                                </label>
-                            </div>
-                            <label htmlFor="isAdmin">
-                                <i className="fa-solid fa-users"></i> Estado. <span
-                                    className="required">:*</span> <span className="badge rounded-pill text-bg-secondary" style={{ fontSize: "15px" }}>
-                                    <code className='text-white'>(Activar - Administrador)<br /> y (DesActivar - Cliente).</code>
-                                </span>
-                            </label>
-                            <div className="form-floating mb-3">
-                                <select className="form-control form-select form-select-lg mb-3 is-valid" aria-label=".form-select-lg example" onChange={(e) => setIsAdmin(e.target.value)} id='isAdmin' name="isAdmin"
-                                    placeholder="Estado. :*" required>
-                                    <option value="" disabled selected>--- Seleccionar ---</option>
-                                    <option value="false">DesActivar</option>
-                                    <option value="true">Activar</option>
-                                </select>
-                                <label htmlFor="isAdmin">
-                                    <i className="fa-solid fa-users"></i> Estado. :*
-                                </label>
-                            </div>
-                            <label htmlFor="password">
-                                <i className="fas fa-key"></i> La Contraseña. <span
-                                    className="required">:*</span>
-                            </label>
-                            <div className="form-floating mb-3">
-                                <input
-                                    className="form-control is-valid" type="password" onChange={(e) => setPassword(e.target.value)} id='password' name="password" placeholder="La Contraseña." required />
-                                <label htmlFor="password">
-                                    <i className="fas fa-key"></i> La Contraseña. <span
-                                        className="required">:*</span>
-                                </label>
-                            </div>
-                            <label htmlFor="r_password">
-                                <i className="fas fa-key"></i> La Contraseña Actual. <span
-                                    className="required">:*</span>
-                            </label>
-                            <div className="form-floating mb-3">
-                                <input
-                                    className="form-control is-valid" type="password" onChange={(e) => setRPassword(e.target.value)} id='r_password' name="r_password" placeholder="La Contraseña Actual." required />
-                                <label htmlFor="r_password">
-                                    <i className="fas fa-key"></i> La Contraseña Actual. <span
-                                        className="required">:*</span>
-                                </label>
-                            </div>
-                            <button className="w-100 btn btn-lg btn-primary">
-                                <i className="fas fa-user-plus"></i> Crear Cuenta.
-                            </button>
-                            <hr className="my-4" />
-                            <small className="text-muted">
-                                <p style={{ textAlign: "justify" }}>
-                                    {' '}¿Ya Tienes Una Cuenta?{' '} <Link to="/login" rel="noopener noreferrer" className="btn btn-secondary">
+            <section className="bg-gray-50 dark:bg-gray-900">
+                <div className="flex flex-col items-center justify-center px-12 py-12 mx-auto md:h-screen lg:py-12">
+                    <div className="bg-white rounded-lg shadow dark:border md:mt-0 xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                        <div className="p-12 space-y-12 md:space-y-12 sm:p-12">
+                            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                                Crear y Cuenta Nueva.
+                            </h1>
+                            <form className="space-y-12 md:space-y-12" onSubmit={registerHandler}>
+                                <div className='grid md:grid-cols-2 md:gap-6'>
+                                    <div className='relative z-0 w-full mb-3 group'>
+                                        <label
+                                            htmlFor="nombres"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                            style={{ fontSize: "15px" }}>
+                                            <i className="fa-solid fa-pen-to-square"></i> Tu Nombre. <span
+                                                className="required">:*</span>
+                                        </label>
+                                        <input
+                                            type="text"
+                                            onChange={(e) => setNombres(e.target.value)}
+                                            id='nombres'
+                                            name="nombres"
+                                            placeholder="Tu Nombre."
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            style={{ fontSize: "11px" }} required />
+                                    </div>
+                                    <div className='relative z-0 w-full mb-3 group'>
+                                        <label
+                                            htmlFor="apellidos"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                            style={{ fontSize: "15px" }}>
+                                            <i className="fa-solid fa-pen-to-square"></i> Tu Apellido. <span
+                                                className="required">:*</span>
+                                        </label>
+                                        <input
+                                            type="text"
+                                            onChange={(e) => setApellidos(e.target.value)}
+                                            id='apellidos'
+                                            name="apellidos"
+                                            placeholder="Tu Apellido."
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            style={{ fontSize: "11px" }} required />
+                                    </div>
+                                </div>
+                                <div className='grid md:grid-cols-2 md:gap-6'>
+                                    <div className='relative z-0 w-full mb-3 group'>
+                                        <label
+                                            htmlFor="username"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                            style={{ fontSize: "15px" }}>
+                                            <i className="fas fa-user-plus"></i> Tu Usuario. <span
+                                                className="required">:*</span>
+                                        </label>
+                                        <input
+                                            type="text"
+                                            onChange={(e) => setUsername(e.target.value)}
+                                            id='username'
+                                            name="username"
+                                            placeholder="Tu Usuario."
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            style={{ fontSize: "11px" }} required />
+                                    </div>
+                                    <div className='relative z-0 w-full mb-3 group'>
+                                        <label
+                                            htmlFor="email"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                            style={{ fontSize: "15px" }}>
+                                            <i className="fas fa-at"></i> Tu Correo. <span className="required">:*</span>
+                                        </label>
+                                        <input
+                                            type="email"
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            id='email'
+                                            name="email"
+                                            placeholder="tucorreo@ejemplo.com"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            style={{ fontSize: "11px" }} required />
+                                    </div>
+                                </div>
+                                <div className='grid md:grid-cols-2 md:gap-6'>
+                                    <div className='relative z-0 w-full mb-3 group'>
+                                        <label
+                                            htmlFor="password"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                            style={{ fontSize: "15px" }}>
+                                            <i className="fas fa-key"></i> La Contraseña. <span
+                                                className="required">:*</span>
+                                        </label>
+                                        <input
+                                            type="password"
+                                            onChange={(e) => setPassword(e.target.value)}
+                                            id='password'
+                                            name="password"
+                                            placeholder="La Contraseña."
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            style={{ fontSize: "11px" }} required />
+                                    </div>
+                                    <div className='relative z-0 w-full mb-3 group'>
+                                        <label
+                                            htmlFor="r_password"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                            style={{ fontSize: "15px" }}>
+                                            <i className="fas fa-key"></i> La Contraseña Actual. <span
+                                                className="required">:*</span>
+                                        </label>
+                                        <input
+                                            type="password"
+                                            onChange={(e) => setRPassword(e.target.value)}
+                                            id='r_password'
+                                            name="r_password"
+                                            placeholder="La Contraseña Actual."
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            style={{ fontSize: "11px" }} required />
+                                    </div>
+                                </div>
+                                <div className='grid md:grid-cols-2 md:gap-6'>
+                                    <div className='relative z-0 w-full mb-3 group'>
+                                        <label
+                                            htmlFor="rol"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                            style={{ fontSize: "15px" }}>
+                                            <i className="fa-solid fa-users"></i> Cargo. <span
+                                                className="required">:*</span> <span className="badge rounded-pill text-bg-secondary" style={{ fontSize: "11px" }}>
+                                                <code className='text-white'>(Administrador) y (Cliente).</code>
+                                            </span>
+                                        </label>
+                                        <hr className="my-20" />
+                                        <select
+                                            onChange={(e) => setRol(e.target.value)}
+                                            id='rol'
+                                            name="rol"
+                                            placeholder="Cargo. :*"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                            aria-label=".form-select-lg example"
+                                            style={{ fontSize: "11px" }} required>
+                                            <option value="" disabled selected style={{ fontSize: "11px" }}>--- Seleccionar ---</option>
+                                            <option value="Administrador" style={{ fontSize: "11px" }}>Administrador</option>
+                                            <option value="Cliente" style={{ fontSize: "11px" }}>Cliente</option>
+                                        </select>
+                                        <hr className="my-20" />
+                                    </div>
+                                    <div className='relative z-0 w-full mb-3 group'>
+                                        <label
+                                            htmlFor="isAdmin"
+                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                                            style={{ fontSize: "15px" }}>
+                                            <i className="fa-solid fa-users"></i> Estado. <span
+                                                className="required">:*</span> <span className="badge rounded-pill text-bg-secondary" style={{ fontSize: "11px" }}>
+                                                <code className='text-white'>(Activar - Administrador) y (DesActivar - Cliente).</code>
+                                            </span>
+                                        </label>
+                                        <hr className="my-20" />
+                                        <select
+                                            onChange={(e) => setIsAdmin(e.target.value)}
+                                            id='isAdmin'
+                                            name="isAdmin"
+                                            placeholder="Estado. :*"
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                            aria-label=".form-select-lg example"
+                                            style={{ fontSize: "11px" }} required>
+                                            <option value="" disabled selected style={{ fontSize: "11px" }}>--- Seleccionar ---</option>
+                                            <option value="false" style={{ fontSize: "11px" }}>DesActivar</option>
+                                            <option value="true" style={{ fontSize: "11px" }}>Activar</option>
+                                        </select>
+                                        <hr className="my-20" />
+                                    </div>
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                                    style={{ fontSize: "15px" }}>
+                                    <i className="fas fa-user-plus"></i> Crear Cuenta.
+                                </button>
+                                <p
+                                    className="text-sm font-light text-gray-500 dark:text-gray-400"
+                                    style={{ fontSize: "15px" }}>
+                                    {' '}¿Ya Tienes Una Cuenta?{' '} <hr className="my-4" /> <Link
+                                        to="/login"
+                                        rel="noopener noreferrer"
+                                        className="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+                                        style={{ fontSize: "15px" }}>
                                         <i className="fas fa-user-shield"></i> Inicia Sesi&#243;n.
                                     </Link>
                                 </p>
-                            </small>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
             <div className="b-example-divider"></div>
         </>
     );

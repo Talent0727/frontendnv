@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -40,7 +41,7 @@ const SignIn = () => {
 
     return (
         <>
-            <div className="b-example-divider" style={{ marginTop: '100px' }}></div>
+            <div className="b-example-divider" style={{ marginTop: '0%' }}></div>
             {/*== Start Page Header ==*/}
             <div id="page-header-wrapper">
                 <div className="container">
@@ -76,58 +77,41 @@ const SignIn = () => {
                 </div>
             </div>
             {/*== End Page Header ==*/}
-            <div className="container col-xl-10 col-xxl-8 px-4 py-5">
-                <div className="row align-items-center g-lg-5 py-5">
-                    <div className="col-lg-7 text-center text-lg-start">
-                        <h1 className="display-4 fw-bold lh-1 mb-3">
-                            <span className="special" style={{ textAlign: "justify", color: "black" }}>
-                                Nury Valenzuela&#174;
-                            </span>Joyer&iacute;a &#124; Colombia.
-                        </h1>
-                        <p className="col-lg-10 fs-4" style={{ textAlign: "justify" }}>
-                            ¡.Bienvenido.! USUARIOS REGISTRADOS.
-                        </p>
-                    </div>
-                    <div className="col-md-10 mx-auto col-lg-5">
-                        <form className="p-4 p-md-5 border rounded-3 bg-light" onSubmit={loginHandler}>
-                            <label htmlFor="email">
-                                <i className="fas fa-at"></i> Tu Correo. <span className="required">:*</span>
-                            </label>
-                            <div className="form-floating mb-3">
-                                <input className="form-control is-valid" type="email" onChange={(e) => setEmail(e.target.value)} id='email' placeholder="tucorreo@ejemplo.com" required />
-                                <label htmlFor="email">
-                                    <i className="fas fa-at"></i> Tu Correo. <span className="required">:*</span>
-                                </label>
-                            </div>
-                            <label htmlFor="password">
-                                <i className="fas fa-key"></i> La Contraseña. <span className="required">:*</span>
-                            </label>
-                            <div className="form-floating mb-3">
-                                <input className="form-control is-valid" type="password" onChange={(e) => setPassword(e.target.value)} id='password' placeholder="La Contraseña." required />
-                                <label htmlFor="password">
-                                    <i className="fas fa-key"></i> La Contraseña. <span className="required">:*</span>
-                                </label>
-                            </div>
-                            <button className="w-100 btn btn-lg btn-primary">
-                                <i className="fas fa-user-shield"></i> Iniciar Sesi&#243;n.
-                            </button>
-                            <hr className="my-4" />
-                            <small className="text-muted">
-                                <p style={{ textAlign: "justify" }}>
-                                    {' '}
-                                    SI TODAV&#205;A NO TIENES UNA CUENTA DE USUARIO PARA ACCEDER AL FORMULARIO
-                                    DE REGISTRO.{' '}
-                                    {' '}
-                                    TE SOLICITAREMOS LA INFORMACI&#211;N IMPRESCINDIBLE PARA REALIZAR EL PROCESO DE COMPRA.{' '}
-                                    <Link to="/register" rel="noopener noreferrer" className="btn btn-secondary">
+            <section className="bg-gray-50 dark:bg-gray-900">
+                <div className="flex flex-col items-center justify-center px-12 py-12 mx-auto md:h-screen lg:py-12">
+                    <div className="bg-white rounded-lg shadow dark:border md:mt-0 xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                        <div className="p-12 space-y-12 md:space-y-12 sm:p-12">
+                            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                                Iniciar Sesi&#243;n En Su Cuenta.
+                            </h1>
+                            <form className="space-y-12 md:space-y-12" onSubmit={loginHandler}>
+                                <div className='relative z-0 w-full mb-3 group'>
+                                    <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" style={{ fontSize: "15px" }}>
+                                        <i className="fas fa-at"></i> Tu Correo. <span className="required">:*</span>
+                                    </label>
+                                    <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder="tucorreo@ejemplo.com" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" style={{ fontSize: "11px" }} required />
+                                </div>
+                                <div className='relative z-0 w-full mb-3 group'>
+                                    <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" style={{ fontSize: "15px" }}>
+                                        <i className="fas fa-key"></i> La Contraseña. <span className="required">:*</span>
+                                    </label>
+                                    <input type="password" onChange={(e) => setPassword(e.target.value)} name="password" id='password' placeholder="La Contraseña." className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" style={{ fontSize: "11px" }} required />
+                                </div>
+                                <button type="submit" className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" style={{ fontSize: "15px" }}>
+                                    <i className="fas fa-user-shield"></i> Iniciar Sesi&#243;n.
+                                </button>
+                                <p className="text-sm font-light text-gray-500 dark:text-gray-400" style={{ fontSize: "15px" }}>
+                                    ¿A&#250;n NO Tienes Una Cuenta?
+                                    <hr className="my-4" />
+                                    <Link to="/register" rel="noopener noreferrer" className="w-full text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" style={{ fontSize: "15px" }}>
                                         <i className="fas fa-user-plus"></i> Reg&#237;strarse.
                                     </Link>
                                 </p>
-                            </small>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
             <div className="b-example-divider"></div>
         </>
     );

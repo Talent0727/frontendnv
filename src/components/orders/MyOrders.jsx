@@ -29,7 +29,7 @@ const MyOrders = () => {
 
     return (
         <>
-            <div className="b-example-divider" style={{ marginTop: '100px' }}></div>
+            <div className="b-example-divider" style={{ marginTop: '0%' }}></div>
             {/*== Start Page Header ==*/}
             <div id="page-header-wrapper">
                 <div className="container">
@@ -121,27 +121,29 @@ const MyOrders = () => {
                                                     </h3>
                                                     {
                                                         orders.length === 0 ? (
-                                                            <h4 className='no-products'>
-                                                                ¡.Sin Pedidos.!
-                                                            </h4>
+                                                            <div className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                                                                <span className="font-medium no-data" style={{ fontSize: "15px" }}>
+                                                                    ¡.Sin Pedidos.!
+                                                                </span>
+                                                            </div>
                                                         ) : (
                                                             <div>
-                                                                {
-                                                                    orders.map((item) => (
-                                                                        <div className="myaccount-table table-responsive text-center" key={item._id}>
-                                                                            <table className="table table-bordered">
-                                                                                <thead className="thead-light">
-                                                                                    <tr>
-                                                                                        <th className="pro-thumbnail text-black">
-                                                                                            # REFERENCIA. :*
-                                                                                        </th>
-                                                                                        <th className="pro-thumbnail text-black">
-                                                                                            ACCI&#211;N. :*
-                                                                                        </th>
-                                                                                    </tr>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                    <tr>
+                                                                <div className="myaccount-table table-responsive text-center">
+                                                                    <table className="table table-bordered">
+                                                                        <thead className="thead-light">
+                                                                            <tr>
+                                                                                <th className="pro-thumbnail text-black">
+                                                                                    # REFERENCIA. :*
+                                                                                </th>
+                                                                                <th className="pro-thumbnail text-black">
+                                                                                    ACCI&#211;N. :*
+                                                                                </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            {
+                                                                                orders.map((item) => (
+                                                                                    <tr key={item._id}>
                                                                                         <td>
                                                                                             <strong className='badge badge-secondary text-black mb-2' style={{ fontWeight: "bold", fontSize: "15px" }}>
                                                                                                 {item._id}
@@ -155,11 +157,11 @@ const MyOrders = () => {
                                                                                             </Link>
                                                                                         </td>
                                                                                     </tr>
-                                                                                </tbody>
-                                                                            </table>
-                                                                        </div>
-                                                                    ))
-                                                                }
+                                                                                ))
+                                                                            }
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
                                                             </div>
                                                         )
                                                     }

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { toast } from 'react-toastify';
 import { Store } from '../../utils/Store';
-import WishListItem from './WishListItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const WishList = () => {
 
@@ -20,7 +20,7 @@ const WishList = () => {
 
   return (
     <>
-      <div className="b-example-divider" style={{ marginTop: '100px' }}></div>
+      <div className="b-example-divider" style={{ marginTop: '0%' }}></div>
       {/*== Start Page Header ==*/}
       <div id="page-header-wrapper">
         <div className="container">
@@ -61,21 +61,95 @@ const WishList = () => {
         </div>
       </div>
       {/*== End Page Header ==*/}
-      <div>
-        {
-          wishItems.length === 0 ? (
-            <h4 className='no-products'>
-              ¡.NO Has Añadido Ning&#250;n Producto A La Lista De Deseos.!
-            </h4>
-          ) : (
-            <div className="w-groups">
-              {wishItems.map((item) => (
-                <WishListItem key={item._id} item={item} removeItemHandler={removeItemHandler} />
-              ))}
-
+      <div id="wishlist-page-wrapper" className="page-padding">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="cart-table table-responsive">
+                <table className="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th className="pro-thumbnail">IMAGEN. :*</th>
+                      <th className="pro-title">NOMBRE. :*</th>
+                      <th className="pro-price">MEN&#218; 1 CATEGOR&#205;A. :*</th>
+                      <th className="pro-quantity">MEN&#218; 2 CATEGOR&#205;A. :*</th>
+                      <th className="pro-quantity">MEN&#218; 3 CATEGOR&#205;A. :*</th>
+                      <th className="pro-subtotal">PRECIO. :*</th>
+                      <th className="pro-remove">ACCI&#211;N. :*</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {
+                      wishItems.length === 0 ? (
+                        <div className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                          <span className="font-medium no-data" style={{ fontSize: "15px" }}>
+                            ¡.NO Has Añadido Ning&#250;n Producto A La Lista De Deseos.!
+                          </span>
+                        </div>
+                      ) : (
+                        <>
+                          {
+                            wishItems.map((item) => (
+                              <tr key={item._id}>
+                                <td className="pro-thumbnail">
+                                  <Link to={`/product/${item._id}`} rel="noopener noreferrer">
+                                    <img
+                                      src={item.image}
+                                      className="card-img-top img-fluid border border-dark img-rounded mx-auto d-block img-thumbnail"
+                                      alt={item.title}
+                                      title={item.title} />
+                                  </Link>
+                                </td>
+                                <td className="pro-title">
+                                  <span className='badge badge-info mb-2 text-black' style={{ fontSize: "15px" }}>
+                                    {item.title}
+                                  </span>
+                                </td>
+                                <td className="pro-title">
+                                  <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "15px" }}>
+                                    {item.categoryOptions}
+                                  </span>
+                                </td>
+                                <td className="pro-title">
+                                  <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "15px" }}>
+                                    {item.subcategoryOptions}
+                                  </span>
+                                </td>
+                                <td className="pro-title">
+                                  <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "15px" }}>
+                                    {item.tripletecategoryOptions}
+                                  </span>
+                                </td>
+                                <td className="pro-price">
+                                  <span>
+                                    <em>
+                                      <b style={{ color: "green", fontSize: "20px" }} className="badge badge-success mb-2">
+                                        {(item.price).toLocaleString('es-CO', {
+                                          style: 'currency',
+                                          currency: 'COP',
+                                        })}
+                                      </b>
+                                    </em>
+                                  </span>
+                                </td>
+                                <td className="pro-remove">
+                                  <button className='w-btnTrash' onClick={() => removeItemHandler(item)}>
+                                    <span style={{ color: "red", fontSize: "20px" }} alt='Eliminar.' title='Eliminar.' className='w-trash badge badge-danger mb-2'>
+                                      <i className="fa-solid fa-trash"></i>
+                                    </span>
+                                  </button>
+                                </td>
+                              </tr>
+                            ))}
+                        </>
+                      )
+                    }
+                  </tbody>
+                </table>
+              </div>
             </div>
-          )
-        }
+          </div>
+        </div>
       </div>
     </>
   );

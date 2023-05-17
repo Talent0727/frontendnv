@@ -1,8 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import MyOrderDetails from './MyOrderDetails';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const MyOrder = () => {
@@ -37,7 +36,7 @@ const MyOrder = () => {
 
     return (
         <>
-            <div className="b-example-divider" style={{ marginTop: '100px' }}></div>
+            <div className="b-example-divider" style={{ marginTop: '0%' }}></div>
             {/*== Start Page Header ==*/}
             <div id="page-header-wrapper">
                 <div className="container">
@@ -86,23 +85,84 @@ const MyOrder = () => {
                                         <tr>
                                             <th className="pro-thumbnail">
                                                 <span style={{ color: "black", fontSize: "15px" }} className="badge badge-secondary mb-2">
-                                                    PRODUCTOS. :*
+                                                    IMAGEN. :*
+                                                </span>
+                                            </th>
+                                            <th className="pro-thumbnail">
+                                                <span style={{ color: "black", fontSize: "15px" }} className="badge badge-secondary mb-2">
+                                                    NOMBRE. :*
+                                                </span>
+                                            </th>
+                                            <th className="pro-thumbnail">
+                                                <span style={{ color: "black", fontSize: "15px" }} className="badge badge-secondary mb-2">
+                                                    CANTIDAD. :*
+                                                </span>
+                                            </th>
+                                            <th className="pro-thumbnail">
+                                                <span style={{ color: "black", fontSize: "15px" }} className="badge badge-secondary mb-2">
+                                                    TALLA. :*
+                                                </span>
+                                            </th>
+                                            <th className="pro-thumbnail">
+                                                <span style={{ color: "black", fontSize: "15px" }} className="badge badge-secondary mb-2">
+                                                    COLOR DE ORO. :*
+                                                </span>
+                                            </th>
+                                            <th className="pro-thumbnail">
+                                                <span style={{ color: "black", fontSize: "15px" }} className="badge badge-secondary mb-2">
+                                                    PRECIO. :*
                                                 </span>
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td className="pro-thumbnail">
-                                                <div className="spr-groups">
-                                                    {
-                                                        order.orderItems?.map((item) => (
-                                                            <MyOrderDetails key={item._id} item={item} />
-                                                        ))
-                                                    }
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        {
+                                            order.orderItems?.map((item) => (
+                                                <tr key={item._id}>
+                                                    <td className="pro-thumbnail">
+                                                        <Link to={`/product/${item._id}`} rel="noopener noreferrer">
+                                                            <img
+                                                                src={`${item.image}`}
+                                                                className="card-img-top img-fluid border border-dark img-rounded mx-auto d-block img-thumbnail"
+                                                                alt={item.title}
+                                                                title={item.title} />
+                                                        </Link>
+                                                    </td>
+                                                    <td className="pro-thumbnail">
+                                                        <span className='badge badge-info mb-2 text-black' style={{ fontSize: "15px" }}>
+                                                            {item.title}
+                                                        </span>
+                                                    </td>
+                                                    <td className="pro-thumbnail">
+                                                        <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "15px" }}>
+                                                            CANTIDAD. :* {item.quantity}
+                                                        </span>
+                                                    </td>
+                                                    <td className="pro-thumbnail">
+                                                        <span className="badge badge-info mb-2 text-black price" style={{ fontSize: "15px" }}>
+                                                            {item.size}
+                                                        </span>
+                                                    </td>
+                                                    <td className="pro-thumbnail">
+                                                        <span className="badge badge-info mb-2 text-black price" style={{ fontSize: "15px" }}>
+                                                            {item.color}
+                                                        </span>
+                                                    </td>
+                                                    <td className="pro-thumbnail">
+                                                        <span className="price">
+                                                            <em>
+                                                                <b style={{ color: "green", fontSize: "15px" }} className="badge badge-success mb-2">
+                                                                    {(item.price).toLocaleString('es-CO', {
+                                                                        style: 'currency',
+                                                                        currency: 'COP',
+                                                                    })}
+                                                                </b>
+                                                            </em>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            ))
+                                        }
                                     </tbody>
                                 </table>
                             </div>
@@ -272,7 +332,8 @@ const MyOrder = () => {
                                                         </h4>
                                                     </td>
                                                 </tr>
-                                            </tbody></table>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>

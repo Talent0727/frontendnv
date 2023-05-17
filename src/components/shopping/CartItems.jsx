@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useContext } from 'react';
 import { toast } from 'react-toastify';
 import Checkout from './Checkout';
 import { Store } from '../../utils/Store';
-import CartItem from './CartItem';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 
@@ -38,7 +39,7 @@ const CartItems = () => {
 
     return (
         <>
-            <div className="b-example-divider" style={{ marginTop: '100px' }}></div>
+            <div className="b-example-divider" style={{ marginTop: '0%' }}></div>
             {/*== Start Page Header ==*/}
             <div id="page-header-wrapper">
                 <div className="container">
@@ -79,23 +80,6 @@ const CartItems = () => {
                 </div>
             </div>
             {/*== End Page Header ==*/}
-            <div>
-                {
-                    cartItems.length === 0 ? (
-                        <h4 className='no-products'>
-                            ¡.NO Has Añadido Ning&#250;n Producto Al Carrito.!
-                        </h4>
-                    ) : (
-                        <div className="spr-groups">
-                            {
-                                cartItems.map((item) => (
-                                    <CartItem key={item._id} item={item} removeItemHandler={removeItemHandler} updateCartHandler={updateCartHandler} />
-                                ))
-                            }
-                        </div>
-                    )
-                }
-            </div>
             <div id="cart-page-wrapper" className="page-padding">
                 <div className="container">
                     <div className="row">
@@ -105,6 +89,7 @@ const CartItems = () => {
                                 <table className="table table-bordered">
                                     <thead>
                                         <tr>
+                                            <th className="pro-thumbnail">IMAGEN. :*</th>
                                             <th className="pro-thumbnail">NOMBRE. :*</th>
                                             <th className="pro-price">MEN&#218; 1 CATEGOR&#205;A. :*</th>
                                             <th className="pro-quantity">MEN&#218; 2 CATEGOR&#205;A. :*</th>
@@ -112,19 +97,36 @@ const CartItems = () => {
                                             <th className="pro-quantity">PRECIO. :*</th>
                                             <th className="pro-subtotal">TALLA. :*</th>
                                             <th className="pro-remove">COLOR DE ORO. :*</th>
+                                            <th className="pro-thumbnail">CANTIDAD. :*</th>
+                                            <th className="pro-thumbnail">ACCI&#211;N. :*</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {
                                             cartItems.length === 0 ? (
-                                                <h4 className='no-products'>
-                                                    ¡.Actualmente NO Hay Productos.!
-                                                </h4>
+                                                <div className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                                                    <span className="font-medium no-data" style={{ fontSize: "15px", color: "black", textAlign: "center" }}>
+                                                        ¡.Actualmente NO Hay Productos.!
+                                                    </span>
+                                                </div>
                                             ) : (
                                                 <>
                                                     {
                                                         cartItems.map((item) => (
                                                             <tr key={item._id}>
+                                                                <td className="pro-thumbnail">
+                                                                    <Link to={`/product/${item._id}`} rel="noopener noreferrer">
+                                                                        <div>
+                                                                            <div className="block w-40 h-30 rounded border border-gray-200 overflow-hidden">
+                                                                                <img
+                                                                                    src={item.image}
+                                                                                    className="card-img-top img-fluid border border-dark img-rounded mx-auto d-block img-thumbnail"
+                                                                                    alt={item.title}
+                                                                                    title={item.title} />
+                                                                            </div>
+                                                                        </div>
+                                                                    </Link>
+                                                                </td>
                                                                 <td className="pro-thumbnail">
                                                                     <span style={{ color: "black", fontSize: "15px" }} className="badge badge-secondary mb-2">
                                                                         {item.title}
@@ -163,6 +165,40 @@ const CartItems = () => {
                                                                         {item.color}
                                                                     </span>
                                                                 </td>
+                                                                <td className="pro-thumbnail">
+                                                                    <div className="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
+                                                                        <button
+                                                                            onClick={() => updateCartHandler(item, item.quantity - 1)} disabled={item.quantity === 1}
+                                                                            data-action="decrement"
+                                                                            className=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none"
+                                                                        >
+                                                                            <span className="m-auto text-2xl font-thin">
+                                                                                &#45;
+                                                                            </span>
+                                                                        </button>
+                                                                        <span className="outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center  custom-input-number text-black" style={{ fontSize: "15px" }}>
+                                                                            {item.quantity}
+                                                                        </span>
+                                                                        <button
+                                                                            onClick={() => updateCartHandler(item, item.quantity + 1)}
+                                                                            data-action="increment"
+                                                                            className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer"
+                                                                        >
+                                                                            <span className="m-auto text-2xl font-thin">
+                                                                                &#43;
+                                                                            </span>
+                                                                        </button>
+                                                                    </div>
+                                                                </td>
+                                                                <td className="pro-thumbnail">
+                                                                    <button
+                                                                        onClick={() => removeItemHandler(item)}
+                                                                        className="px-4 py-2 inline-block text-red-600 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 cursor-pointer">
+                                                                        <span style={{ color: "red", fontSize: "10px" }} alt='Eliminar.' title='Eliminar.' className='badge badge-danger mb-2'>
+                                                                            <i className="fa-solid fa-trash"></i>
+                                                                        </span>
+                                                                    </button>
+                                                                </td>
                                                             </tr>
                                                         ))
                                                     }
@@ -175,63 +211,58 @@ const CartItems = () => {
                             {/* Cart Update Option */}
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-lg-5 ml-auto">
-                            {/* Cart Calculation Area */}
-                            <div className="cart-calculator-wrapper">
-                                <div className="cart-calculate-items">
-                                    <h3>Mi Factura. :*</h3>
-                                    <div className="table-responsive">
-                                        <table className="table">
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <span style={{ color: "green", fontSize: "15px" }} className="badge badge-success mb-2">
-                                                            SubTotal. :*
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span style={{ color: "green", fontSize: "15px" }} className="badge badge-success mb-2">
-                                                            {(uint1.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }))}
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <span style={{ color: "green", fontSize: "15px" }} className="badge badge-success mb-2">
-                                                            Impuesto IVA De 19%. :*
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span style={{ color: "green", fontSize: "15px" }} className="badge badge-success mb-2">
-                                                            {(uint2.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }))}
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                                <tr className="total">
-                                                    <td>
-                                                        <span style={{ color: "green", fontSize: "15px" }} className="badge badge-success mb-2">
-                                                            Total. :*
-                                                        </span>
-                                                    </td>
-                                                    <td className="total-amount">
-                                                        <span style={{ color: "green", fontSize: "15px" }} className="badge badge-success mb-2">
-                                                            {(uint3.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }))}
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                {cartItems.length > 0 && (<button onClick={() => setOpen(true)} className="btn btn-brand d-block text-center">
-                                    <i className="fa-solid fa-credit-card"></i> Verificar.
-                                </button>)}
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
+            <section className="py-10">
+                <div className="container max-w-screen-xl mx-auto px-4">
+                    <div className="flex flex-col md:flex-row gap-4">
+                        <aside className="md:w-1/4">
+                            <article className="border border-gray-200 bg-white shadow-sm rounded mb-5 p-3 lg:p-5">
+                                <ul className="mb-5">
+                                    <li className="flex justify-between text-gray-600  mb-1">
+                                        <span style={{ color: "green", fontSize: "10px" }} className="badge badge-success mb-2">
+                                            SubTotal. :*
+                                        </span>
+                                        <span style={{ color: "green", fontSize: "10px" }} className="badge badge-success mb-2">
+                                            {(uint1.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }))}
+                                        </span>
+                                    </li>
+                                    <li className="flex justify-between text-gray-600  mb-1">
+                                        <span style={{ color: "green", fontSize: "10px" }} className="badge badge-success mb-2">
+                                            Impuesto IVA De 19%. :*
+                                        </span>
+                                        <span style={{ color: "green", fontSize: "10px" }} className="badge badge-success mb-2">
+                                            {(uint2.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }))}
+                                        </span>
+                                    </li>
+                                    <li className="text-lg font-bold border-t flex justify-between mt-3 pt-3">
+                                        <span style={{ color: "green", fontSize: "10px" }} className="badge badge-success mb-2">
+                                            Total. :*
+                                        </span>
+                                        <span style={{ color: "green", fontSize: "10px" }} className="badge badge-success mb-2">
+                                            {(uint3.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }))}
+                                        </span>
+                                    </li>
+                                </ul>
+                                {cartItems.length > 0 && (
+                                    <a
+                                        rel="noopener noreferrer"
+                                        onClick={() => setOpen(true)}
+                                        className="px-4 py-3 mb-2 inline-block text-lg w-full text-center font-medium text-white bg-green-600 border border-transparent rounded-md hover:bg-green-700 cursor-pointer">
+                                        <i className="fa-solid fa-credit-card"></i> Verificar.
+                                    </a>)}
+                                <></>
+                                <Link
+                                    to="/shop"
+                                    className="px-4 py-3 inline-block text-lg w-full text-center font-medium text-green-600 bg-white shadow-sm border border-gray-400 rounded-md hover:bg-gray-100"
+                                >
+                                    Volver A La Tienda.
+                                </Link>
+                            </article>
+                        </aside>
+                    </div>
+                </div>
+            </section>
             {open && <Checkout setOpen={setOpen} cartItems={cartItems} subTotal={subTotal} taxPrice={taxPrice} totalPrice={totalPrice} />}
         </>
     );

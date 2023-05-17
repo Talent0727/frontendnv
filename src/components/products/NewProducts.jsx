@@ -1,9 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import NewProduct from './NewProduct';
 import { faEye, faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
+import '../../style/index.css';
 
 const NewProducts = () => {
 
@@ -48,24 +48,106 @@ const NewProducts = () => {
           {/* Start Products Content Wrapper */}
           <div className="row">
             <div className="col-lg-12">
-              <>
-
-                {
-                  products.length === 0 ? (
-                    <h3 className='no-data'>¡.Actualmente NO Hay Productos.!</h3>
-                  ) : (
-                    <div className="npc-groups">
+              <div className='relative overflow-x-auto shadow-md sm:rounded-lg'>
+                <div className="flex items-center justify-between py-4 bg-white dark:bg-gray-800">
+                  <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                      <tr>
+                        <th scope="col" className="px-6 py-3" style={{ fontSize: "15px" }}>
+                          IMAGEN.
+                        </th>
+                        <th scope="col" className="px-6 py-3" style={{ fontSize: "15px" }}>
+                          NOMBRE.
+                        </th>
+                        <th scope="col" className="px-6 py-3" style={{ fontSize: "15px" }}>
+                          MEN&#218; 1 CATEGOR&#205;A.
+                        </th>
+                        <th scope="col" className="px-6 py-3" style={{ fontSize: "15px" }}>
+                          MEN&#218; 2 CATEGOR&#205;A.
+                        </th>
+                        <th scope="col" className="px-6 py-3" style={{ fontSize: "15px" }}>
+                          MEN&#218; 3 CATEGOR&#205;A.
+                        </th>
+                        <th scope="col" className="px-6 py-3" style={{ fontSize: "15px" }}>
+                          PRECIO.
+                        </th>
+                        <th scope="col" className="px-6 py-3" style={{ fontSize: "15px" }}>
+                          VER PRODUCTO.
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
                       {
-                        //only 4 latest
-                        products.slice(-10).map((product) => (
-                          <NewProduct key={product._id} product={product} />
-                        ))
+                        products.length === 0 ? (
+                          <div className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                            <span className="font-medium no-data" style={{ fontSize: "15px" }}>
+                              ¡.Actualmente NO Hay Productos.!
+                            </span>
+                          </div>
+                        ) : (
+                          <>
+                            {
+                              products.slice(-10).map((product) => (
+                                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" key={product._id}>
+                                  <th scope="row" className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+                                    <Link to={`/product/${product._id}`} rel="noopener noreferrer">
+                                      <img
+                                        src={product.image}
+                                        className="img-responsive img-rounded mx-auto d-block img-thumbnail"
+                                        width={200}
+                                        height={200}
+                                        alt={product.title}
+                                        title={product.title} />
+                                    </Link>
+                                  </th>
+                                  <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                                    <span className='badge badge-info mb-2 text-black' style={{ fontSize: "15px" }}>
+                                      {product.title}
+                                    </span>
+                                  </td>
+                                  <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                                    <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "15px" }}>
+                                      {product.categoryOptions}
+                                    </span>
+                                  </td>
+                                  <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                                    <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "15px" }}>
+                                      {product.subcategoryOptions}
+                                    </span>
+                                  </td>
+                                  <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                                    <span className='badge badge-danger mb-2 text-black' style={{ fontSize: "15px" }}>
+                                      {product.tripletecategoryOptions}
+                                    </span>
+                                  </td>
+                                  <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                                    <span className="price">
+                                      <em>
+                                        <b style={{ color: "green", fontSize: "15px" }} className="badge badge-success mb-2">
+                                          {(product.price).toLocaleString('es-CO', {
+                                            style: 'currency',
+                                            currency: 'COP',
+                                          })}
+                                        </b>
+                                      </em>
+                                    </span>
+                                  </td>
+                                  <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                                    <Link to={`/product/${product._id}`} rel="noopener noreferrer">
+                                      <span className='badge badge-secondary mb-2 text-black' style={{ fontSize: "15px" }}>
+                                        <FontAwesomeIcon icon={faEye} /> VER PRODUCTO.
+                                      </span>
+                                    </Link>
+                                  </td>
+                                </tr>
+                              ))}
+                          </>
+                        )
                       }
-                    </div>
-                  )
-                }
-
-              </>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
           {/* End Products Content Wrapper */}
