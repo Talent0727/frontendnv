@@ -10,6 +10,8 @@
 
 # ![image](https://github.com/Adriianpr919/frontendnv/assets/54821048/1619a1ad-0edb-476c-b1a7-11011c08541d)
 
+# ![image](https://github.com/Adriianpr919/frontendnv/assets/54821048/9e624641-55d0-4063-bcc1-a362ec4366c3)
+
 ===========================================================================
 
 Como arrancar el proyecto Primero dirijase al package.json para ver los scripts.
