@@ -8,6 +8,8 @@ import Tripletecategory from './Tripletecategory';
 //////////////////////////////////////////////////////////////////////////////////
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import 'flowbite';
+
 const ShopFilter = ({ filterResult, filterResult2, filterResult3, category, subcategory, tripletecategory, selectedPrice, changePrice }) => {
     return (
         <>

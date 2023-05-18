@@ -18,6 +18,8 @@ import Carousel from 'react-bootstrap/Carousel';
 import '../../style/BannerSlider.css';
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
+import 'flowbite';
+
 const Intro = () => {
 
   const progressCircle = useRef(null);

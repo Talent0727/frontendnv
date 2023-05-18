@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import 'flowbite';
+
 const SignUp = () => {
 
     const navigate = useNavigate();

@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 
+import 'flowbite';
+
 const CartItems = () => {
 
     const { state, dispatch: ctxDispatch } = useContext(Store);

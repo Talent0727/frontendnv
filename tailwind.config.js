@@ -1,10 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    "./public/**/*.index.html",
     "./src/**/*.{js,ts,jsx,tsx}", // Note the addition of the `app` directory.
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}"
+    "./node_modules/flowbite/**/*.{js,jsx,ts,tsx}"
   ],
   darkMode: 'class',
   theme: {
@@ -49,6 +50,11 @@ module.exports = {
         'Noto Color Emoji'
       ]
     }
+  },
+  build: {
+    sourcemap: true,
+    sourcemapFile: "./src",
+    emptyOutDir: true,
   },
   plugins: [
     require('flowbite/plugin')

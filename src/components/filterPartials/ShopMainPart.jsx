@@ -8,6 +8,8 @@ import Empty from './Empty';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import 'flowbite';
+
 const ShopMainPart = () => {
 
     const [products, setProducts] = useState([]); //default is empty, no Products

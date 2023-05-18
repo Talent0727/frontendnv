@@ -3,6 +3,8 @@ import React from 'react';
 import Users from './assetsUsers/img/customers/user.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import 'flowbite';
+
 const AboutMe = () => {
 
     const userInfo = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null;

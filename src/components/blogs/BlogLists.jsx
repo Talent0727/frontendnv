@@ -6,6 +6,8 @@ import { faInfoCircle, faEye } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import '../../style/index.css';
 
+import 'flowbite';
+
 const BlogLists = () => {
 
     const [blogs, setBlogs] = useState([]);

@@ -5,6 +5,8 @@ import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
+import 'flowbite';
+
 const BlogDetails = () => {
 
     const [blog, setBlog] = useState([]);
@@ -73,7 +75,7 @@ const BlogDetails = () => {
             {/*== End Page Header ==*/}
             <main className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900">
                 <div className="flex justify-between px-4 mx-auto max-w-screen-xl ">
-                    <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+                    <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert" key={blog._id}>
                         <header className="mb-4 lg:mb-6 not-format">
                             <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
                                 {blog.title}
@@ -100,36 +102,42 @@ const BlogDetails = () => {
                             </div>
                         </div>
                         <blockquote>
-                            <p className="blog-desc" style={{ textAlign: "justify" }}>
-                                {blog.description}
-                            </p>
-                        </blockquote>
-                        <p>
-                            <div className="post-footer d-block d-sm-flex justify-content-sm-between align-items-center">
-                                <ul className="tags">
-                                    <li>
-                                        <a rel="noopener noreferrer">
-                                            <FontAwesomeIcon icon="fa-solid fa-user-tie" /> <span>{blog.author}</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a rel="noopener noreferrer">
-                                            <FontAwesomeIcon icon="fa-solid fa-calendar-days" /> <span>
-                                                {blog.createdAt?.slice(0, 10)}
-                                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div className="post-share mt-3 mt-sm-0">
-                                    <a className="text-reset" style={{ fontSize: "25px" }} href="https://www.instagram.com/nuryvalenzuelajoyeria/" target="_blank" rel="noopener noreferrer" role="button" data-mdb-ripple-color="dark">
-                                        <i className="fab fa-instagram" style={{ fontSize: "25px", color: "#ac2bac" }} />
-                                    </a>
-                                    <a className="text-reset" style={{ fontSize: "25px" }} href="https://api.whatsapp.com/send?phone=573133966349&text=Hola%2C%20vengo%20desde%20tu%20perfil%20de%20Instagram%20y%20deseo%20obtener%20mas%20informaci%C3%B3n%20%20%F0%9F%92%8E" target="_blank" rel="noopener noreferrer" role="button" data-mdb-ripple-color="dark">
-                                        <i className="fab fa-whatsapp" style={{ fontSize: "25px", color: "#008000" }} />
-                                    </a>
-                                </div>
+                            <div>
+                                <p className="blog-desc" style={{ textAlign: "justify" }}>
+                                    <span>
+                                        {blog.description}
+                                    </span>
+                                </p>
                             </div>
-                        </p>
+                        </blockquote>
+                        <div>
+                            <p>
+                                <div className="post-footer d-block d-sm-flex justify-content-sm-between align-items-center">
+                                    <ul className="tags">
+                                        <li>
+                                            <a rel="noopener noreferrer">
+                                                <FontAwesomeIcon icon="fa-solid fa-user-tie" /> <span>{blog.author}</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a rel="noopener noreferrer">
+                                                <FontAwesomeIcon icon="fa-solid fa-calendar-days" /> <span>
+                                                    {blog.createdAt?.slice(0, 10)}
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div className="post-share mt-3 mt-sm-0">
+                                        <a className="text-reset" style={{ fontSize: "25px" }} href="https://www.instagram.com/nuryvalenzuelajoyeria/" target="_blank" rel="noopener noreferrer" role="button" data-mdb-ripple-color="dark">
+                                            <i className="fab fa-instagram" style={{ fontSize: "25px", color: "#ac2bac" }} />
+                                        </a>
+                                        <a className="text-reset" style={{ fontSize: "25px" }} href="https://api.whatsapp.com/send?phone=573133966349&text=Hola%2C%20vengo%20desde%20tu%20perfil%20de%20Instagram%20y%20deseo%20obtener%20mas%20informaci%C3%B3n%20%20%F0%9F%92%8E" target="_blank" rel="noopener noreferrer" role="button" data-mdb-ripple-color="dark">
+                                            <i className="fab fa-whatsapp" style={{ fontSize: "25px", color: "#008000" }} />
+                                        </a>
+                                    </div>
+                                </div>
+                            </p>
+                        </div>
                     </article>
                 </div>
             </main>

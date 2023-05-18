@@ -5,6 +5,8 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+import 'flowbite';
+
 const Checkout = ({ setOpen, cartItems, subTotal, taxPrice, totalPrice }) => {
 
     const navigate = useNavigate();

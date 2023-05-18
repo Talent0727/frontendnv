@@ -1,5 +1,7 @@
 import React from 'react';
 
+import 'flowbite';
+
 const Empty = () => {
   return (
     <div className='e-container'>

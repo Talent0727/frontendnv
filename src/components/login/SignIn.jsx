@@ -5,6 +5,8 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import 'flowbite';
+
 const SignIn = () => {
 
     const navigate = useNavigate();

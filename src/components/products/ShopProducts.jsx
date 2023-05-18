@@ -4,6 +4,8 @@ import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 
+import 'flowbite';
+
 const ShopProducts = ({ list }) => {
 
   // for pagination

@@ -5,6 +5,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../../style/index.css';
 
+import 'flowbite';
+
 const HomeBlog = () => {
 
     const [blogs, setBlogs] = useState([]);

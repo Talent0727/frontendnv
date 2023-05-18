@@ -5,6 +5,8 @@ import AboutMe from '../views/AboutMe';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MyOrders from '../orders/MyOrders';
 
+import 'flowbite';
+
 const MyAccount = () => {
     return (
         <>

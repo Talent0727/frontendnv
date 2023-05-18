@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import '../../style/index.css';
 
+import 'flowbite';
+
 const NewProducts = () => {
 
   const [products, setProducts] = useState([]);

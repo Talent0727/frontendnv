@@ -3,4 +3,9 @@ module.exports = {
     tailwindcss: {},
     autoprefixer: {},
   },
+  build: {
+    sourcemap: true,
+    sourcemapFile: "./src",
+    emptyOutDir: true,
+  },
 }

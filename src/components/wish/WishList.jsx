@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
+import 'flowbite';
+
 const WishList = () => {
 
   const { state, dispatch: ctxDispatch } = useContext(Store);

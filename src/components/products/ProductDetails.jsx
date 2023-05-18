@@ -7,6 +7,8 @@ import { Store } from '../../utils/Store';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 
+import 'flowbite';
+
 const ProductDetails = () => {
 
     const navigate = useNavigate();
@@ -126,7 +128,7 @@ const ProductDetails = () => {
                                             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                     <div className="grid grid-cols-1 gap-4">
-                                                        <div className="space-x-2 overflow-auto text-left whitespace-nowrap">
+                                                        <div className="space-x-2 overflow-auto text-left whitespace-nowrap" key={product._id}>
                                                             <a
                                                                 className="inline-block border border-gray-200 p-1 rounded-md hover:border-blue-500 cursor-pointer"
                                                             >
@@ -156,7 +158,7 @@ const ProductDetails = () => {
                                                     </div>
                                                 </th>
                                                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                    <div className="border border-gray-200 shadow-sm p-1 text-center rounded mb-5">
+                                                    <div className="border border-gray-200 shadow-sm p-1 text-center rounded mb-5" key={product._id}>
                                                         <img
                                                             className="h-auto max-w-full rounded-lg object-cover inline-block"
                                                             src={selectedImg || `${product.image}`}
@@ -173,7 +175,7 @@ const ProductDetails = () => {
                                 </div>
                             </div>
                         </aside>
-                        <main>
+                        <main key={product._id}>
                             <h1 className="font-semibold text-5xl mb-4">
                                 {product.title}
                             </h1>
@@ -220,11 +222,13 @@ const ProductDetails = () => {
                                 </li>
                             </ul>
                             <hr className="my-2" />
-                            <p className="mb-4 font-semibold text-xl">
-                                <span className="badge badge-success text-black" style={{ color: "green", fontWeight: "bold", fontSize: "20px" }}>
-                                    Precio. :* {(uint8.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }))}
-                                </span>
-                            </p>
+                            <div>
+                                <p className="mb-4 font-semibold text-xl">
+                                    <span className="badge badge-success text-black" style={{ color: "green", fontWeight: "bold", fontSize: "20px" }}>
+                                        Precio. :* {(uint8.toLocaleString('es-CO', { style: 'currency', currency: 'COP' }))}
+                                    </span>
+                                </p>
+                            </div>
                             <div className="flex flex-wrap items-center space-x-2 mb-2">
                                 <span className="text-green-500">
                                     <span className='badge badge-success text-black' style={{ color: "green", fontWeight: "bold", fontSize: "20px" }}>
@@ -233,50 +237,53 @@ const ProductDetails = () => {
                                 </span>
                             </div>
                             <hr className="my-2" />
-                            <p className="mb-4 text-gray-500">
-                                <div className="pd-group">
-                                    <div className="pd-otherAction">
-                                        <div className="pd-size" style={{ textAlign: "justify" }}>
-                                            <h1 className="font-semibold text-3xl mb-3">
-                                                Talla 📏. :*
-                                            </h1>
-                                            <div className="pd-sizeDiv">
-                                                {
-                                                    product.sizes?.map((size) => (
-                                                        <>
-                                                            <input type="radio" onChange={(e) => setSize(e.target.value)} id={size.value} name="size" value={size.value} required />
-                                                            <label htmlFor={size.value}>{size.value}</label>
-                                                        </>
-                                                    ))
-                                                }
+                            <div>
+                                <p className="mb-4 text-gray-500">
+                                    <div className="pd-group">
+                                        <div className="pd-otherAction">
+                                            <div className="pd-size" style={{ textAlign: "justify" }}>
+                                                <h1 className="font-semibold text-3xl mb-3">
+                                                    Talla 📏. :*
+                                                </h1>
+                                                <div className="pd-sizeDiv">
+                                                    {
+                                                        product.sizes?.map((size) => (
+                                                            <>
+                                                                <input type="radio" onChange={(e) => setSize(e.target.value)} id={size.value} name="size" value={size.value} required />
+                                                                <label htmlFor={size.value}>{size.value}</label>
+                                                            </>
+                                                        ))
+                                                    }
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </p>
+                                </p>
+                            </div>
                             <hr className="my-2" />
-                            <p className="mb-4 text-gray-500">
-                                <div className="pd-group">
-                                    <div className="pd-otherAction">
-                                        <div className="pd-color" style={{ textAlign: "justify" }}>
-                                            <h1 className="font-semibold text-3xl mb-3">
-                                                Color De Oro 🖌️. :*
-                                            </h1>
-                                            <div className="pd-sizeDiv">
-                                                {
-                                                    product.colors?.map((color) => (
-                                                        <>
-                                                            <input type="radio" onChange={(e) => setColor(e.target.value)} id={color.value} name="color" value={color.value} required />
-                                                            <label htmlFor={color.value}>{color.value}</label>
-                                                        </>
-                                                    ))
-                                                }
+                            <div>
+                                <p className="mb-4 text-gray-500">
+                                    <div className="pd-group">
+                                        <div className="pd-otherAction">
+                                            <div className="pd-color" style={{ textAlign: "justify" }}>
+                                                <h1 className="font-semibold text-3xl mb-3">
+                                                    Color De Oro 🖌️. :*
+                                                </h1>
+                                                <div className="pd-sizeDiv">
+                                                    {
+                                                        product.colors?.map((color) => (
+                                                            <>
+                                                                <input type="radio" onChange={(e) => setColor(e.target.value)} id={color.value} name="color" value={color.value} required />
+                                                                <label htmlFor={color.value}>{color.value}</label>
+                                                            </>
+                                                        ))
+                                                    }
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </p>
-
+                                </p>
+                            </div>
                             <div className="flex flex-wrap gap-2 mb-5">
                                 <button className="btn btn-transparent btn-semi-round" alt="Añadir A La Lista De Deseos." title='Añadir A La Lista De Deseos.' onClick={addToWishHandler}>
                                     <span className="fa fa-heart" /> A&#241;adir Lista De Deseos.
@@ -285,41 +292,42 @@ const ProductDetails = () => {
                                     <i className="fa fa-shopping-basket" /> A&#241;adir Al Carrito.
                                 </button>
                             </div>
-
-                            <p className="mb-4 text-gray-500">
-                                <div className="col-lg-12">
-                                    <div className="single-product-page-content">
-                                        <div className="row">
-                                            <div className="col-lg-12">
-                                                {/* Product Full Description Start */}
-                                                <div className="product-full-info-reviews">
-                                                    {/* Single Product tab Menu */}
-                                                    <nav className="nav" id="nav-tab">
-                                                        <a className="active" id="description-tab" rel="noopener noreferrer" data-bs-toggle="tab" href="#description">
-                                                            Descripci&#243;n. :*
-                                                        </a>
-                                                    </nav>
-                                                    {/* Single Product tab Menu */}
-                                                    {/* Single Product tab Content */}
-                                                    <div className="tab-content" id="nav-tabContent">
-                                                        <div className="tab-pane fade show active" id="description">
-                                                            <p className="pd-desc" style={{ textAlign: "justify" }}>
-                                                                <strong>
-                                                                    <FontAwesomeIcon icon={faBagShopping} /> Producto Detalle. :*
-                                                                </strong>
-                                                                <hr className="my-2" />
-                                                                {product.description}
-                                                            </p>
+                            <div>
+                                <p className="mb-4 text-gray-500">
+                                    <div className="col-lg-12">
+                                        <div className="single-product-page-content">
+                                            <div className="row">
+                                                <div className="col-lg-12">
+                                                    {/* Product Full Description Start */}
+                                                    <div className="product-full-info-reviews">
+                                                        {/* Single Product tab Menu */}
+                                                        <nav className="nav" id="nav-tab">
+                                                            <a className="active" id="description-tab" rel="noopener noreferrer" data-bs-toggle="tab" href="#description">
+                                                                Descripci&#243;n. :*
+                                                            </a>
+                                                        </nav>
+                                                        {/* Single Product tab Menu */}
+                                                        {/* Single Product tab Content */}
+                                                        <div className="tab-content" id="nav-tabContent">
+                                                            <div className="tab-pane fade show active" id="description">
+                                                                <p className="pd-desc" style={{ textAlign: "justify" }}>
+                                                                    <strong>
+                                                                        <FontAwesomeIcon icon={faBagShopping} /> Producto Detalle. :*
+                                                                    </strong>
+                                                                    <hr className="my-2" />
+                                                                    {product.description}
+                                                                </p>
+                                                            </div>
                                                         </div>
+                                                        {/* Single Product tab Content */}
                                                     </div>
-                                                    {/* Single Product tab Content */}
+                                                    {/* Product Full Description End */}
                                                 </div>
-                                                {/* Product Full Description End */}
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </p>
+                                </p>
+                            </div>
                         </main>
                     </div>
                 </div>
