@@ -71,8 +71,8 @@ const ShopProducts = ({ list }) => {
                                   <tbody>
                                     <>
                                       {
-                                        list.slice(pagesVisited, pagesVisited + blogsPerPage).map((product) => (
-                                          <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" key={product._id}>
+                                        list.slice(pagesVisited, pagesVisited + blogsPerPage).map((product, index) => (
+                                          <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" key={index}>
                                             <th scope="row" className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
                                               <Link to={`/product/${product._id}`} rel="noopener noreferrer">
                                                 <img

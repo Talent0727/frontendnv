@@ -6,11 +6,11 @@ const Tripletecategory = ({ tripletecategory, filterResult3 }) => {
       <div className="f-buttons">
         <button className='f-button' onClick={() => filterResult3()}>Ver Todos.</button>
         {
-          tripletecategory.map((tripletecategory) => (
+          tripletecategory.map((tripletecategory, index) => (
             <button
               className='f-button'
               onClick={() => filterResult3(tripletecategory.titletripletecategory)}
-              key={tripletecategory._id}>
+              key={index}>
               {tripletecategory.titletripletecategory}
             </button>
           ))

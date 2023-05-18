@@ -114,8 +114,8 @@ const CartItems = () => {
                                             ) : (
                                                 <>
                                                     {
-                                                        cartItems.map((item) => (
-                                                            <tr key={item._id}>
+                                                        cartItems.map((item, index) => (
+                                                            <tr key={index}>
                                                                 <td className="pro-thumbnail">
                                                                     <Link to={`/product/${item._id}`} rel="noopener noreferrer">
                                                                         <div>

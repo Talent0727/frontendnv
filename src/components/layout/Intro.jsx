@@ -76,9 +76,9 @@ const Intro = () => {
               cssMode={true}
               className="mySwiper"
             >
-              {banners.map((banner) => (
+              {banners.map((banner, index) => (
                 <SwiperSlide
-                  key={banner._id}
+                  key={index}
                   className='image'
                   style={{ backgroundColor: '#bdc3c787' }}>
                   <a rel="noopener noreferrer" className="flex">

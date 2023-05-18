@@ -6,11 +6,11 @@ const Category = ({ category, filterResult }) => {
       <div className="f-buttons">
         <button className='f-button' onClick={() => filterResult()}>Ver Todos.</button>
         {
-          category.map((category) => (
+          category.map((category, index) => (
             <button
               className='f-button'
               onClick={() => filterResult(category.titlecategory)}
-              key={category._id}>
+              key={index}>
               {category.titlecategory}
             </button>
           ))

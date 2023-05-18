@@ -6,11 +6,11 @@ const Subcategory = ({ subcategory, filterResult2 }) => {
             <div className="f-buttons">
                 <button className='f-button' onClick={() => filterResult2()}>Ver Todos.</button>
                 {
-                    subcategory.map((subcategory) => (
+                    subcategory.map((subcategory, index) => (
                         <button
                             className='f-button'
                             onClick={() => filterResult2(subcategory.titlesubcategory)}
-                            key={subcategory._id}>
+                            key={index}>
                             {subcategory.titlesubcategory}
                         </button>
                     ))

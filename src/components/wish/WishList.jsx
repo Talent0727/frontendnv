@@ -91,8 +91,8 @@ const WishList = () => {
                       ) : (
                         <>
                           {
-                            wishItems.map((item) => (
-                              <tr key={item._id}>
+                            wishItems.map((item, index) => (
+                              <tr key={index}>
                                 <td className="pro-thumbnail">
                                   <Link to={`/product/${item._id}`} rel="noopener noreferrer">
                                     <img

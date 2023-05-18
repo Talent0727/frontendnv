@@ -141,10 +141,10 @@ const ProductDetails = () => {
                                                                     width="500"
                                                                     height="500"
                                                                 />
-                                                                {product.imagesOnes?.map((item) => (
+                                                                {product.imagesOnes?.map((item, index) => (
                                                                     <img
                                                                         className="h-auto max-w-full rounded-lg"
-                                                                        key={item._id}
+                                                                        key={index}
                                                                         onClick={() => setSelectedImg(`${item.value}`)}
                                                                         src={`${item.value}`}
                                                                         alt={product.title}
@@ -247,9 +247,9 @@ const ProductDetails = () => {
                                                 </h1>
                                                 <div className="pd-sizeDiv">
                                                     {
-                                                        product.sizes?.map((size) => (
+                                                        product.sizes?.map((size, index) => (
                                                             <>
-                                                                <input type="radio" onChange={(e) => setSize(e.target.value)} id={size.value} name="size" value={size.value} required />
+                                                                <input type="radio" onChange={(e) => setSize(e.target.value)} id={size.value} name="size" value={size.value} key={index} required />
                                                                 <label htmlFor={size.value}>{size.value}</label>
                                                             </>
                                                         ))
@@ -271,9 +271,9 @@ const ProductDetails = () => {
                                                 </h1>
                                                 <div className="pd-sizeDiv">
                                                     {
-                                                        product.colors?.map((color) => (
+                                                        product.colors?.map((color, index) => (
                                                             <>
-                                                                <input type="radio" onChange={(e) => setColor(e.target.value)} id={color.value} name="color" value={color.value} required />
+                                                                <input type="radio" onChange={(e) => setColor(e.target.value)} id={color.value} name="color" value={color.value} key={index} required />
                                                                 <label htmlFor={color.value}>{color.value}</label>
                                                             </>
                                                         ))

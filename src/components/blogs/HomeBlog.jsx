@@ -83,8 +83,8 @@ const HomeBlog = () => {
                                         <tbody>
                                             <>
                                                 {
-                                                    blogs.slice(-4).map((blog) => (
-                                                        <tr key={blog._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                                    blogs.slice(-4).map((blog, index) => (
+                                                        <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                                             <th scope="row" className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
                                                                 <Link to={`/blogs/${blog._id}`} rel="noopener noreferrer">
                                                                     <img

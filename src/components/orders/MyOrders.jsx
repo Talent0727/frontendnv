@@ -144,8 +144,8 @@ const MyOrders = () => {
                                                                         </thead>
                                                                         <tbody>
                                                                             {
-                                                                                orders.map((item) => (
-                                                                                    <tr key={item._id}>
+                                                                                orders.map((item, index) => (
+                                                                                    <tr key={index}>
                                                                                         <td>
                                                                                             <strong className='badge badge-secondary text-black mb-2' style={{ fontWeight: "bold", fontSize: "15px" }}>
                                                                                                 {item._id}
