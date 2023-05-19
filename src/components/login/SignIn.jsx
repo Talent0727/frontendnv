@@ -2,10 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import axios from 'axios';
+//import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import 'flowbite';
+import { api } from '../../api/login/loginApi';
 
 const SignIn = () => {
 
@@ -19,7 +20,7 @@ const SignIn = () => {
 
         try {
 
-            const { data } = await axios.post('/api/users/login', {
+            const { data } = await api.post('/api/users/login', {
                 email,
                 password
             });

@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTruck } from '@fortawesome/free-solid-svg-icons';
 import { toast } from 'react-toastify';
-import axios from 'axios';
+//import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 import 'flowbite';
+import { api } from '../../api/order/orderApi';
 
 const Checkout = ({ setOpen, cartItems, subTotal, taxPrice, totalPrice }) => {
 
@@ -28,7 +29,7 @@ const Checkout = ({ setOpen, cartItems, subTotal, taxPrice, totalPrice }) => {
 
         try {
 
-            const { data } = await axios.post('/api/orders', {
+            const { data } = await api.post('/api/orders', {
 
                 orderItems: cartItems,
                 userId: userId,

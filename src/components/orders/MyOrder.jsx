@@ -1,8 +1,10 @@
-import axios from 'axios';
+//import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { api } from '../../api/order/orderApi';
 
 import 'flowbite';
 
@@ -20,7 +22,7 @@ const MyOrder = () => {
         const fetchData = async () => {
             try {
 
-                const { data } = await axios.get(`/api/orders/find/${id}`);
+                const { data } = await api.get(`/api/orders/find/${id}`);
                 console.log(data);
                 setOrder(data);
 

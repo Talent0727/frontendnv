@@ -1,4 +1,4 @@
-import axios from 'axios';
+//import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import '../../style/index.css';
 
 import 'flowbite';
+import { api } from '../../api/blog/blogApi';
 
 const BlogLists = () => {
 
@@ -26,7 +27,7 @@ const BlogLists = () => {
     useEffect(() => {
 
         const fetchData = async () => {
-            const resultBlog = await axios.get('/api/blogs/all');
+            const resultBlog = await api.get('/api/blogs/all');
             // i want the latest blogs to show
 
             const resultBlogData = resultBlog.data;

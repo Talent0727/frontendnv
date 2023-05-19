@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import axios from 'axios';
+//import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ShopFilter from './ShopFilter';
 import ShopProducts from '../products/ShopProducts';
@@ -9,6 +9,7 @@ import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import 'flowbite';
+import { api } from '../../api/product/shopApi';
 
 const ShopMainPart = () => {
 
@@ -85,7 +86,7 @@ const ShopMainPart = () => {
     useEffect(() => {
         //fetch all products from db
         const fetchData = async () => {
-            const resultProducts = await axios.get('/api/products/all');
+            const resultProducts = await api.get('/api/products/all');
 
             const resultProductsData = resultProducts.data;
 
@@ -96,17 +97,17 @@ const ShopMainPart = () => {
             setProducts(sortResultProductsData);
 
             //fetch all category
-            const resultCategory = await axios.get('/api/category/all');
+            const resultCategory = await api.get('/api/category/all');
             console.log(resultCategory.data);
             setCategory(resultCategory.data);
 
             //fetch all subcategory
-            const resultSubcategory = await axios.get('/api/subcategory/all');
+            const resultSubcategory = await api.get('/api/subcategory/all');
             console.log(resultSubcategory.data);
             setSubcategory(resultSubcategory.data);
 
             //fetch all Tripletecategory
-            const resultTripletecategory = await axios.get('/api/tripletecategory/all');
+            const resultTripletecategory = await api.get('/api/tripletecategory/all');
             console.log(resultTripletecategory.data);
             setTripletecategory(resultTripletecategory.data);
         }

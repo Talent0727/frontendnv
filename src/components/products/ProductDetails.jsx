@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import axios from 'axios';
+//import axios from 'axios';
 import React, { useState, useContext, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
 
 import 'flowbite';
+import { api } from '../../api/product/productApi';
 
 const ProductDetails = () => {
 
@@ -29,7 +30,7 @@ const ProductDetails = () => {
     useEffect(() => {
 
         const fetchData = async () => {
-            const resultProduct = await axios.get(`/api/products/find/${id}`);
+            const resultProduct = await api.get(`/api/products/find/${id}`);
             setProduct(resultProduct.data);
         }
 

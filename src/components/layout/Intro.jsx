@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import axios from 'axios';
+//import axios from 'axios';
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -19,6 +19,7 @@ import '../../style/BannerSlider.css';
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 import 'flowbite';
+import { api } from '../../api/banner/bannerApi';
 
 const Intro = () => {
 
@@ -34,7 +35,7 @@ const Intro = () => {
   useEffect(() => {
 
     const fetchData = async () => {
-      const resultBanner = await axios.get('/api/banners/all');
+      const resultBanner = await api.get('/api/banners/all');
       console.log(resultBanner.data);
       setBanners(resultBanner.data);
     }

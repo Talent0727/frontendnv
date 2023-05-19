@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import axios from 'axios';
+//import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import 'flowbite';
+import { api } from '../../api/about/aboutApi';
 
 const About = () => {
 
@@ -12,7 +13,7 @@ const About = () => {
   useEffect(() => {
 
     const fetchData = async () => {
-      const resultAbout = await axios.get('/api/abouts/all');
+      const resultAbout = await api.get('/api/abouts/all');
       console.log(resultAbout.data);
       setAbouts(resultAbout.data);
     }

@@ -1,8 +1,10 @@
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import axios from 'axios';
+//import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
+import { api } from '../../api/order/orderApi';
 
 import 'flowbite';
 
@@ -20,7 +22,7 @@ const MyOrders = () => {
     useEffect(() => {
 
         const fetchData = async () => {
-            const resultOrders = await axios.get(`/api/orders/mine/${userId}`);
+            const resultOrders = await api.get(`/api/orders/mine/${userId}`);
             console.log(resultOrders.data);
             setOrders(resultOrders.data);
         }

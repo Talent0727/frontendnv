@@ -1,11 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import axios from 'axios';
+//import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import 'flowbite';
+import { api } from '../../api/login/userApi';
 
 const SignUp = () => {
 
@@ -31,7 +32,7 @@ const SignUp = () => {
 
         try {
 
-            await axios.post('/api/users//register', {
+            await api.post('/api/users//register', {
                 nombres,
                 apellidos,
                 username,

@@ -1,4 +1,4 @@
-import axios from 'axios';
+//import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { faEye, faBagShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import '../../style/index.css';
 
 import 'flowbite';
+import { api } from '../../api/product/productApi';
 
 const NewProducts = () => {
 
@@ -14,7 +15,7 @@ const NewProducts = () => {
   useEffect(() => {
 
     const fetchData = async () => {
-      const resultProducts = await axios.get('/api/products/all');
+      const resultProducts = await api.get('/api/products/all');
       console.log(resultProducts.data);
       setProducts(resultProducts.data);
     }

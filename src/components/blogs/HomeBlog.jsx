@@ -1,11 +1,12 @@
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import axios from 'axios';
+//import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../../style/index.css';
 
 import 'flowbite';
+import { api } from '../../api/blog/blogApi';
 
 const HomeBlog = () => {
 
@@ -14,7 +15,7 @@ const HomeBlog = () => {
     useEffect(() => {
 
         const fetchData = async () => {
-            const resultBlog = await axios.get('/api/blogs/all');
+            const resultBlog = await api.get('/api/blogs/all');
             console.log(resultBlog.data);
             setBlogs(resultBlog.data);
         }

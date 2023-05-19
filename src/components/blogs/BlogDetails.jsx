@@ -1,11 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import axios from 'axios';
+//import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 import 'flowbite';
+import { api } from '../../api/blog/blogApi';
 
 const BlogDetails = () => {
 
@@ -20,7 +21,7 @@ const BlogDetails = () => {
     useEffect(() => {
 
         const fetchData = async () => {
-            const resultBlog = await axios.get(`/api/blogs/find/${id}`);
+            const resultBlog = await api.get(`/api/blogs/find/${id}`);
             console.log(resultBlog.data);
             setBlog(resultBlog.data);
         }
